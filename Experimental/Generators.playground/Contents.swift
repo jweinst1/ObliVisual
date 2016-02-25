@@ -53,5 +53,32 @@ struct randlettergenerator {
     }
 }
 
+struct numpairGenerator {
+    var a:Int
+    var b:Int
+    var increment:Int
+    
+    init(a:Int=1, b:Int=2, increment:Int=1) {
+        self.a = a
+        self.b = b
+        self.increment = increment
+    }
+    //gets the next pair in the sequence
+    mutating func next()->[Int] {
+        let yield = [self.a, self.b]
+        self.a += self.increment
+        self.b += self.increment
+        return yield
+    }
+    //calls the next method a certain number of times, and returns the resulting array.
+    mutating func getnextpairs(times:Int) ->[[Int]] {
+        var pairs = [[Int]]()
+        for _ in 1...times {
+            pairs.append(self.next())
+        }
+        return pairs
+    }
+}
+
 
 
