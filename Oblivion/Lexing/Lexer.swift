@@ -19,3 +19,15 @@ class TokenMethods {
         return charset.isSubsetOf(CharLib.letterset)
     }
 }
+
+class Lexer {
+    var mode:Bool
+
+    init() {
+        self.mode = true
+    }
+
+    func LexTokens(tokens:[token]) -> [token] {
+        
+    }
+}

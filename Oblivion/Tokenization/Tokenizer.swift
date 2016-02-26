@@ -14,6 +14,14 @@ struct token {
         self.symbol = symbol
         self.label = label!
     }
+    //sets label of token
+    mutating func setlabel(label:String) {
+        self.label = label
+    }
+
+    func getlabel() -> String {
+        return self.label
+    }
 }
 
 struct CharLib {
