@@ -18,12 +18,19 @@ struct token {
 struct CharLib {
     //de
     static var numset = Set("0123456789".characters)
+    static var letterset = Set("abcdefghijklmnopqrstuvwxyz".characters)
 }
 
 class TokenMethods {
-    
-    static func isNumber(input:String) {
-        
+    //determines if string is a number
+    static func isNumber(input:String) ->Bool {
+        let charset = Set(input.characters)
+        return charset.isSubsetOf(CharLib.numset)
+    }
+    //determines if string is a word
+    static func isWord(input:String) ->Bool {
+        let charset = Set(input.characters)
+        return charset.isSubsetOf(CharLib.letterset)
     }
 }
 
