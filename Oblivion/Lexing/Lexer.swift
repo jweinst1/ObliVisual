@@ -28,6 +28,6 @@ class Lexer {
     }
 
     func LexTokens(tokens:[token]) -> [token] {
-        
+
     }
 }
