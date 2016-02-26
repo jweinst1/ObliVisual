@@ -11,6 +11,7 @@
 		2352741CB65879EE4C66C5C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527D66267C5C966DBE0DAC /* main.swift */; };
 		2352747F2F0151D665489972 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527A3053ADA655A282176D /* Tokenizer.swift */; };
 		2352750D48D4D07E04D60F8C /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235270992EF1E656BA383C10 /* Interpreter.swift */; };
+		23527EDA302DD88D49C723A2 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527B5F9C1C121491218867 /* Lexer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,7 @@
 		235279A72B94DD0114C9EA60 /* symbols.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = symbols.txt; sourceTree = "<group>"; };
 		235279D587B1E325B79940E7 /* JointContainers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JointContainers.swift; sourceTree = "<group>"; };
 		23527A3053ADA655A282176D /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		23527B5F9C1C121491218867 /* Lexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		23527BF580CBC606145EA42C /* Generators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Generators.playground; sourceTree = "<group>"; };
 		23527D66267C5C966DBE0DAC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		23527F401CB1162FD1E1405A /* Oblivion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Oblivion; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,14 @@
 			path = Drafts;
 			sourceTree = "<group>";
 		};
+		235278D99F91FA89C4CCE6E0 /* Lexing */ = {
+			isa = PBXGroup;
+			children = (
+				23527B5F9C1C121491218867 /* Lexer.swift */,
+			);
+			path = Lexing;
+			sourceTree = "<group>";
+		};
 		23527942E80F05763792AD9F /* UtilObjects */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 				235270992EF1E656BA383C10 /* Interpreter.swift */,
 				23527942E80F05763792AD9F /* UtilObjects */,
 				235279FADD3E703B9E3A33BF /* Tokenization */,
+				235278D99F91FA89C4CCE6E0 /* Lexing */,
 			);
 			path = Oblivion;
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 				2352750D48D4D07E04D60F8C /* Interpreter.swift in Sources */,
 				235272356C9771E1506AC038 /* JointContainers.swift in Sources */,
 				2352747F2F0151D665489972 /* Tokenizer.swift in Sources */,
+				23527EDA302DD88D49C723A2 /* Lexer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

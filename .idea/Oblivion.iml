@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Interpreter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Tokenization/Tokenizer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/main.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Oblivion/Lexing/Lexer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/JointContainers.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drafts/symbols.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Experimental/Generators.playground" isTestSource="false" />
