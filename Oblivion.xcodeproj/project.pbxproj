@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235272356C9771E1506AC038 /* JointContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235279D587B1E325B79940E7 /* JointContainers.swift */; };
 		2352741CB65879EE4C66C5C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527D66267C5C966DBE0DAC /* main.swift */; };
+		2352750D48D4D07E04D60F8C /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235270992EF1E656BA383C10 /* Interpreter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +25,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		235270992EF1E656BA383C10 /* Interpreter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
 		235279A72B94DD0114C9EA60 /* symbols.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = symbols.txt; sourceTree = "<group>"; };
+		235279D587B1E325B79940E7 /* JointContainers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JointContainers.swift; sourceTree = "<group>"; };
 		23527BF580CBC606145EA42C /* Generators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Generators.playground; sourceTree = "<group>"; };
 		23527D66267C5C966DBE0DAC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		23527F401CB1162FD1E1405A /* Oblivion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Oblivion; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,10 +60,20 @@
 			path = Drafts;
 			sourceTree = "<group>";
 		};
+		23527942E80F05763792AD9F /* UtilObjects */ = {
+			isa = PBXGroup;
+			children = (
+				235279D587B1E325B79940E7 /* JointContainers.swift */,
+			);
+			path = UtilObjects;
+			sourceTree = "<group>";
+		};
 		23527ABEE4E1D6C1C6715445 /* Oblivion */ = {
 			isa = PBXGroup;
 			children = (
 				23527D66267C5C966DBE0DAC /* main.swift */,
+				235270992EF1E656BA383C10 /* Interpreter.swift */,
+				23527942E80F05763792AD9F /* UtilObjects */,
 			);
 			path = Oblivion;
 			sourceTree = "<group>";
@@ -133,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2352741CB65879EE4C66C5C6 /* main.swift in Sources */,
+				2352750D48D4D07E04D60F8C /* Interpreter.swift in Sources */,
+				235272356C9771E1506AC038 /* JointContainers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

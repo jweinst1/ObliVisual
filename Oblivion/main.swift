@@ -13,3 +13,9 @@ print("Hello, World!")
 print("The Oblivion Programming Lanuage")
 print("Version 1.0.0")
 
+var t = pair(first:1, second:"hello")
+print(t.first)
+print(t.second)
+t.setsecond(2)
+print(t.second)
+
