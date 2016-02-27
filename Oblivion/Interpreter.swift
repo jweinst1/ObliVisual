@@ -19,5 +19,6 @@ class Interpreter {
 
     mutating func processline(line:String) {
         var toks = self.tokenizer.Tokenize(line)
+        self.lexer.LexTokens(toks)
     }
 }

@@ -18,8 +18,13 @@ class TokenMethods {
         let charset = Set(input.lowercaseString.characters)
         return charset.isSubsetOf(CharLib.letterset)
     }
+    //checks if token is a math operator
+    static func isMath(input:String) ->Bool {
+        let charset = Set(input.lowercaseString.characters)
+        return charset.isSubsetOf(CharLib.mathopset)
+    }
 }
-
+//lexes the new tokens
 class Lexer {
     var mode:Bool
 
@@ -27,7 +32,17 @@ class Lexer {
         self.mode = true
     }
 
-    func LexTokens(tokens:[token]) -> [token] {
-
+    func LexTokens(tokens:[token]) -> Void {
+        for elem in tokens {
+            if TokenMethods.isMath(elem.symbol) {
+                elem.setlabel("math")
+            }
+            else if TokenMethods.isNumber(elem.symbol) {
+                elem.setlabel("number")
+            }
+            else {
+                elem.setlabel("ERROR")
+            }
+        }
     }
 }

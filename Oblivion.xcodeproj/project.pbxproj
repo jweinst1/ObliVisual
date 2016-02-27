@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		235272356C9771E1506AC038 /* JointContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235279D587B1E325B79940E7 /* JointContainers.swift */; };
+		23527385039A55014268A875 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235274DEDEB5249918B0F210 /* Parser.swift */; };
 		2352741CB65879EE4C66C5C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527D66267C5C966DBE0DAC /* main.swift */; };
 		2352747F2F0151D665489972 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527A3053ADA655A282176D /* Tokenizer.swift */; };
 		2352750D48D4D07E04D60F8C /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235270992EF1E656BA383C10 /* Interpreter.swift */; };
+		2352764532E75FC80BCAFB08 /* HolderTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352710AF97506666AEFC09E /* HolderTools.swift */; };
 		2352775173054E58812A9C66 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235279255B3126FB00BD51F7 /* TokenUtils.swift */; };
 		23527EDA302DD88D49C723A2 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527B5F9C1C121491218867 /* Lexer.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		235270992EF1E656BA383C10 /* Interpreter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interpreter.swift; sourceTree = "<group>"; };
+		2352710AF97506666AEFC09E /* HolderTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderTools.swift; sourceTree = "<group>"; };
+		235274DEDEB5249918B0F210 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		235279255B3126FB00BD51F7 /* TokenUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenUtils.swift; sourceTree = "<group>"; };
 		235279A72B94DD0114C9EA60 /* symbols.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = symbols.txt; sourceTree = "<group>"; };
 		235279D587B1E325B79940E7 /* JointContainers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JointContainers.swift; sourceTree = "<group>"; };
@@ -50,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23527075149301AF82FCE09B /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				235274DEDEB5249918B0F210 /* Parser.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
 		23527266802A8CA47A5C28BD /* Experimental */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				235279D587B1E325B79940E7 /* JointContainers.swift */,
+				2352710AF97506666AEFC09E /* HolderTools.swift */,
 			);
 			path = UtilObjects;
 			sourceTree = "<group>";
@@ -99,6 +112,7 @@
 				23527942E80F05763792AD9F /* UtilObjects */,
 				235279FADD3E703B9E3A33BF /* Tokenization */,
 				235278D99F91FA89C4CCE6E0 /* Lexing */,
+				23527075149301AF82FCE09B /* Parsing */,
 			);
 			path = Oblivion;
 			sourceTree = "<group>";
@@ -177,6 +191,8 @@
 				2352747F2F0151D665489972 /* Tokenizer.swift in Sources */,
 				23527EDA302DD88D49C723A2 /* Lexer.swift in Sources */,
 				2352775173054E58812A9C66 /* TokenUtils.swift in Sources */,
+				23527385039A55014268A875 /* Parser.swift in Sources */,
+				2352764532E75FC80BCAFB08 /* HolderTools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
