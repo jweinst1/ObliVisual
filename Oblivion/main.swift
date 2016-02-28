@@ -19,6 +19,9 @@ var ITP = Interpreter()
 while true {
     print("obl>", terminator:" ")
     var input = readLine()!
-    ITP.processline(input)
+    if input == "close" {
+        break
+    }
+    ITP.parseline(input)
 }
 

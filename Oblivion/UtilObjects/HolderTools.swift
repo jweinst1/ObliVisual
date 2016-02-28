@@ -35,6 +35,14 @@ struct IntStack {
         }
     }
 
+    //subtracts current integers in the stack toward the last value
+    mutating func minus() {
+        while self.stack.count > 1 {
+            self.stack[0] -= self.stack[1]
+            self.stack.removeAtIndex(1)
+        }
+    }
+
     func getlast() ->Int {
         return self.stack.last!
     }
