@@ -24,5 +24,6 @@ class Interpreter {
         self.lexer.LexTokens(toks)
         print(toks)
         self.parser.parse(toks)
+        print(toks)
     }
 }

@@ -15,7 +15,7 @@ class Parser {
     }
     //main parse function
     func parse(tokens:[token]) {
-        for (var i=tokens.count;i>=0;i--) {
+        for (var i=tokens.count-1;i>=0;i--) {
             switch(tokens[i].label) {
             case "number":
                 self.mathproc.push(Int(tokens[i].symbol)!)
