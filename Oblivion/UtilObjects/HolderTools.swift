@@ -47,3 +47,21 @@ struct IntStack {
         return self.stack.last!
     }
 }
+
+//stack struct that holds arguments
+struct ArgStack<elem> {
+    var stack:[elem]
+
+    init() {
+        self.stack = [elem]()
+    }
+
+    //pushes an element down
+    mutating func push(val:elem) {
+        self.stack.insert(val, atIndex: 0)
+    }
+    //returns top element
+    mutating func pull() -> elem {
+        return self.stack.popLast()!
+    }
+}

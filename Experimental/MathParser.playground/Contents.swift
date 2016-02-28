@@ -110,3 +110,4 @@ class Reader {
 
 var f = Reader()
 f.parseline("p + 4 - 6 4")
+//6
