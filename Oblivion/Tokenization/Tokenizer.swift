@@ -10,14 +10,15 @@ struct token {
     var label:String
     var symbol:String
 
-    init(symbol:String, label:String?) {
+    init(symbol:String, label:String) {
         self.symbol = symbol
-        self.label = label!
+        self.label = label
     }
     //sets label of token
     mutating func setlabel(label:String) {
         self.label = label
     }
+    //changes symbol value to integer
 
     func getlabel() -> String {
         return self.label
@@ -34,10 +35,10 @@ struct CharLib {
 //main tokenizer class for Oblivion
 class Tokenizer {
     static func Tokenize(line:String) ->[token] {
-        var splits = line.componentsSeparatedByString(" ")
+        let splits = line.componentsSeparatedByString(" ")
         var toks = [token]()
         for elem in splits {
-            toks.append(token(symbol:elem))
+            toks.append(token(symbol:elem, label:"NAN"))
         }
         return toks
     }

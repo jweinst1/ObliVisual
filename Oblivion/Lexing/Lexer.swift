@@ -23,6 +23,7 @@ class TokenMethods {
         let charset = Set(input.lowercaseString.characters)
         return charset.isSubsetOf(CharLib.mathopset)
     }
+
 }
 //lexes the new tokens
 class Lexer {
@@ -33,12 +34,24 @@ class Lexer {
     }
 
     func LexTokens(tokens:[token]) -> Void {
-        for elem in tokens {
+        print(tokens.count)
+        for (var i=0;i<tokens.count;i++) {
+            var elem = tokens[i]
             if TokenMethods.isMath(elem.symbol) {
-                elem.setlabel("math")
+                switch (elem.symbol) {
+                case "+":
+                    elem.setlabel("add")
+                case "-":
+                    elem.setlabel("mul")
+                default:
+                    elem.setlabel("m")
+                }
             }
             else if TokenMethods.isNumber(elem.symbol) {
                 elem.setlabel("number")
+            }
+            else if elem.symbol == "p" {
+                elem.setlabel("print")
             }
             else {
                 elem.setlabel("ERROR")

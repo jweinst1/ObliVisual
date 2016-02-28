@@ -1,14 +1,10 @@
-//
-// Created by Joshua Weinstein on 2/26/16.
-// Copyright (c) 2016 Joshua Weinstein. All rights reserved.
-//
+//: Playground - noun: a place where people can play
 
-import Foundation
+import Cocoa
 
-//used for evaluating math statements in reverse order
 struct IntStack {
     var stack:[Int]
-
+    
     init() {
         self.stack = [Int]()
     }
@@ -34,8 +30,10 @@ struct IntStack {
             self.stack.removeAtIndex(1)
         }
     }
-
+    
     func getlast() ->Int {
         return self.stack.last!
     }
 }
+
+

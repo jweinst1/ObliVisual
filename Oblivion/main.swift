@@ -15,8 +15,10 @@ print("Version 1.0.0")
 
 var ITP = Interpreter()
 
+//continous interpretation loop
 while true {
     print("obl>", terminator:" ")
     var input = readLine()!
+    ITP.processline(input)
 }
 

@@ -6,31 +6,29 @@
 import Foundation
 //main file for the Parser class
 
-//class that can compress arrays
-class ArrayMath {
 
-    static func sum(array:[Int]) -> Int {
-        return array.reduce(0, combine: { (acc, i) in
-            return acc + i
-        })
+class Parser {
+    var mathproc:IntStack
+
+    init() {
+        self.mathproc = IntStack()
     }
-
-    static func product(array:[Int]) -> Int {
-        return array.reduce(1, combine: { (acc, i) in
-            return acc * i
-        })
-    }
-
-    static func minus(array:[Int]) -> Int {
-        return array.reduce(0, combine: { (acc, i) in
-            return acc - i
-        })
-    }
-
-    static func div(array:[Int]) -> Int {
-        return array.reduce(1, combine: { (acc, i) in
-            return acc / i
-        })
+    //main parse function
+    func parse(tokens:[token]) {
+        for (var i=tokens.count;i>=0;i--) {
+            switch(tokens[i].label) {
+            case "number":
+                self.mathproc.push(Int(tokens[i].symbol)!)
+            case "add":
+                self.mathproc.sum()
+            case "mul":
+                self.mathproc.mul()
+            case "print":
+                print(self.mathproc.getlast())
+            default:
+                print("ERR")
+            }
+        }
     }
 }
 

@@ -9,16 +9,20 @@ import Foundation
 class Interpreter {
     var log:[String]
     var lexer:Lexer
-    var tokenizer:Tokenizer
+    var parser:Parser
 
     init() {
         self.log = [String]()
         self.lexer = Lexer()
-        self.tokenizer = Tokenizer
+        self.parser = Parser()
     }
 
-    mutating func processline(line:String) {
-        var toks = self.tokenizer.Tokenize(line)
+    func processline(line:String) {
+        self.log.append(line)
+        let toks = Tokenizer.Tokenize(line)
+        print(toks)
         self.lexer.LexTokens(toks)
+        print(toks)
+        self.parser.parse(toks)
     }
 }
