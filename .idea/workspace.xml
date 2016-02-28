@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="" />
+    <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Experimental/StringSearching.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Experimental/StringSearching.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Experimental/StringSearching.playground/Contents.swift" afterPath="$PROJECT_DIR$/Experimental/StringSearching.playground/Contents.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oblivion/UtilObjects/HolderTools.swift" afterPath="$PROJECT_DIR$/Oblivion/UtilObjects/HolderTools.swift" />
+    </list>
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -114,8 +118,8 @@
       <file leaf-file-name="HolderTools.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Oblivion/UtilObjects/HolderTools.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17826825">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.54159594">
+              <caret line="30" column="68" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -136,8 +140,8 @@
         <option value="$PROJECT_DIR$/Oblivion/Tokenization/TokenUtils.swift" />
         <option value="$PROJECT_DIR$/Oblivion/Lexing/Lexer.swift" />
         <option value="$PROJECT_DIR$/Oblivion/Interpreter.swift" />
-        <option value="$PROJECT_DIR$/Oblivion/UtilObjects/HolderTools.swift" />
         <option value="$PROJECT_DIR$/Oblivion/Parsing/Parser.swift" />
+        <option value="$PROJECT_DIR$/Oblivion/UtilObjects/HolderTools.swift" />
       </list>
     </option>
   </component>
@@ -434,6 +438,86 @@
     <entry file="file://$PROJECT_DIR$/Oblivion/main.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Experimental/Generators.playground/Contents.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Drafts/symbols.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oblivion/Interpreter.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oblivion/Parsing/Parser.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oblivion/Tokenization/Tokenizer.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oblivion/Tokenization/TokenUtils.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oblivion/Lexing/Lexer.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oblivion/UtilObjects/JointContainers.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oblivion/UtilObjects/HolderTools.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oblivion/main.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
           <folding />
         </state>
@@ -569,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Oblivion/UtilObjects/HolderTools.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17826825">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.54159594">
+          <caret line="30" column="68" selection-start-line="30" selection-start-column="68" selection-end-line="30" selection-end-column="68" />
           <folding />
         </state>
       </provider>

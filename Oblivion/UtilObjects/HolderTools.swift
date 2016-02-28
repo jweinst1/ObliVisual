@@ -5,6 +5,7 @@
 
 import Foundation
 
+//used for evaluating math statements in reverse order
 struct IntStack {
     var stack:[Int]
 
@@ -18,5 +19,25 @@ struct IntStack {
     //returns top element
     mutating func pull() -> Int {
         return self.stack.popLast()!
+    }
+    //sums the current integers in the stack toward the last value
+    mutating func sum() {
+        let index = self.stack.count-1
+        for i in 0..<index {
+            self.stack[index] += self.stack[i]
+            self.stack.removeAtIndex(i)
+        }
+    }
+    //multiplies current integers in the stack toward the last value
+    mutating func mul() {
+        let index = self.stack.count-1
+        for i in 0..<index {
+            self.stack[index] *= self.stack[i]
+            self.stack.removeAtIndex(i)
+        }
+    }
+
+    func getlast() ->Int {
+        return self.stack.last
     }
 }

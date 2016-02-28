@@ -27,3 +27,30 @@ func DirectSearch(str:String, substr:String) -> Bool {
 
 DirectSearch("love is wonderful and hope", substr: "love")
 //true
+
+
+
+//relative ordering of strings
+
+struct RelativeOrdering {
+    
+    static func relativate(input:String) -> [String] {
+        let charset = Array(input.characters)
+        var relatives = [String]()
+        for(var i=0;i<charset.count-1;i++) {
+            let obj = String(charset[i]) + "->" + String(charset[i+1])
+            relatives.append(obj)
+        }
+        return relatives
+    }
+}
+
+
+func RelativeSearch(str:String, substr:String) ->Bool {
+    let strset = Set(RelativeOrdering.relativate(str))
+    let substrset = Set(RelativeOrdering.relativate(substr))
+    return substrset.isSubsetOf(strset)
+}
+
+RelativeSearch("boohoo, I dont like you any more", substr: "any")
+//true
