@@ -8,9 +8,11 @@
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/main.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Parsing/MathParser.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Parsing/Parser.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/VariableDictionary.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/JointContainers.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/HolderTools.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Interpreter.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drafts/ReadingLines.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drafts/symbols.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Experimental/ArrayReduce.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Experimental/Generators.playground" isTestSource="false" />

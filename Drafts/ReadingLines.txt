@@ -1,0 +1,8 @@
+###Line Reading Drafts###
+
+Order of processing
+
+obl> @ conjoined + list 1 2 3 list 4 5 6
+[1 2 3 4 5 6]
+
+~~~Here, the lists are processed first, into the stack, and then concatenated, then bound.
