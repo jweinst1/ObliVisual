@@ -24,6 +24,14 @@ class TokenMethods {
         return charset.isSubsetOf(CharLib.mathopset)
     }
 
+    static func isListEnd(input:String) ->Bool {
+        return input.characters.last == "]"
+    }
+
+    static func isListStart(input:String) ->Bool {
+        return input.characters.first == "["
+    }
+
 }
 //lexes the new tokens
 class Lexer {
