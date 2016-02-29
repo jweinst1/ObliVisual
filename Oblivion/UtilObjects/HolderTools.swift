@@ -56,6 +56,10 @@ struct ArgStack<elem> {
         self.stack = [elem]()
     }
 
+    subscript(index:Int) -> elem {
+        return self.stack[index]
+    }
+
     //pushes an element down
     mutating func push(val:elem) {
         self.stack.insert(val, atIndex: 0)
@@ -63,5 +67,9 @@ struct ArgStack<elem> {
     //returns top element
     mutating func pull() -> elem {
         return self.stack.popLast()!
+    }
+    //gets length of stack
+    func length() -> Int {
+        return self.stack.count
     }
 }
