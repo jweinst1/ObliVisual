@@ -72,4 +72,8 @@ struct ArgStack<elem> {
     func length() -> Int {
         return self.stack.count
     }
+    //clears out the stack
+    mutating func flush() {
+        self.stack = [elem]()
+    }
 }

@@ -23,12 +23,20 @@ class Parser {
                 switch(tokens[i]) {
                 case "+":
                     MathParser.sum(self.currentstack)
+                case "*":
+                    MathParser.mul(self.currentstack)
+                case "-":
+                    MathParser.subtract(self.currentstack)
+                case "/":
+                    MathParser.div(self.currentstack)
                 default:
-                    print(ERR)
+                    print("ERR bad token")
 
                 }
             }
         }
+        print(self.currentstack.stack.first!)
+        self.currentstack.flush()
     }
 }
 
