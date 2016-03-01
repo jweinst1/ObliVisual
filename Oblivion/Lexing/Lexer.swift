@@ -9,9 +9,9 @@ import Foundation
 
 class TokenMethods {
     //determines if string is a number
-    static func isNumber(input:String) ->Bool {
+    static func isInt(input:String) ->Bool {
         let charset = Set(input.characters)
-        return charset.isSubsetOf(CharLib.numset)
+        return charset.isSubsetOf(CharLib.intset)
     }
     //determines if string is a word
     static func isWord(input:String) ->Bool {
@@ -32,6 +32,12 @@ class TokenMethods {
         return input.characters.first == "["
     }
 
+    static func ismath(input:String) -> Bool {
+        if OperTokens.math.contains(input) {
+            return true
+        }
+    }
+
 }
 //lexes the new tokens
 class Lexer {
@@ -41,29 +47,9 @@ class Lexer {
         self.mode = true
     }
 
-    func LexTokens(tokens:[token]) -> Void {
-        print(tokens.count)
-        for (var i=0;i<tokens.count;i++) {
-            var elem = tokens[i]
-            if TokenMethods.isMath(elem.symbol) {
-                switch (elem.symbol) {
-                case "+":
-                    elem.setlabel("add")
-                case "-":
-                    elem.setlabel("mul")
-                default:
-                    elem.setlabel("m")
-                }
-            }
-            else if TokenMethods.isNumber(elem.symbol) {
-                elem.setlabel("number")
-            }
-            else if elem.symbol == "p" {
-                elem.setlabel("print")
-            }
-            else {
-                elem.setlabel("ERROR")
-            }
+    func LexToken(token:String) -> String {
+        if TokenMethods.isNumber(token) {
+            return "int"
         }
     }
 }

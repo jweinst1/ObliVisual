@@ -8,25 +8,25 @@ import Foundation
 
 
 class Parser {
-    var mathproc:IntStack
+    var currentstack:ArgStack
 
     init() {
-        self.mathproc = IntStack()
+        self.currentstack = ArgStack()
     }
     //main parse function
-    func parse(tokens:[token]) {
-        for (var i=tokens.count-1;i>=0;i--) {
-            switch(tokens[i].label) {
-            case "number":
-                self.mathproc.push(Int(tokens[i].symbol)!)
-            case "add":
-                self.mathproc.sum()
-            case "mul":
-                self.mathproc.mul()
-            case "print":
-                print(self.mathproc.getlast())
-            default:
-                print("ERR")
+    func parse(tokens:[String]) -> Void {
+        for(var i=tokens.count-1;i>=0;i--) {
+            if TokenMethods.isInt(tokens[i]) {
+                self.currentstack.push(Int(tokens[i])!)
+            }
+            else {
+                switch(tokens[i]) {
+                case "+":
+                    MathParser.sum(self.currentstack)
+                default:
+                    print(ERR)
+
+                }
             }
         }
     }
