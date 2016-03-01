@@ -7,5 +7,5 @@ import Foundation
 //document that contains the math parser
 
 class MathParser {
-
+    let op
 }

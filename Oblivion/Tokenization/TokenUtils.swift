@@ -6,3 +6,11 @@
 import Foundation
 
 //file for implementing token utility functions
+
+struct OperTokens {
+    static let math = "+ - * / % ^ _ **".componentsSeparatedByString(" ")
+    static let list = "<+ -> ! ~".componentsSeparatedByString(" ")
+    static let comparison = "== != >= <= > < &=".componentsSeparatedByString(" ")
+    static let bool = "and or not".componentsSeparatedByString(" ")
+    static let chain = "all any".componentsSeparatedByString(" ")
+}
