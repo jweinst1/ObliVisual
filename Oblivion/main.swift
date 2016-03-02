@@ -22,6 +22,6 @@ while true {
     if input == "close" {
         break
     }
-    ITP.parseline(input)
+    ITP.interpretline(input)
 }
 

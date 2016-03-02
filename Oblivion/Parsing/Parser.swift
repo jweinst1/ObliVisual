@@ -8,7 +8,7 @@ import Foundation
 
 
 class Parser {
-    var currentstack:ArgStack
+    var currentstack:ArgStack<Int>
 
     init() {
         self.currentstack = ArgStack()
@@ -29,6 +29,11 @@ class Parser {
                     MathParser.subtract(self.currentstack)
                 case "/":
                     MathParser.div(self.currentstack)
+                case "^":
+                    MathParser.max(self.currentstack)
+                case "_":
+                    MathParser.min(self.currentstack)
+
                 default:
                     print("ERR bad token")
 

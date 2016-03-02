@@ -18,11 +18,6 @@ class TokenMethods {
         let charset = Set(input.lowercaseString.characters)
         return charset.isSubsetOf(CharLib.letterset)
     }
-    //checks if token is a math operator
-    static func isMath(input:String) ->Bool {
-        let charset = Set(input.lowercaseString.characters)
-        return charset.isSubsetOf(CharLib.mathopset)
-    }
 
     static func isListEnd(input:String) ->Bool {
         return input.characters.last == "]"
@@ -32,24 +27,5 @@ class TokenMethods {
         return input.characters.first == "["
     }
 
-    static func ismath(input:String) -> Bool {
-        if OperTokens.math.contains(input) {
-            return true
-        }
-    }
 
-}
-//lexes the new tokens
-class Lexer {
-    var mode:Bool
-
-    init() {
-        self.mode = true
-    }
-
-    func LexToken(token:String) -> String {
-        if TokenMethods.isNumber(token) {
-            return "int"
-        }
-    }
 }
