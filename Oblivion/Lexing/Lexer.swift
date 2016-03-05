@@ -7,7 +7,7 @@ import Foundation
 
 //main file to implement a lexer
 
-class TokenMethods {
+struct TokenMethods {
     //determines if string is a number
     static func isInt(input:String) ->Bool {
         let charset = Set(input.characters)

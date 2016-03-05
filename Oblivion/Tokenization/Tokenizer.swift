@@ -10,7 +10,7 @@ import Foundation
 
 //main tokenizer class for Oblivion
 struct Tokenizer {
-    static func Tokenize(line:String, mode:Character) -> [String] {
+    static func Tokenize(line:String, mode:Character="n") -> [String] {
         var splits = line.componentsSeparatedByString(" ")
         if mode == "n" {
             return splits
