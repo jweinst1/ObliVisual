@@ -15,3 +15,4 @@ func <-<elem> (first:elem, second:elem) -> Array<elem> {
 5 <- 6
 //[5, 6]
 
+
