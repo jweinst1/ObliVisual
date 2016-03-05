@@ -15,4 +15,11 @@ func <-<elem> (first:elem, second:elem) -> Array<elem> {
 5 <- 6
 //[5, 6]
 
+//random number operator
+
+prefix operator %^ {}
+
+prefix func %^ (elem:Int) -> Int {
+    return random() % elem
+}
 
