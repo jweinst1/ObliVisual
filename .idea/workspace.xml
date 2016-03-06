@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Oblivion/UtilObjects/DuoCore.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Oblivion.iml" afterPath="$PROJECT_DIR$/.idea/Oblivion.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Experimental/DuoCore.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Experimental/DuoCore.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oblivion.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Oblivion.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oblivion/Lexing/Lexer.swift" afterPath="$PROJECT_DIR$/Oblivion/Lexing/Lexer.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oblivion/Operators/GlobalOperators.swift" afterPath="$PROJECT_DIR$/Oblivion/Operators/GlobalOperators.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oblivion/Parsing/MathParser.swift" afterPath="$PROJECT_DIR$/Oblivion/Parsing/MathParser.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oblivion/Parsing/Parser.swift" afterPath="$PROJECT_DIR$/Oblivion/Parsing/Parser.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oblivion/Tokenization/Tokenizer.swift" afterPath="$PROJECT_DIR$/Oblivion/Tokenization/Tokenizer.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Experimental/DuoCore.playground/Contents.swift" afterPath="$PROJECT_DIR$/Experimental/DuoCore.playground/Contents.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Oblivion/UtilObjects/DuoCore.swift" afterPath="$PROJECT_DIR$/Oblivion/UtilObjects/DuoCore.swift" />
     </list>
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -114,8 +109,8 @@
       <file leaf-file-name="DuoCore.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Oblivion/UtilObjects/DuoCore.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7385399">
-              <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.7894737">
+              <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -906,8 +901,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Oblivion/UtilObjects/DuoCore.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7385399">
-          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.7894737">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
           <folding />
         </state>
       </provider>
