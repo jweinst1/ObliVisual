@@ -6,18 +6,20 @@
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Operators/GlobalOperators.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Tokenization/Tokenizer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Tokenization/TokenUtils.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/DuoCore.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/JointContainers.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/HolderTools.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/VariableDictionary.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Oblivion/Lexing/Lexer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/main.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Parsing/MathParser.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Parsing/Parser.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/DuoCore.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/HolderTools.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/JointContainers.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/StringExtensions.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Oblivion/UtilObjects/VariableDictionary.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Interpreter.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Oblivion/Lexing/Lexer.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Drafts/ReadingLines.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drafts/tokens.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drafts/symbols.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Drafts/Streams.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Drafts/ReadingLines.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Experimental/ArrayReduce.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Experimental/Generators.playground" isTestSource="false" />
     </content>

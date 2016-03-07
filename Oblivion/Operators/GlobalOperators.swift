@@ -5,17 +5,4 @@
 
 import Foundation
 //globally declared custom operators
-infix operator <- { associativity left}
-prefix operator -% {}
 
-//operator that creates an array from successive association
-func <-<elem> (first:elem, second:elem) -> Array<elem> {
-    var members = Array<elem>()
-    members.append(first)
-    members.append(second)
-    return members
-}
-
-prefix func -% (num:Int) -> Int {
-    return random() % num
-}
