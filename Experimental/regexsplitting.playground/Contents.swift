@@ -45,10 +45,6 @@ extension String {
 
 //finding tokens in a line of code
 
-"def hello[(x, y]: return x".matchesForRegexInText("def|[a-zA-Z0-9]+|\\[|\\(")
-//["def", "hello", "[", "(", "x", "y", "return", "x"]
-
-"[x for x in range(6)]".matchesForRegexInText("for|[a-zA-Z0-9]+|\\(|\\)\\[|\\]")
-//["x", "for", "x", "in", "range", "(", "6", "]"]
+"x <- 6".matchesForRegexInText("\\(|\\)|\\[|\\]|\\.|\\@|[a-zA-Z]+|[0-9]+|<-")
 
 
