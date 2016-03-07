@@ -9,7 +9,7 @@ TOKEN LIST
 --
 ->
 =>
-@
+@ --> Assignment marker
 ~>
 **
 create
@@ -17,4 +17,4 @@ create
 ,
 ;
 :
-
+# --> String marker

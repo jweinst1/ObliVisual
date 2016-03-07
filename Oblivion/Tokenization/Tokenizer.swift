@@ -11,7 +11,7 @@ import Foundation
 //main tokenizer class for Oblivion
 struct Tokenizer {
     static let tokenpat = "\\(|\\)|\\[|\\]|\\.|\\@|[a-zA-Z]+|[0-9]+|<-"
-    static func Tokenize(line:String, mode:Character="n") -> [String] {
+    static func Tokenize(line:String) -> [String] {
         return line.matchesForRegexInText(Tokenizer.tokenpat)
     }
 }
