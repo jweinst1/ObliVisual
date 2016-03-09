@@ -59,7 +59,7 @@ struct Token {
     }
 }
 
-var sample = "5&7^6+1"
+//pattern for extracting oper tokens
 let mathpat = "\\+|\\-|\\*|[0-9]+|\\^|_|\\&"
 
 
@@ -73,7 +73,7 @@ struct Tokenizer {
         return newtokens
     }
 }
-
+//facilitates min and max operators
 struct operfuncs {
     static func max(num1:Int, num2:Int) -> Int {
         if num1 > num2 {
@@ -95,8 +95,7 @@ struct operfuncs {
 }
 
 
-// sample tokens made
-var sampletokens = Tokenizer.tokenize(sample.matchesForRegexInText(mathpat))
+
 
 struct Lexer {
     
@@ -114,8 +113,7 @@ struct Lexer {
         return list
     }
 }
-//tokens are lexed
-var lexedtokens = Lexer.lextokens(sampletokens)
+
 
 //assembler which carries two distinct types of assemble styles
 struct Assembler {
@@ -124,7 +122,11 @@ struct Assembler {
         //default initialization
         var current = 0
         for(var i=0;i<instructions.count;i++) {
-            if instructions[i].type == "int" && i == 0 {
+            if i != instructions.count-1 && instructions[i].type == "oper" && instructions[i+1].type == "oper" {
+                print("SUCCESSIVE OPER ERROR")
+                i=100
+            }
+            else if instructions[i].type == "int" && i == 0 {
                 current = instructions[i].element as! Int
             }
             else if instructions[i].type == "oper" {
@@ -151,7 +153,7 @@ struct Assembler {
     }
 }
 // assembles the tokens to a result
-Assembler.linearassemble(lexedtokens)
+
 
 //top level function to process input lines for user
 func Interpret(line:String) -> Void {
@@ -160,3 +162,5 @@ func Interpret(line:String) -> Void {
     let lexed = Lexer.lextokens(tokens)
     Assembler.linearassemble(lexed)
 }
+
+Interpret("8&7^6^7+3-4")
