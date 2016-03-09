@@ -7,6 +7,10 @@ import Foundation
 
 //file for implementing token utility functions
 
+struct TokenPatterns {
+    static let alltokens = "\\+|\\-|\\*|[0-9]+|\\^|_|\\&|@"
+}
+
 struct OperTokens {
     static let math = Set("+ - * / % ^ _ **".componentsSeparatedByString(" "))
     static let list = Set("<+ -> ! ~".componentsSeparatedByString(" "))

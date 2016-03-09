@@ -163,4 +163,4 @@ func Interpret(line:String) -> Void {
     Assembler.linearassemble(lexed)
 }
 
-Interpret("8&7^6^7+3-4")
+
