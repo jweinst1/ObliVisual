@@ -41,9 +41,9 @@ struct Token {
     var type:String
     var element:Any
     
-    init(element:Any, type:String) {
-        self.type = type
+    init(element:Any) {
         self.element = element
+        self.type = "NOTNAMED"
     }
     
     mutating func setelement(element:Any) {
@@ -53,17 +53,47 @@ struct Token {
     mutating func settype(type:String) {
         self.type = type
     }
+    
+    func isTyped() -> Bool {
+        return self.type != "NOTNAMED"
+    }
 }
 
 var sample = "5 + 6 - 8 * 4"
 let mathpat = "\\+|\\-|\\*|[0-9]+"
-sample.matchesForRegexInText(mathpat)
 
+
+//sample tokenizer
 struct Tokenizer {
     static func tokenize(fragments:[String]) -> [Token] {
         var newtokens = [Token]()
         for elem in fragments {
-            
+            newtokens.append(Token(element:elem))
         }
+        return newtokens
     }
+}
+// sample tokens made
+var sampletokens = Tokenizer.tokenize(sample.matchesForRegexInText(mathpat))
+
+struct Lexer {
+    
+    static func lextokens(var list:[Token]) -> [Token] {
+        for (var i=0;i<list.count;i++) {
+            let template = list[i].element as! String
+            if template.matchPattern("[1-9][0-9]*") {
+                list[i].settype("int")
+            }
+            else if template.matchPattern("\\+|\\*|\\-") {
+                list[i].settype("oper")
+            }
+        }
+        return list
+    }
+}
+//tokens are lexed
+var lexedtokens = Lexer.lextokens(sampletokens)
+
+struct Assembler {
+    
 }
