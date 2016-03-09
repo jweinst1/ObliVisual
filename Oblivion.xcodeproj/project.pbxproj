@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		235272356C9771E1506AC038 /* JointContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235279D587B1E325B79940E7 /* JointContainers.swift */; };
 		23527385039A55014268A875 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235274DEDEB5249918B0F210 /* Parser.swift */; };
+		235273D6722F4A7D9941C7A1 /* MathAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527513330A468CE8FE1B4C /* MathAssembler.swift */; };
 		2352741CB65879EE4C66C5C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527D66267C5C966DBE0DAC /* main.swift */; };
 		2352747F2F0151D665489972 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527A3053ADA655A282176D /* Tokenizer.swift */; };
 		2352750D48D4D07E04D60F8C /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235270992EF1E656BA383C10 /* Interpreter.swift */; };
@@ -41,6 +42,7 @@
 		23527163DDB8B1E7D0ACC585 /* GlobalOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalOperators.swift; sourceTree = "<group>"; };
 		235273AB2331F5469D02F360 /* ArrayReduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayReduce.swift; sourceTree = "<group>"; };
 		235274DEDEB5249918B0F210 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		23527513330A468CE8FE1B4C /* MathAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathAssembler.swift; sourceTree = "<group>"; };
 		235277A0E291658A262DAF98 /* ReadingLines.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadingLines.txt; sourceTree = "<group>"; };
 		2352785A863265AF9EB5BFD8 /* Streams.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Streams.txt; sourceTree = "<group>"; };
 		23527873DBDBBD16C21ED237 /* VariableDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableDictionary.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				23527075149301AF82FCE09B /* Parsing */,
 				23527BC8B17F2D9BC4842C02 /* Objects */,
 				235272F7B9E6D4EB910E3314 /* Operators */,
+				23527FA458D11088372CCDA1 /* Assemblers */,
 			);
 			path = Oblivion;
 			sourceTree = "<group>";
@@ -175,6 +178,14 @@
 				23527F401CB1162FD1E1405A /* Oblivion */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		23527FA458D11088372CCDA1 /* Assemblers */ = {
+			isa = PBXGroup;
+			children = (
+				23527513330A468CE8FE1B4C /* MathAssembler.swift */,
+			);
+			path = Assemblers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				23527F87AFDAF6B663EA39CD /* GlobalOperators.swift in Sources */,
 				23527C95689970F1CFC3A424 /* DuoCore.swift in Sources */,
 				23527F1232C84DEC79B26401 /* StringExtensions.swift in Sources */,
+				235273D6722F4A7D9941C7A1 /* MathAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
