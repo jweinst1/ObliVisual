@@ -6,15 +6,3 @@
 import Foundation
 
 //struct that can assemble mathematical expressions
-struct MathAssembler {
-    var current:Int?
-    var mode:Character
-
-    init(mode:Character) {
-        self.mode = mode
-    }
-
-    func assemble(tokens:[Any]) -> Int {
-
-    }
-}

@@ -15,6 +15,7 @@
 		2352750D48D4D07E04D60F8C /* Interpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235270992EF1E656BA383C10 /* Interpreter.swift */; };
 		2352764532E75FC80BCAFB08 /* HolderTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352710AF97506666AEFC09E /* HolderTools.swift */; };
 		2352775173054E58812A9C66 /* TokenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235279255B3126FB00BD51F7 /* TokenUtils.swift */; };
+		23527826855E2F6B33CCF7D0 /* LexerMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352755CA065DFA1CC57CDDB /* LexerMethods.swift */; };
 		235278ED7A5BE59C21B483AB /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527ABEEA7ABF31C5D7D221 /* Token.swift */; };
 		2352791B006C67F568F3AC5D /* VariableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527873DBDBBD16C21ED237 /* VariableDictionary.swift */; };
 		23527BBCF2417A9C364B9EBB /* Integers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527BE9F4A5C854AD31B495 /* Integers.swift */; };
@@ -44,6 +45,7 @@
 		235273AB2331F5469D02F360 /* ArrayReduce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayReduce.swift; sourceTree = "<group>"; };
 		235274DEDEB5249918B0F210 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		23527513330A468CE8FE1B4C /* MathAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathAssembler.swift; sourceTree = "<group>"; };
+		2352755CA065DFA1CC57CDDB /* LexerMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LexerMethods.swift; sourceTree = "<group>"; };
 		235277A0E291658A262DAF98 /* ReadingLines.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadingLines.txt; sourceTree = "<group>"; };
 		2352785A863265AF9EB5BFD8 /* Streams.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Streams.txt; sourceTree = "<group>"; };
 		23527873DBDBBD16C21ED237 /* VariableDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VariableDictionary.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				23527B5F9C1C121491218867 /* Lexer.swift */,
+				2352755CA065DFA1CC57CDDB /* LexerMethods.swift */,
 			);
 			path = Lexing;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				23527F1232C84DEC79B26401 /* StringExtensions.swift in Sources */,
 				235273D6722F4A7D9941C7A1 /* MathAssembler.swift in Sources */,
 				235278ED7A5BE59C21B483AB /* Token.swift in Sources */,
+				23527826855E2F6B33CCF7D0 /* LexerMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

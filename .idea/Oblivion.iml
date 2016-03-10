@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Tokenization/Token.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Objects/Integers.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Assemblers/MathAssembler.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Oblivion/Lexing/LexerMethods.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Lexing/Lexer.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/main.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Oblivion/Parsing/MathParser.swift" isTestSource="false" />

@@ -10,8 +10,14 @@ import Foundation
 
 //main tokenizer class for Oblivion
 struct Tokenizer {
-    static let tokenpat = "\\(|\\)|\\[|\\]|\\.|\\@|[a-zA-Z]+|[0-9]+|<-"
-    static func Tokenize(line:String) -> [String] {
-        return line.matchesForRegexInText(Tokenizer.tokenpat)
+
+    static func Tokenize(line:String) -> [Token] {
+        let fragments = line.matchesForRegexInText(TokenPatterns.alltokens)
+        var newtokens = [Token]()
+        for elem in fragments {
+            newtokens.append(Token(element:elem))
+        }
+        return newtokens
+
     }
 }

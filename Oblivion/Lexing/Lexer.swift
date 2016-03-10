@@ -7,28 +7,4 @@ import Foundation
 
 //main file to implement a lexer
 
-struct TokenMethods {
-    //determines if string is a number
-    static func isNum(input:String) ->Bool {
-        let charset = Set(input.characters)
-        return charset.isSubsetOf(CharLib.intset)
-    }
-    static func isInt(input:String) ->Bool {
-        return input.matchPattern("[1-9][0-9]*")
-    }
-    //determines if string is a word
-    static func isWord(input:String) ->Bool {
-        let charset = Set(input.lowercaseString.characters)
-        return charset.isSubsetOf(CharLib.letterset)
-    }
 
-    static func isListEnd(input:String) ->Bool {
-        return input.characters.last == "]"
-    }
-
-    static func isListStart(input:String) ->Bool {
-        return input.characters.first == "["
-    }
-
-
-}

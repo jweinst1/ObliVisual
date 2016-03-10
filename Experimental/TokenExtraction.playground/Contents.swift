@@ -44,7 +44,11 @@ extension String {
 }
 
 func ExtractTokens(line:String) -> [String] {
-    return line.matchesForRegexInText("[0-9]+|\\+>|\\+")
+    return line.matchesForRegexInText("[a-zA-Z]+|[0-9]|[1-9][0-9]*|<<|\\<-|\\+|\\-|\\*|\\[|\\]|\\/|;|,|\\.|@| ")
 }
 
-ExtractTokens("5+6 +> 7")
+ExtractTokens("foo.fun 4")
+
+let all = Set("+ - * / ^ _ << <-".componentsSeparatedByString(" "))
+
+
