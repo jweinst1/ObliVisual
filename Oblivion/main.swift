@@ -13,8 +13,11 @@ print("Hello, World!")
 print("The Oblivion Programming Lanuage")
 print("Version 1.0.0")
 
-let f = Assembler()
-print(f.hascurrent())
+let teststring = "5+6+4+8"
+var tokens = Tokenizer.Tokenize(teststring)
+var lexedtokens = Lexer.lextokens(tokens)
+var mach = Assembler()
+mach.assemble(lexedtokens)
 //continous interpretation loop
 
 

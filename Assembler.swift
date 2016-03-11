@@ -12,6 +12,7 @@ struct Assembler {
 
     init() {
         self.mode = "FIRST"
+        self.current = 0
     }
 
     mutating func assemble(var instrucs:[Token]) -> Void {
@@ -21,11 +22,17 @@ struct Assembler {
                 if instrucs[i].type == "oper" {
                     let temp = instrucs[i].element as! String
                     switch(temp) {
-                        
+                    case "+":
+                        var num = self.current as! Int
+                        num += instrucs[i+1].element as! Int
+                        self.current = num
+                    default:
+                        print("INVALID OPER")
                     }
                 }
             }
         }
+        self.printresult()
     }
     mutating func setupfirst(instrucs:[Token]) {
         switch(instrucs[0].type) {
@@ -35,6 +42,12 @@ struct Assembler {
         default:
             print("INAVLID TOKEN TYPE")
 
+        }
+    }
+
+    func printresult() -> Void {
+        if self.mode == "int" {
+            print(self.current)
         }
     }
 }
