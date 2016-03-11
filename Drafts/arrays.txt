@@ -1,0 +1,5 @@
+Array symbols
+
+[1, 2, 3] --> standard rep
+
+1, 2, 3 --> using , as an infix operator

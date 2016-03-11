@@ -13,8 +13,8 @@ print("Hello, World!")
 print("The Oblivion Programming Lanuage")
 print("Version 1.0.0")
 
-print(LexerMethods.isOper("+"))
-
+let f = Assembler()
+print(f.hascurrent())
 //continous interpretation loop
 
 

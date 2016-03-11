@@ -9,7 +9,7 @@ import Foundation
 
 struct TokenPatterns {
     static let alltokens = "[a-zA-Z]+|[0-9]|[1-9][0-9]*|<<|\\<-|\\+|\\-|\\*|\\[|\\]|\\/|;|,|\\.|\\^|_|@| "
-    static let allopers = "<<|\\<-|\\+|\\-|\\*|\\[|\\]|\\/|\\^|_|@"
+    static let allopers = "<<|\\<-|\\+|\\-|\\*|\\[|\\]|\\/|\\^|_|@|,"
 }
 
 struct OperTokens {
