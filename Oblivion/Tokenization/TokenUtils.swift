@@ -8,12 +8,12 @@ import Foundation
 //file for implementing token utility functions
 
 struct TokenPatterns {
-    static let alltokens = "[a-zA-Z]+|[0-9]|[1-9][0-9]*|<<|\\<-|\\+|\\-|\\*|\\[|\\]|\\/|;|,|\\.|\\^|_|@| "
+    static let alltokens = "\\`[^`]*\\`|[a-zA-Z]+|[0-9]|[1-9][0-9]*|<<|\\<-|\\+|\\-|\\*|\\[|\\]|\\/|;|,|\\.|\\^|_|\\&|@| "
     static let allopers = "<<|\\<-|\\+|\\-|\\*|\\[|\\]|\\/|\\^|_|@|,"
 }
 
 struct OperTokens {
-    static let all = Set("+ - * / ^ _ << <-".componentsSeparatedByString(" "))
+    static let all = Set("+ - * / ^ _ << <- & @".componentsSeparatedByString(" "))
     static let list = Set("<+ -> ! ~".componentsSeparatedByString(" "))
     static let comparison = Set("== != >= <= > < &=".componentsSeparatedByString(" "))
     static let bool = Set("and or not".componentsSeparatedByString(" "))

@@ -26,4 +26,8 @@ struct LexerMethods {
         return OperTokens.containers.contains(input)
     }
 
+    static func isString(input:String) ->Bool {
+        return input.matchPattern("^\\`[^`]*\\`$")
+    }
+
 }

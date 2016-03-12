@@ -31,6 +31,19 @@ struct Assembler {
                     }
                 }
             }
+            else if self.mode == "string" {
+                if instrucs[i].type == "oper" {
+                    let temp = instrucs[i].element as! String
+                    switch(temp) {
+                    case "&":
+                    var tempstr = self.current as! String
+                    tempstr += instrucs[i+1].element as! String
+                    self.current = tempstr
+                    default:
+                        print("INVALID OPER")
+                    }
+                }
+            }
         }
         self.printresult()
     }
@@ -38,6 +51,9 @@ struct Assembler {
         switch(instrucs[0].type) {
         case "int":
             self.mode = "int"
+            self.current = instrucs[0].element
+        case "string":
+            self.mode = "string"
             self.current = instrucs[0].element
         default:
             print("INAVLID TOKEN TYPE")
@@ -48,6 +64,11 @@ struct Assembler {
     func printresult() -> Void {
         if self.mode == "int" {
             print(self.current)
+        }
+        else if self.mode == "string" {
+            var temp = self.current as! String
+            temp = "`" + temp + "`"
+            print(temp)
         }
     }
 }

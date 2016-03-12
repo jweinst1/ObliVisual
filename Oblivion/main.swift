@@ -13,11 +13,13 @@ print("Hello, World!")
 print("The Oblivion Programming Lanuage")
 print("Version 1.0.0")
 
-let teststring = "5+6+4+8"
+let teststring = "`rrr`&`ttt`&`reee`"
 var tokens = Tokenizer.Tokenize(teststring)
 var lexedtokens = Lexer.lextokens(tokens)
 var mach = Assembler()
 mach.assemble(lexedtokens)
+print("`who is having dinner?`".matchesForRegexInText("^\\`[^`]*\\`$"))
+print("`who is ha$TGFDG`".matchesForRegexInText("^\\`[^`]*\\`$"))
 //continous interpretation loop
 
 

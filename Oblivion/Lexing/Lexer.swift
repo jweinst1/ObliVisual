@@ -16,11 +16,18 @@ struct Lexer {
                 list[i].settype("int")
                 list[i].element = Int(template)!
             }
-            else if template.matchPattern(TokenPatterns.allopers) {
+            else if LexerMethods.isOper(template) {
                 list[i].settype("oper")
             }
             else if LexerMethods.isWord(template) {
                 list[i].settype("name")
+            }
+            else if LexerMethods.isString(template) {
+                list[i].settype("string")
+                var temp = list[i].element as! String
+                temp = String(temp.characters.dropFirst())
+                temp = String(temp.characters.dropLast())
+                list[i].element = temp
             }
         }
         return list
