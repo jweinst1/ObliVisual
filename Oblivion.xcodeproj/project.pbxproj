@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235270C8313DF197DD6B497A /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527CB421D53FF061F59808 /* Assembler.swift */; };
 		235272356C9771E1506AC038 /* JointContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235279D587B1E325B79940E7 /* JointContainers.swift */; };
 		23527385039A55014268A875 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235274DEDEB5249918B0F210 /* Parser.swift */; };
 		2352741CB65879EE4C66C5C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527D66267C5C966DBE0DAC /* main.swift */; };
@@ -17,7 +18,6 @@
 		23527826855E2F6B33CCF7D0 /* LexerMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2352755CA065DFA1CC57CDDB /* LexerMethods.swift */; };
 		235278ED7A5BE59C21B483AB /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527ABEEA7ABF31C5D7D221 /* Token.swift */; };
 		2352791B006C67F568F3AC5D /* VariableDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527873DBDBBD16C21ED237 /* VariableDictionary.swift */; };
-		235279D5BD5CBD71464EA498 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527CBF099AFD85F46C0D32 /* Assembler.swift */; };
 		23527BBCF2417A9C364B9EBB /* Integers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527BE9F4A5C854AD31B495 /* Integers.swift */; };
 		23527C3949854AB836A2B674 /* MathParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527B1AC46C9C3B4DC22395 /* MathParser.swift */; };
 		23527C95689970F1CFC3A424 /* DuoCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23527D95C5154FEECE3330BD /* DuoCore.swift */; };
@@ -58,7 +58,7 @@
 		23527B5F9C1C121491218867 /* Lexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		23527BE9F4A5C854AD31B495 /* Integers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Integers.swift; sourceTree = "<group>"; };
 		23527BF580CBC606145EA42C /* Generators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Generators.playground; sourceTree = "<group>"; };
-		23527CBF099AFD85F46C0D32 /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = SOURCE_ROOT; };
+		23527CB421D53FF061F59808 /* Assembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		23527D4014303E5A53AD38FC /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		23527D66267C5C966DBE0DAC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		23527D95C5154FEECE3330BD /* DuoCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DuoCore.swift; sourceTree = "<group>"; };
@@ -115,6 +115,14 @@
 			path = Drafts;
 			sourceTree = "<group>";
 		};
+		23527861775E41272922DB12 /* Assemblers */ = {
+			isa = PBXGroup;
+			children = (
+				23527CB421D53FF061F59808 /* Assembler.swift */,
+			);
+			path = Assemblers;
+			sourceTree = "<group>";
+		};
 		235278D99F91FA89C4CCE6E0 /* Lexing */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,7 +165,7 @@
 				23527075149301AF82FCE09B /* Parsing */,
 				23527BC8B17F2D9BC4842C02 /* Objects */,
 				235272F7B9E6D4EB910E3314 /* Operators */,
-				23527FA458D11088372CCDA1 /* Assemblers */,
+				23527861775E41272922DB12 /* Assemblers */,
 			);
 			path = Oblivion;
 			sourceTree = "<group>";
@@ -186,14 +194,6 @@
 				23527F401CB1162FD1E1405A /* Oblivion */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		23527FA458D11088372CCDA1 /* Assemblers */ = {
-			isa = PBXGroup;
-			children = (
-				23527CBF099AFD85F46C0D32 /* Assembler.swift */,
-			);
-			path = Assemblers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +262,7 @@
 				23527F1232C84DEC79B26401 /* StringExtensions.swift in Sources */,
 				235278ED7A5BE59C21B483AB /* Token.swift in Sources */,
 				23527826855E2F6B33CCF7D0 /* LexerMethods.swift in Sources */,
-				235279D5BD5CBD71464EA498 /* Assembler.swift in Sources */,
+				235270C8313DF197DD6B497A /* Assembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
