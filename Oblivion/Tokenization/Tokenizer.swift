@@ -12,12 +12,6 @@ import Foundation
 struct Tokenizer {
 
     static func Tokenize(line:String) -> [Token] {
-        let fragments = line.matchesForRegexInText(TokenPatterns.alltokens)
-        var newtokens = [Token]()
-        for elem in fragments {
-            newtokens.append(Token(element:elem))
-        }
-        return newtokens
 
     }
 }
