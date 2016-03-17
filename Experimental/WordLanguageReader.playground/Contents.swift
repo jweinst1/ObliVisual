@@ -2,20 +2,33 @@
 
 import Cocoa
 
-"Hello Youtube"
-//in this video we will learn how to initialize arrays in Swift.
+//nested dictionaries
 
-//the first way, is to use the [] method.
+var a:Dictionary = [
+    "who":[
+        "does":[
+            "you":[]
+        ]
+    ],
+    "what":[
+        "do":[]
+    ],
+    "does":[
+        "he":[
+            "know":[]
+        ],
+        "or":[]
+    ]
+]
 
-var f = [Int]()
-//Int, indicates the array can hold integers.
+func find(input:String) -> Bool {
+    let words = input.componentsSeparatedByString(" ")
+    var current = a
+    for(var i=0;i<words.count;i++) {
+        if let checker = current[words[i]] {
+            current = checker
+        }
+    }
+}
 
-//the other way is to use pointy brackets
 
-var g = Array<String>()
-//these two will work identically
-print(g)
-print(f)
-//thats all for today!
-
-\
