@@ -51,6 +51,7 @@ while True:
         break
     #shows available trie
     elif entry == "show":
-        print(jsoneditor.trie)
+        for elem in jsoneditor.trie.keys():
+            print(jsoneditor.trie[elem])
     else:
         jsoneditor.statement(entry)

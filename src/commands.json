@@ -1,1 +1,1 @@
-{"add": {"**arg**": {"and": {"**arg**": {}}, "to": {"**arg**": {}}}}}
+{"add": {"**arg**": {"to": {"**arg**": {"[addition]": {}}}, "and": {"**arg**": {"[addition]": {}}}, "with": {"**arg**": {"[addition]": {}}}}}, "**arg**": {"plus": {"**arg**": {"[addition]": {}}}}}
