@@ -22,6 +22,9 @@
       "and": {
         "**arg**": {
           "[addition]": {}}},
+      "plus":{
+        "**arg**":{
+          "[addition]":{}}},
       "[addall]":{}}},
   "print": {
     "**arg**": {
