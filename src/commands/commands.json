@@ -1,0 +1,26 @@
+{"subtract": {
+  "**arg**": {
+    "from": {
+      "**arg**": {
+        "[subtraction]": {}}}}},
+  "**arg**": {
+    "plus": {
+      "**arg**": {
+        "[addition]": {}}}},
+  "add": {
+    "**arg**": {
+      "with": {
+        "**arg**": {
+          "[addition]": {}}},
+      "to": {
+        "**arg**": {
+          "[addition]": {}}},
+      "and": {
+        "**arg**": {
+          "[addition]": {}}}}},
+  "print": {
+    "**arg**": {
+      "[print]": {}}},
+  "display": {
+    "**arg**": {
+      "[print]": {}}}}
