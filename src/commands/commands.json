@@ -21,11 +21,15 @@
           "[addition]": {}}},
       "and": {
         "**arg**": {
-          "[addition]": {}}}}},
+          "[addition]": {}}},
+      "[addall]":{}}},
   "print": {
     "**arg**": {
       "[print]": {}}},
   "display": {
     "**arg**": {
-      "[print]": {}}}
+      "[print]": {}}},
+  "show":{
+    "**arg**":{
+      "[print]":{}}}
 }
