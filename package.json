@@ -1,0 +1,24 @@
+{
+  "name": "oblivion",
+  "version": "1.0.0",
+  "description": "A programming language that uses English as syntax.",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jweinst1/Oblivion.git"
+  },
+  "keywords": [
+    "languages",
+    "compilers",
+    "interpreter"
+  ],
+  "author": "Joshua Weinstein <jweinst1@berkeley.edu> (https://github.com/jweinst1)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jweinst1/Oblivion/issues"
+  },
+  "homepage": "https://github.com/jweinst1/Oblivion#readme"
+}
