@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Converters/NumberPharses.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Converters/WordToNumber.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Converters/NumberPharses.json" afterPath="$PROJECT_DIR$/src/Converters/numberphrases.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Converters/WordToNumber.js" afterPath="$PROJECT_DIR$/src/Converters/WordToNumber.js" />
     </list>
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,17 +50,19 @@
         <entry file="file://$PROJECT_DIR$/src/Converters/WordToNumber.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-              <folding />
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#38#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NumberPharses.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Converters/NumberPharses.json">
+      <file leaf-file-name="numberphrases.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Converters/numberphrases.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08695652">
-              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.47826087">
+              <caret line="11" column="145" selection-start-line="11" selection-start-column="145" selection-end-line="11" selection-end-column="145" />
               <folding />
             </state>
           </provider>
@@ -170,8 +173,9 @@
         <option value="$PROJECT_DIR$/src/Interpreter.js" />
         <option value="$PROJECT_DIR$/src/Assembler.js" />
         <option value="$PROJECT_DIR$/src/commands/commands.json" />
-        <option value="$PROJECT_DIR$/src/Converters/WordToNumber.js" />
         <option value="$PROJECT_DIR$/src/Converters/NumberPharses.json" />
+        <option value="$PROJECT_DIR$/src/Converters/WordToNumber.js" />
+        <option value="$PROJECT_DIR$/src/Converters/numberphrases.json" />
       </list>
     </option>
   </component>
@@ -302,7 +306,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Interpreter.js">
+  <component name="RunManager" selected="Node.js.WordToNumber.js">
     <configuration default="false" name="Oblivion" type="AppleRunConfiguration" factoryName="Application" temporary="true" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Oblivion" TARGET_NAME="Oblivion" CONFIG_NAME="Debug" SCHEME_NAME="Oblivion" RUN_TARGET_PROJECT_NAME="Oblivion" RUN_TARGET_NAME="Oblivion" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
       <envs />
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
@@ -332,6 +336,9 @@
       <method />
     </configuration>
     <configuration default="false" name="Interpreter.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="Interpreter.js" working-dir="$PROJECT_DIR$/src">
+      <method />
+    </configuration>
+    <configuration default="false" name="WordToNumber.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="WordToNumber.js" working-dir="$PROJECT_DIR$/src/Converters">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -382,13 +389,15 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Node.js.sample.js" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.Interpreter.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.WordToNumber.js" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.Interpreter.js" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.WordToNumber.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.Interpreter.js" />
       </list>
     </recent_temporary>
   </component>
@@ -612,10 +621,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interpreter.js">
+    <entry file="file://$PROJECT_DIR$/src/commands/commands.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        <state vertical-scroll-proportion="16.875">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -630,6 +639,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interpreter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/commands/JSONINTERFACE.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -638,26 +655,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/commands/commands.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="16.875">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Converters/WordToNumber.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Converters/NumberPharses.json">
+    <entry file="file://$PROJECT_DIR$/src/Converters/numberphrases.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08695652">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.47826087">
+          <caret line="11" column="145" selection-start-line="11" selection-start-column="145" selection-end-line="11" selection-end-column="145" />
           <folding />
         </state>
       </provider>
