@@ -10,7 +10,10 @@
         "[addition]": {}}},
     "minus": {
       "**arg**":{
-        "[subtraction]":{}}}},
+        "[subtraction]":{}}},
+    "times":{
+      "**arg**":{
+        "[multiplication]":{}}}},
   "add": {
     "**arg**": {
       "with": {
@@ -39,5 +42,10 @@
     "**arg**":{
       "by":{
         "**arg**":{
-          "[increment]":{}}}}}
+          "[increment]":{}}}}},
+  "multiply":{
+    "**arg**":{
+      "by":{
+        "**arg**":{
+          "[multiplication]":{}}}}}
 }
