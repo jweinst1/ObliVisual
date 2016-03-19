@@ -34,5 +34,10 @@
       "[print]": {}}},
   "show":{
     "**arg**":{
-      "[print]":{}}}
+      "[print]":{}}},
+  "increment":{
+    "**arg**":{
+      "by":{
+        "**arg**":{
+          "[increment]":{}}}}}
 }
