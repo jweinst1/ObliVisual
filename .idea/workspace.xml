@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assembler.js" afterPath="$PROJECT_DIR$/src/Assembler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpreter.js" afterPath="$PROJECT_DIR$/src/Interpreter.js" />
     </list>
     <ignored path="Oblivion.iws" />
@@ -81,10 +78,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assembler.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Assembler.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assembler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="1.097561">
               <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
@@ -103,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Interpreter.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Interpreter.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Interpreter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75609756">
-              <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -326,7 +323,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.Utils.js">
+  <component name="RunManager" selected="Node.js.Interpreter.js">
     <configuration default="false" name="commandeditor" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -413,8 +410,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.Utils.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.Interpreter.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.Interpreter.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.Utils.js" />
         <item index="2" class="java.lang.String" itemvalue="Node.js.WordToNumber.js" />
       </list>
     </recent_temporary>
@@ -759,16 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assembler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TypeInference.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -791,9 +778,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Interpreter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75609756">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assembler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.097561">
+          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

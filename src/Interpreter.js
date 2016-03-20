@@ -12,17 +12,14 @@ var Interpreter = (function () {
         var tokens = line.split(" ");
         var arguments = [];
         var current = cmds;
-        console.log(current);
         while (tokens.length>0) {
             var temp = tokens.shift();
             if (temp in current) {
                 current = current[temp];
-                console.log(current)
             }
             else if ("**arg**" in current) {
                 arguments.push(ti.ParseType(temp));
                 current = current["**arg**"];
-                console.log(current)
             }
             else {
                 //breaks loop if non-formed statement encountered
@@ -31,7 +28,13 @@ var Interpreter = (function () {
         }
         //need processing
         var linetype = ut.GetSingleKey(current);
-        
+        switch(linetype) {
+            case "[addition]":
+                console.log(asm.MathAssembler.add(arguments));
+                break;
+            default:
+                console.log("Statement Type not picked")
+        }
     };
     return Interpreter;
 })();
