@@ -47,5 +47,10 @@
     "**arg**":{
       "by":{
         "**arg**":{
-          "[multiplication]":{}}}}}
+          "[multiplication]":{}}}}},
+  "divide":{
+    "**arg**":{
+      "by":{
+        "**arg**":{
+          "[division]":{}}}}}
 }

@@ -23,7 +23,8 @@ var Interpreter = (function () {
             }
             else {
                 //breaks loop if non-formed statement encountered
-                return "Invalid Token or Statement"
+                console.log("invalid statement");
+                return 0
             }
         }
         console.log(arguments);
@@ -32,6 +33,15 @@ var Interpreter = (function () {
         switch(linetype) {
             case "[addition]":
                 console.log(asm.MathAssembler.add(arguments));
+                break;
+            case "[subtraction]":
+                console.log(asm.MathAssembler.subtract(arguments));
+                break;
+            case "[multiplication]":
+                console.log(asm.MathAssembler.multiply(arguments));
+                break;
+            case "[division]":
+                console.log(asm.MathAssembler.divide(arguments));
                 break;
             default:
                 console.log("Statement Type not picked")
