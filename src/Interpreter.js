@@ -1,4 +1,5 @@
 var cmds = require("./commands/commands.json");
+var asm = require("./Assembler.js");
 //main interpreter object
 var Interpreter = (function () {
     function Interpreter() {
@@ -36,5 +37,5 @@ var Interpreter = (function () {
 })();
 
 
-var test = "add 6 to 7";
+var test = "add 6 and 7";
 console.log(Interpreter.interpretLine(test));
