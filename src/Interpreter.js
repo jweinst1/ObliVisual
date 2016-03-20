@@ -1,5 +1,6 @@
 var cmds = require("./commands/commands.json");
 var asm = require("./Assembler.js");
+var argcon = require("./argumentcontainers.js");
 //main interpreter object
 var Interpreter = (function () {
     function Interpreter() {

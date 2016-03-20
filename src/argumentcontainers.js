@@ -14,3 +14,30 @@ var Pair = function(first, second) {
         this.second = value;
     };
 };
+
+exports.Pair = Pair;
+
+var ArgArray = function(arr, statement) {
+    this.arr = arr;
+    this.statement = statement;
+    this.getfirst = function(){
+        return arr[0];
+    }
+};
+
+exports.ArgArray = ArgArray;
+
+
+var ArgStack = function() {
+    this.stack = [];
+    this.push = function(elem) {
+        this.stack.unshift(elem);
+    };
+    this.pull = function() {
+        return this.stack.shift();
+    };
+    //non destructive version of pull
+    this.peek = function() {
+        return this.stack[0];
+    }
+};
