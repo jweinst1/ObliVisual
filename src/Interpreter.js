@@ -1,6 +1,7 @@
 var cmds = require("./commands/commands.json");
 var asm = require("./Assembler.js");
 var argcon = require("./argumentcontainers.js");
+var ti = require("./TypeInference.js");
 //main interpreter object
 var Interpreter = (function () {
     function Interpreter() {
@@ -18,7 +19,7 @@ var Interpreter = (function () {
                 console.log(current)
             }
             else if ("**arg**" in current) {
-                arguments.push(temp);
+                arguments.push(ti.ParseType(temp));
                 current = current["**arg**"];
                 console.log(current)
             }
@@ -27,12 +28,7 @@ var Interpreter = (function () {
                 return "Invalid Token or Statement"
             }
         }
-        if ("[addition]" in current) {
-            return parseInt(arguments[0]) + parseInt(arguments[1])
-        }
-        else {
-            return "Err"
-        }
+        var extracted = new argcon.ArgArray(arguments, Object.keys(current)[0]);
     };
     return Interpreter;
 })();

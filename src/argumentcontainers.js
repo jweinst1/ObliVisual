@@ -41,3 +41,5 @@ var ArgStack = function() {
         return this.stack[0];
     }
 };
+
+exports.ArgStack = ArgStack;
