@@ -2,6 +2,7 @@ var cmds = require("./commands/commands.json");
 var asm = require("./Assembler.js");
 var argcon = require("./argumentcontainers.js");
 var ti = require("./TypeInference.js");
+var ut = require("./Utils.js");
 //main interpreter object
 var Interpreter = (function () {
     function Interpreter() {
@@ -28,7 +29,9 @@ var Interpreter = (function () {
                 return "Invalid Token or Statement"
             }
         }
-        var extracted = new argcon.ArgArray(arguments, Object.keys(current)[0]);
+        //need processing
+        var linetype = ut.GetSingleKey(current);
+        
     };
     return Interpreter;
 })();

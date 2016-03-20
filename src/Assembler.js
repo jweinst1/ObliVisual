@@ -6,28 +6,28 @@
 var MathAssembler = {
     add:function(numbers) {
         var total = 0;
-        for (elem in numbers) {
+        for (var elem in numbers) {
             total += numbers[elem];
         }
         return total;
     },
     subtract:function(numbers) {
         var total = numbers.shift();
-        for (elem in numbers) {
+        for (var elem in numbers) {
             total -= numbers[elem];
         }
         return total;
     },
     multiply:function(numbers) {
         var total = 1;
-        for (elem in numbers) {
+        for (var elem in numbers) {
             total *= numbers[elem];
         }
         return total;
     },
     divide:function(numbers) {
         var total = 1;
-        for (elem in numbers) {
+        for (var elem in numbers) {
             if (numbers[elem] == 0) {
                 total /= 1
             }
