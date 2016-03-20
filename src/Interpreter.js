@@ -26,6 +26,7 @@ var Interpreter = (function () {
                 return "Invalid Token or Statement"
             }
         }
+        console.log(arguments);
         //need processing
         var linetype = ut.GetSingleKey(current);
         switch(linetype) {
@@ -39,6 +40,8 @@ var Interpreter = (function () {
     return Interpreter;
 })();
 
+exports.Interpreter = Interpreter;
+
 
 var test = "add 6 and 7";
-console.log(Interpreter.interpretLine(test));
+Interpreter.interpretLine(test);
