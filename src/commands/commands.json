@@ -16,7 +16,9 @@
         "[multiplication]":{}}},
     "equals":{
       "**arg**":{
-        "[equalop]":{}}}},
+        "[equalop]":{}}},
+    "squared":{
+      "[squareop]":{}}},
   "add": {
     "**arg**": {
       "with": {
@@ -55,5 +57,10 @@
     "**arg**":{
       "by":{
         "**arg**":{
-          "[division]":{}}}}}
+          "[division]":{}}}}},
+  "raise":{
+    "**arg**":{
+      "by":{
+        "**arg**":{
+          "[powerop]":{}}}}}
 }

@@ -78,7 +78,15 @@ exports.BoolAseembler = BoolAssembler;
 var MathFuncs = {
     power:function(numbers) {
         return Math.pow(numbers[0], numbers[1])
+    },
+    random:function(numbers) {
+        return Math.floor((Math.random() * numbers[1]) + numbers[0]);
+    },
+    square:function(numbers) {
+        return Math.pow(numbers[0], 2);
     }
 };
+
+exports.MathFuncs = MathFuncs;
 
 

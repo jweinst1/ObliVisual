@@ -36,6 +36,12 @@ var Interpreter = (function () {
             case "[addition]":
                 return asm.MathAssembler.add(arguments);
                 break;
+            case "[squareop]":
+                return asm.MathFuncs.square(arguments);
+                break;
+            case "[powerop]":
+                return asm.MathFuncs.power(arguments);
+                break;
             case "[subtraction]":
                 return asm.MathAssembler.subtract(arguments);
                 break;
