@@ -3,7 +3,10 @@ var asm = require("./Assembler.js");
 var argcon = require("./argumentcontainers.js");
 var ti = require("./TypeInference.js");
 var ut = require("./Utils.js");
+var ma = require("./MultipleArguments.js");
 //main interpreter object
+
+
 var Interpreter = (function () {
     function Interpreter() {
     }
