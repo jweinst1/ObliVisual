@@ -54,6 +54,9 @@ var Interpreter = (function () {
             case "[equalop]":
                 return asm.BoolAseembler.equals(arguments);
                 break;
+            case "[greaterthan]":
+                return asm.BoolAseembler.gt(arguments);
+                break;
             default:
                 console.log("Statement Type not picked")
         }

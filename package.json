@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/jweinst1/Oblivion.git"
   },
+  "bin":{
+    "oblivion":"Main.js"
+  },
+  "preferGlobal":true,
   "keywords": [
     "languages",
     "compilers",

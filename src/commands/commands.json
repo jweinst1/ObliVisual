@@ -18,7 +18,12 @@
       "**arg**":{
         "[equalop]":{}}},
     "squared":{
-      "[squareop]":{}}},
+      "[squareop]":{}},
+    "is":{
+      "greater":{
+        "than":{
+          "**arg**":{
+            "[greaterthan]":{}}}}}},
   "add": {
     "**arg**": {
       "with": {
