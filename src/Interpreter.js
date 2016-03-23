@@ -23,25 +23,27 @@ var Interpreter = (function () {
             }
             else {
                 //breaks loop if non-formed statement encountered
-                console.log("invalid statement");
-                return 0
+                return "Invalid Statement"
             }
         }
         console.log(arguments);
         //need processing
         var linetype = ut.GetSingleKey(current);
         switch(linetype) {
+            case "[print]":
+                return arguments[0];
+                break;
             case "[addition]":
-                console.log(asm.MathAssembler.add(arguments));
+                return asm.MathAssembler.add(arguments);
                 break;
             case "[subtraction]":
-                console.log(asm.MathAssembler.subtract(arguments));
+                return asm.MathAssembler.subtract(arguments);
                 break;
             case "[multiplication]":
-                console.log(asm.MathAssembler.multiply(arguments));
+                return asm.MathAssembler.multiply(arguments);
                 break;
             case "[division]":
-                console.log(asm.MathAssembler.divide(arguments));
+                return asm.MathAssembler.divide(arguments);
                 break;
             default:
                 console.log("Statement Type not picked")
@@ -53,5 +55,3 @@ var Interpreter = (function () {
 exports.Interpreter = Interpreter;
 
 
-var test = "add 6 and 7";
-Interpreter.interpretLine(test);

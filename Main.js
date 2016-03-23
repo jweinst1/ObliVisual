@@ -11,7 +11,7 @@ rl.on('line', function(line) {
         case 'close':
             process.exit(0);
         default:
-            intp.Interpreter.interpretLine(line);
+            console.log(intp.Interpreter.interpretLine(line));
             break;
     }
     rl.prompt();

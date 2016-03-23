@@ -2,6 +2,10 @@
  * Created by Josh on 3/18/16.
  */
 
+function checkarguments(args, num) {
+    return args.length === num
+}
+
     //assembles math statements from arrays
 var MathAssembler = {
     add:function(numbers) {
@@ -40,8 +44,26 @@ var MathAssembler = {
 
 exports.MathAssembler = MathAssembler;
 
-//static functions that deal with 1 or 2 arguments, non-array
-var MathFunctions = {
+//static functions that deal with boolean comparisons
 
+var BoolAssembler = {
+    equals:function(elements) {
+        checkarguments(elements, 2);
+        return elements[0] === elements[1]
+    },
+    notequal:function(elements) {
+        checkarguments(elements, 2);
+        return elements [0] !== elements[1]
+    },
+    gt:function(elements) {
+        return elements[0] > elements[1]
+    },
+    lt:function(elements) {
+        return elements[0] < elements[1]
+    }
 };
+
+//exports the bool assembler
+exports.BoolAseembler = BoolAssembler;
+
 

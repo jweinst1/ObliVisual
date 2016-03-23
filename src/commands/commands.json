@@ -13,7 +13,10 @@
         "[subtraction]":{}}},
     "times":{
       "**arg**":{
-        "[multiplication]":{}}}},
+        "[multiplication]":{}}},
+    "equals":{
+      "**arg**":{
+        "[equalop]":{}}}},
   "add": {
     "**arg**": {
       "with": {
