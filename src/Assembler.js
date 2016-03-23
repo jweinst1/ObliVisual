@@ -2,8 +2,9 @@
  * Created by Josh on 3/18/16.
  */
 
+//checks if arguments length too long or short
 function checkarguments(args, num) {
-    return args.length === num
+    if(args.length !== num) throw "arguments too long or too short";
 }
 
     //assembles math statements from arrays
@@ -56,14 +57,28 @@ var BoolAssembler = {
         return elements [0] !== elements[1]
     },
     gt:function(elements) {
+        checkarguments(elements, 2);
         return elements[0] > elements[1]
     },
     lt:function(elements) {
         return elements[0] < elements[1]
+    },
+    ge:function(elements) {
+        return elements[0] >= elements[1]
+    },
+    le:function(elements) {
+        return elements[0] <= elements[1]
     }
 };
 
 //exports the bool assembler
 exports.BoolAseembler = BoolAssembler;
+
+//specialized math functions
+var MathFuncs = {
+    power:function(numbers) {
+        return Math.pow(numbers[0], numbers[1])
+    }
+};
 
 

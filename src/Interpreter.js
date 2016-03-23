@@ -45,6 +45,9 @@ var Interpreter = (function () {
             case "[division]":
                 return asm.MathAssembler.divide(arguments);
                 break;
+            case "[equalop]":
+                return asm.BoolAseembler.equals(arguments);
+                break;
             default:
                 console.log("Statement Type not picked")
         }
