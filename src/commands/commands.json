@@ -37,8 +37,12 @@
           "[addition]": {}}},
       "plus":{
         "**arg**":{
-          "[addition]":{}}},
-      "[addall]":{}}},
+          "[addition]":{}}}}},
+  "sum":{
+    "the":{
+      "numbers":{
+        "**marg**":{
+          "[addition]":{}}}}},
   "print": {
     "**arg**": {
       "[print]": {}}},

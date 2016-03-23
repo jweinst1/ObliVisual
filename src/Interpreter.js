@@ -3,7 +3,6 @@ var asm = require("./Assembler.js");
 var argcon = require("./argumentcontainers.js");
 var ti = require("./TypeInference.js");
 var ut = require("./Utils.js");
-var ma = require("./MultipleArguments.js");
 //main interpreter object
 
 
@@ -12,6 +11,7 @@ var Interpreter = (function () {
     }
 
     Interpreter.interpretLine = function (line) {
+        var margMode = false;
         var tokens = line.split(" ");
         var arguments = [];
         var current = cmds;
@@ -19,6 +19,10 @@ var Interpreter = (function () {
             var temp = tokens.shift();
             if (temp in current) {
                 current = current[temp];
+            }
+            else if ("**marg**" in current) {
+                arguments.push(ti.ParseType(temp));
+                if (tokens.length==0) current = current["**marg**"];
             }
             else if ("**arg**" in current) {
                 arguments.push(ti.ParseType(temp));

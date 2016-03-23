@@ -2,7 +2,7 @@
 
 var extractargs = function(string) {
     var newstring = string.slice(1, string.length-1);
-    return newstring.split(" ");
+    return newstring.split(",");
 };
 
 exports.extractargs = extractargs;
