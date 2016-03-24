@@ -42,6 +42,10 @@
     "the":{
       "numbers":{
         "**marg**":{
+          "[addition]":{}}}},
+    "these":{
+      "numbers":{
+        "**marg**":{
           "[addition]":{}}}}},
   "print": {
     "**arg**": {
