@@ -53,7 +53,32 @@ var NumberObj = function(value) {
         this.value = Math.sqrt(this.value);
     };
     //non-mutating methods
+    NumberObj.prototypee.repr = function() {
+        return this.value;
+    };
 };
 
 exports.NumberObj = NumberObj;
+
+var StringObj = function(string) {
+    this.string = string;
+    this.type = "string";
+
+    StringObj.prototype.repr = function() {
+        return "\"" + this.string + "\"";
+    };
+    StringObj.prototype.concat = function(addstring) {
+        this.string += addstring.string;
+    };
+    //gets new string object of last character
+    StringObj.prototype.getlast = function() {
+        return new StringObj(this.string[this.string.length-1]);
+    };
+    //gets new string object for first character
+    StringObj.prototype.getfirst = function() {
+        return new StringObj(this.string[0]);
+    };
+};
+
+exports.StringObj = StringObj;
 
