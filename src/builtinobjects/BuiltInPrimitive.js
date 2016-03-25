@@ -54,7 +54,7 @@ var NumberObj = function(value) {
     };
     //non-mutating methods
     NumberObj.prototype.repr = function() {
-        return this.value;
+        return this.value.toString();
     };
 };
 
@@ -82,7 +82,16 @@ var StringObj = function(string) {
 
 exports.StringObj = StringObj;
 
+//a name object, which represents an unbound variable.
+var NameObj = function(name) {
+    this.name = name;
+    this.type = "name";
+    NameObj.prototype.repr = function() {
+        return "@" + this.name;
+    };
+};
 
+exports.NameObj = NameObj;
 
 
 

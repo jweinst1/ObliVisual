@@ -40,10 +40,13 @@ var Interpreter = (function () {
         var linetype = ut.GetSingleKey(current);
         switch(linetype) {
             case "[print]":
-                return arguments[0];
+                return arguments[0].repr();
                 break;
             case "[addition]":
                 return asm.MathAssembler.add(arguments);
+                break;
+            case "[assignment]":
+                return asm.VarAssembler.setvar(arguments, this.globals);
                 break;
             case "[squareop]":
                 return asm.MathFuncs.square(arguments);

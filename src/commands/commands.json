@@ -80,5 +80,8 @@
     "**arg**":{
       "to":{
         "**arg**":{
-          "[assignment]":{}}}}}
+          "[assignment]":{}}}}},
+  "get":{
+    "**arg**":{
+      "[print]":{}}}
 }

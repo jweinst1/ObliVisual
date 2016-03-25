@@ -86,4 +86,16 @@ var MathFuncs = {
 
 exports.MathFuncs = MathFuncs;
 
+var VarAssembler = {
+    setvar:function(arguments, dict) {
+        dict.set(arguments[0].name, arguments[1]);
+        return arguments[0].name + " -> " + arguments[1].repr();
+    },
+    getvar:function(arguments, dict) {
+        return dict.get(arguments[0].name);
+    }
+};
+
+exports.VarAssembler = VarAssembler;
+
 
