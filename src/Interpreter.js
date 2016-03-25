@@ -3,14 +3,16 @@ var asm = require("./Assembler.js");
 var argcon = require("./argumentcontainers.js");
 var ti = require("./TypeInference.js");
 var ut = require("./Utils.js");
+var dict = require("./VariableDictionary.js");
 //main interpreter object
 
 
 var Interpreter = (function () {
     function Interpreter() {
+        this.globals = new dict.VariableDict();
     }
 
-    Interpreter.interpretLine = function (line) {
+    Interpreter.prototype.interpretLine = function (line) {
         var margMode = false;
         var tokens = line.split(" ");
         var arguments = [];
@@ -21,11 +23,11 @@ var Interpreter = (function () {
                 current = current[temp];
             }
             else if ("**marg**" in current) {
-                arguments.push(ti.ParseType(temp));
+                arguments.push(ti.ParseType(temp, this.globals));
                 if (tokens.length==0) current = current["**marg**"];
             }
             else if ("**arg**" in current) {
-                arguments.push(ti.ParseType(temp));
+                arguments.push(ti.ParseType(temp, this.globals));
                 current = current["**arg**"];
             }
             else {

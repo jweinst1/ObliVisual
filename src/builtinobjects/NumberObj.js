@@ -33,7 +33,4 @@ var NumberObj = function(value) {
     //non-mutating methods
 };
 
-var f = new NumberObj(5);
-f.divide(0);
-console.log(f);
-
+exports.NumberObj = NumberObj;
