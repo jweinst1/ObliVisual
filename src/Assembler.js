@@ -1,5 +1,5 @@
 /**
- * Created by Josh on 3/18/16.
+ * File that handles the assembly of arguments passed through the command dictionary
  */
 
 //checks if arguments length too long or short
@@ -10,11 +10,11 @@ function checkarguments(args, num) {
     //assembles math statements from arrays
 var MathAssembler = {
     add:function(numbers) {
-        var total = 0;
+        var total = numbers.shift();
         for (var elem in numbers) {
-            total += numbers[elem];
+            total.add(numbers[elem]);
         }
-        return total;
+        return total.value;
     },
     subtract:function(numbers) {
         var total = numbers.shift();

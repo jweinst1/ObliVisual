@@ -53,7 +53,7 @@ var NumberObj = function(value) {
         this.value = Math.sqrt(this.value);
     };
     //non-mutating methods
-    NumberObj.prototypee.repr = function() {
+    NumberObj.prototype.repr = function() {
         return this.value;
     };
 };
