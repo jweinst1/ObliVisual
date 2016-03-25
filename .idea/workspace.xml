@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assembler.js" afterPath="$PROJECT_DIR$/src/Assembler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TypeInference.js" afterPath="$PROJECT_DIR$/src/TypeInference.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/BuiltInPrimitive.js" afterPath="$PROJECT_DIR$/src/builtinobjects/BuiltInPrimitive.js" />
     </list>
     <ignored path="Oblivion.iws" />
@@ -56,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assembler.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Assembler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assembler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.040650405">
-              <caret line="1" column="84" selection-start-line="1" selection-start-column="84" selection-end-line="1" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -98,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BuiltInPrimitive.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BuiltInPrimitive.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/BuiltInPrimitive.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.796748">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
               </folding>
@@ -186,8 +185,8 @@
         <option value="$PROJECT_DIR$/Main.js" />
         <option value="$PROJECT_DIR$/src/Interpreter.js" />
         <option value="$PROJECT_DIR$/src/TypeInference.js" />
-        <option value="$PROJECT_DIR$/src/builtinobjects/BuiltInPrimitive.js" />
         <option value="$PROJECT_DIR$/src/Assembler.js" />
+        <option value="$PROJECT_DIR$/src/builtinobjects/BuiltInPrimitive.js" />
       </list>
     </option>
   </component>
@@ -829,21 +828,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/builtinobjects/BuiltInPrimitive.js">
+    <entry file="file://$PROJECT_DIR$/src/Assembler.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
+          <caret line="35" column="40" selection-start-line="35" selection-start-column="40" selection-end-line="35" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assembler.js">
+    <entry file="file://$PROJECT_DIR$/src/builtinobjects/BuiltInPrimitive.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.040650405">
-          <caret line="1" column="84" selection-start-line="1" selection-start-column="84" selection-end-line="1" selection-end-column="84" />
-          <folding />
+        <state vertical-scroll-proportion="0.796748">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
