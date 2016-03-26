@@ -23,7 +23,11 @@
       "greater":{
         "than":{
           "**arg**":{
-            "[greaterthan]":{}}}}}},
+            "[greaterthan]":{}}}},
+      "lesser":{
+        "than":{
+          "**arg**":{
+            "[lesserthan]":{}}}}}},
   "add": {
     "**arg**": {
       "with": {
@@ -60,7 +64,7 @@
     "**arg**":{
       "by":{
         "**arg**":{
-          "[increment]":{}}}}},
+          "[addition]":{}}}}},
   "multiply":{
     "**arg**":{
       "by":{

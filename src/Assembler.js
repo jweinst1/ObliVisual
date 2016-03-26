@@ -21,21 +21,21 @@ var MathAssembler = {
         for (var elem in numbers) {
             total.subtract(numbers[elem]);
         }
-        return total;
+        return total.value;
     },
     multiply:function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.multiply(numbers[elem]);
         }
-        return total;
+        return total.value;
     },
     divide:function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.divide(numbers[elem]);
         }
-        return total;
+        return total.value;
     }
 
 };
@@ -47,24 +47,24 @@ exports.MathAssembler = MathAssembler;
 var BoolAssembler = {
     equals:function(elements) {
         checkarguments(elements, 2);
-        return elements[0] === elements[1]
+        return elements[0].value === elements[1].value
     },
     notequal:function(elements) {
         checkarguments(elements, 2);
-        return elements [0] !== elements[1]
+        return elements [0].value !== elements[1].value
     },
     gt:function(elements) {
         checkarguments(elements, 2);
-        return elements[0] > elements[1]
+        return elements[0].value > elements[1].value
     },
     lt:function(elements) {
-        return elements[0] < elements[1]
+        return elements[0].value < elements[1].value
     },
     ge:function(elements) {
-        return elements[0] >= elements[1]
+        return elements[0].value >= elements[1].value
     },
     le:function(elements) {
-        return elements[0] <= elements[1]
+        return elements[0].value <= elements[1].value
     }
 };
 
@@ -74,7 +74,8 @@ exports.BoolAseembler = BoolAssembler;
 //specialized math functions
 var MathFuncs = {
     power:function(numbers) {
-        return Math.pow(numbers[0], numbers[1])
+        numbers[0].power(numbers[1]);
+        return numbers[0].repr()
     },
     random:function(numbers) {
         return Math.floor((Math.random() * numbers[1]) + numbers[0]);

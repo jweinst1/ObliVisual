@@ -69,6 +69,9 @@ var Interpreter = (function () {
             case "[greaterthan]":
                 return asm.BoolAseembler.gt(arguments);
                 break;
+            case "[lesserthan]":
+                return asm.BoolAseembler.lt(arguments);
+                break;
             default:
                 console.log("Statement Type not picked")
         }
