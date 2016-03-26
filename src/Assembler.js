@@ -99,4 +99,16 @@ var VarAssembler = {
 
 exports.VarAssembler = VarAssembler;
 
+var StrAssembler = {
+    concat:function(arguments) {
+        var first = arguments.shift();
+        for(var key in arguments) {
+            first.concat(arguments[key]);
+        }
+        return first.repr();
+    }
+};
+
+exports.StrAssembler = StrAssembler;
+
 

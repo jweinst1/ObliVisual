@@ -13,6 +13,9 @@ var VariableDict = function() {
     VariableDict.prototype.check = function(name) {
         return name in this;
     };
+    VariableDict.prototype.del = function(name) {
+        delete this[name];
+    };
 };
 
 exports.VariableDict = VariableDict;

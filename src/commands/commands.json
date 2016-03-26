@@ -87,5 +87,10 @@
           "[assignment]":{}}}}},
   "get":{
     "**arg**":{
-      "[print]":{}}}
+      "[print]":{}}},
+  "fuse":{
+    "**arg**":{
+      "and":{
+        "**arg**":{
+          "[concat]":{}}}}}
 }

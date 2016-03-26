@@ -45,6 +45,9 @@ var Interpreter = (function () {
             case "[addition]":
                 return asm.MathAssembler.add(arguments);
                 break;
+            case "[concat]":
+                return asm.StrAssembler.concat(arguments);
+                break;
             case "[assignment]":
                 return asm.VarAssembler.setvar(arguments, this.globals);
                 break;
