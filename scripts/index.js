@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
     var geval = eval;
-    var OblivionInterpreter = new Interpreter();
     var repl = new CodeMirrorREPL("repl", {
         mode: "javascript",
         theme: "eclipse"
