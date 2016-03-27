@@ -1,6 +1,0 @@
-{
-  "name": "Oblivion",
-  "tagline": "English as a programming language",
-  "body": "# Oblivion\r\n\r\nOblivion, meaning \"the state of being forgotten\", is a programming language meant to use spoken, human langauge as a programming language.\r\nThe goal of the language is to use the syntax and grammars present in languages like English, to convey code and instructions to an interpreter or compiler,\r\nwithout using a traditional programming language, such as `Java` or `Python`.\r\n\r\nMost statements in a programming language are based off of a type of operation, and a set of arguments that an operation uses. For example, `5 + 5`, is an addition statement. We can infer\r\n\r\n##Usage\r\n\r\nOblivion works by interpreting statements as a placement grammar. The placement of operating words relative to one another indicate where the operands are. For example, `add 5 to 6`, is interpreted as `add **arg** to **arg**` by the interpreter.",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
