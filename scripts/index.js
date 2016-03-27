@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", function () {
         repl.print(message, "message");
     };
 
-    repl.isBalanced = function (code) {
+    /*repl.isBalanced = function (code) {
         var length = code.length;
         var delimiter = '';
         var brackets = [];
@@ -78,9 +78,9 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
         return brackets.length ? false : true;
-    };
+    };*/
 
-    repl.eval = function (code) {
+    /*repl.eval = function (code) {
         try {
             if (isExpression(code)) {
                 geval("__expression__ = " + code);
@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             repl.print(error, "error");
         }
-    };
+    };*/
 
     function isExpression(code) {
         if (/^\s*function\s/.test(code)) return false;
