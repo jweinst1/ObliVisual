@@ -1,7 +1,6 @@
 window.addEventListener("DOMContentLoaded", function () {
     var geval = eval;
     var repl = new CodeMirrorREPL("repl", {
-        mode: "javascript",
         theme: "eclipse"
     });
 
