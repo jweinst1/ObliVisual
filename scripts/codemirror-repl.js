@@ -1,10 +1,8 @@
 CodeMirrorREPL.prototype.isBalanced = function () {
     return true;
 };
-var OblivionInterpreter = new Interpreter();
-CodeMirrorREPL.prototype.eval = function (code) {
-    return OblivionInterpreter.interpretLine(code);
-};
+
+CodeMirrorREPL.prototype.eval = function () {};
 
 function CodeMirrorREPL(textareaId, options) {
     var textarea = document.getElementById(textareaId);
