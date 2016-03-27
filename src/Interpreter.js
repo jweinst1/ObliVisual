@@ -35,7 +35,7 @@ var Interpreter = (function () {
                 return "Invalid Statement"
             }
         }
-        console.log(arguments);
+        //console.log(arguments);
         //need processing
         var linetype = ut.GetSingleKey(current);
         switch(linetype) {
@@ -45,7 +45,7 @@ var Interpreter = (function () {
             case "[addition]":
                 return asm.MathAssembler.add(arguments);
                 break;
-            case "[concat]":
+            case "[strconcat]":
                 return asm.StrAssembler.concat(arguments);
                 break;
             case "[assignment]":

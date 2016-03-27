@@ -92,5 +92,17 @@
     "**arg**":{
       "and":{
         "**arg**":{
-          "[concat]":{}}}}}
+          "[strconcat]":{}}},
+      "with":{
+        "**arg**":{
+          "[strconcat]":{}}}},
+    "the":{
+      "strings":{
+        "**marg**":{
+          "[strconcat]":{}}}}},
+  "bind":{
+    "**arg**":{
+      "to":{
+        "**arg**":{
+          "[assignment]":{}}}}}
 }
