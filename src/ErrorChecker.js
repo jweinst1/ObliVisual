@@ -2,7 +2,7 @@
  * Created by Josh on 3/26/16.
  */
 //file that contains error checking function for arguments and statement types.
-
+var bip = require("./builtinobjects/BuiltInPrimitive.js");
 var checkargs = function(statement, args) {
     switch(statement) {
         case "[addition]":
@@ -11,8 +11,14 @@ var checkargs = function(statement, args) {
         case "[subtraction]":
             return checkfornumbers(args);
             break;
+        case "[multiplication]":
+            return checkfornumbers(args);
+            break;
+        case "[division]":
+            return checkfornumbers(args);
+            break;
         default:
-            for(var key in args) if(agrs[key].constructor===ErrorObj) return true;
+            return false;
     }
 };
 
@@ -22,7 +28,7 @@ exports.checkargs = checkargs;
 //checks number arguments
 var checkfornumbers = function(args) {
     for(var key in args) {
-        if(args[key].constructor !== NumberObj) {
+        if(args[key].constructor !== bip.NumberObj) {
             return true;
         }
     }

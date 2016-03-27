@@ -4,7 +4,7 @@
 
 //checks if arguments length too long or short
 function checkarguments(args, num) {
-    if(args.length !== num) throw "arguments too long or too short";
+    if(args.length !== num) return "arguments too long or too short";
 }
 
     //assembles math statements from arrays
