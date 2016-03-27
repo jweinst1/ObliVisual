@@ -81,7 +81,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     repl.eval = function (code) {
         try {
-            OblivionInterpreter.interpretLine(code);
+            repl.print(OblivionInterpreter.interpretLine(code));
     } catch (error) {
         repl.print(error, "error");
     }
