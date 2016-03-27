@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     repl.print("/* Oblivion REPL   2016  Joshua Weinstein */");
+    repl.print("/* Example command: add 5 to 6, this prints 11*/");
 
     window.print = function (message) {
         repl.print(message, "message");
