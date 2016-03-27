@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", function () {
         theme: "eclipse"
     });
 
-    repl.print("/* JavaScript REPL  Copyright (C) 2013  Aadit M Shah */");
+    repl.print("/* Oblivion REPL   2016  Joshua Weinstein */");
 
     window.print = function (message) {
         repl.print(message, "message");
