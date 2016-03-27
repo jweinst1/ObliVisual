@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", function () {
     var geval = eval;
-
+    var OblivionInterpreter = new Interpreter();
     var repl = new CodeMirrorREPL("repl", {
         mode: "javascript",
         theme: "eclipse"
@@ -80,16 +80,9 @@ window.addEventListener("DOMContentLoaded", function () {
         return brackets.length ? false : true;
     };*/
 
-    /*repl.eval = function (code) {
-        try {
-            if (isExpression(code)) {
-                geval("__expression__ = " + code);
-                express(__expression__);
-            } else geval(code);
-        } catch (error) {
-            repl.print(error, "error");
-        }
-    };*/
+    repl.eval = function (code) {
+        return code
+    };
 
     function isExpression(code) {
         if (/^\s*function\s/.test(code)) return false;
