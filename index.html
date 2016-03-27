@@ -37,7 +37,7 @@
 textarea.html-text-box {background-color:003366;background-image:url(http://);background-repeat:no-repeat;background-attachment:fixed;border-width:1;border-style:solid;border-color:cccccc;font-family:Georgia;font-size:10pt;color:FFFFCC;}
 input.html-text-box {background-color:ffffff;font-family:Georgia;font-size:10pt;color:000000;}
 </style>
-<form method="post" action="http://"><textarea name="comments" cols="70" rows="10" id="itttp" class="html-text-box">Enter your comments here...</textarea><br></form>
+<form method="post" action="http://"><textarea onkeypress="process(event, this)" name="comments" cols="70" rows="10" id="itttp" class="html-text-box">Enter your comments here...</textarea><br></form>
 <script src="BrowserMain.js"></script>
 <script>
 	function process(e) {
