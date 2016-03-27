@@ -8,4 +8,4 @@ Most statements in a programming language are based off of a type of operation, 
 
 ##Usage
 
-Oblivion works by interpreting statements as a placement grammar.
+Oblivion works by interpreting statements as a placement grammar. The placement of operating words relative to one another indicate where the operands are. For example, `add 5 to 6`, is interpreted as `add **arg** to **arg**` by the interpreter.

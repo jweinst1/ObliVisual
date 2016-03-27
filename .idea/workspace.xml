@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assembler.js" afterPath="$PROJECT_DIR$/src/Assembler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BrowserMain.js" afterPath="$PROJECT_DIR$/src/BrowserMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ErrorChecker.js" afterPath="$PROJECT_DIR$/src/ErrorChecker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpreter.js" afterPath="$PROJECT_DIR$/src/Interpreter.js" />
-    </list>
+    <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="" />
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
