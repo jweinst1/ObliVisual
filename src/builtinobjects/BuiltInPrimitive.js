@@ -123,3 +123,22 @@ var ErrorObj = function(message) {
 
 exports.ErrorObj = ErrorObj;
 
+//list object
+var ListObj = function() {
+    this.list = [];
+    this.type = "list";
+
+    ListObj.prototype.repr = function() {
+        if(this.list === []) return this.list;
+        var display = [];
+        for(var key in this.list) display.push(this.list[key].repr());
+        return display;
+    };
+
+    ListObj.prototype.append = function(elem) {
+        this.list.push(elem);
+    };
+};
+
+exports.ListObj = ListObj;
+

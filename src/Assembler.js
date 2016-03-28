@@ -8,7 +8,7 @@ function checkarguments(args, num) {
     if(args.length !== num) return "arguments too long or too short";
 }
 
-    //assembles math statements from arrays
+    //assembles core opers and statements
 var stdAssembler = {
     "+=":function(numbers) {
         var total = numbers.shift();
@@ -176,6 +176,15 @@ var stdAssembler = {
             }
         }
         is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    "list":function(args) {
+        //holds the objects for list generation
+        var newlist = new bip.ListObj();
+        while(args.length > 0) {
+            newlist.append(args[0]);
+            args.splice(0, 1)
+        }
+        args.unshift(newlist);
     }
 
 
