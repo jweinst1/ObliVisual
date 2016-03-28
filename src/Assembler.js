@@ -15,6 +15,7 @@ var stdAssembler = {
         for (var elem in numbers) {
             total.add(numbers[elem]);
         }
+        numbers.unshift(total);
     },
     "+":function(numbers) {
         while(numbers.length > 1) {
@@ -84,24 +85,28 @@ var stdAssembler = {
         for (var elem in numbers) {
             total.subtract(numbers[elem]);
         }
+        numbers.unshift(total);
     },
     "*=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.multiply(numbers[elem]);
         }
+        numbers.unshift(total);
     },
     "/=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.divide(numbers[elem]);
         }
+        numbers.unshift(total);
     },
     "%=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.remainder(numbers[elem]);
         }
+        numbers.unshift(total);
     },
     "==":function(args) {
         var first = args.shift();
@@ -196,6 +201,11 @@ var stdAssembler = {
             }
         }
         args.unshift(container);
+    },
+    "=":function(args, dict) {
+        if (args[0].type === "name" && args.length > 1) {
+            dict.set(args[0].name, args[1]);
+        }
     }
 
 

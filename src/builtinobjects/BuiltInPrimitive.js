@@ -95,7 +95,7 @@ var NameObj = function(name) {
     this.name = name;
     this.type = "name";
     NameObj.prototype.repr = function() {
-        return "@" + this.name;
+        return this.name;
     };
 };
 

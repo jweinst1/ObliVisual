@@ -18,7 +18,7 @@ var Interpreter = (function () {
         var arguments = [];
         for(var i=tokens.length-1;i>=0;i-=1) {
             if(tokens[i] in asm.stdAssembler) {
-                asm.stdAssembler[tokens[i]](arguments);
+                asm.stdAssembler[tokens[i]](arguments, this.globals);
             }
             else {
                 arguments.unshift(ti.ParseType(tokens[i], this.globals));
