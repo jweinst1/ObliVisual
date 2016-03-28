@@ -17,6 +17,9 @@ var checkargs = function(statement, args) {
         case "[division]":
             return checkfornumbers(args);
             break;
+        case "[strconcat]":
+            return checkforstrs(args);
+            break;
         default:
             return false;
     }
@@ -29,6 +32,15 @@ exports.checkargs = checkargs;
 var checkfornumbers = function(args) {
     for(var key in args) {
         if(args[key].constructor !== bip.NumberObj) {
+            return true;
+        }
+    }
+    return false;
+};
+
+var checkforstrs = function(strs) {
+    for(var key in args) {
+        if(args[key].constructor !== bip.StringObj) {
             return true;
         }
     }

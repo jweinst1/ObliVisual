@@ -9,28 +9,28 @@ function checkarguments(args, num) {
 
     //assembles math statements from arrays
 var MathAssembler = {
-    add:function(numbers) {
+    "+=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.add(numbers[elem]);
         }
         return total.value;
     },
-    subtract:function(numbers) {
+    "-=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.subtract(numbers[elem]);
         }
         return total.value;
     },
-    multiply:function(numbers) {
+    "*=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.multiply(numbers[elem]);
         }
         return total.value;
     },
-    divide:function(numbers) {
+    "/=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.divide(numbers[elem]);
