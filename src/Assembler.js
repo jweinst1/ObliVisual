@@ -17,9 +17,39 @@ var stdAssembler = {
         }
     },
     "+":function(numbers) {
+        if(numbers.length===0) numbers.push("ERROR");
         while(numbers.length > 1) {
-            numbers[0] = bip.NumberObj(numbers[0].value + numbers[1].value);
-            delete numbers[1]
+            numbers[0] = new bip.NumberObj(numbers[0].value + numbers[1].value);
+            numbers.splice(1, 1);
+        }
+    },
+    "-":function(numbers) {
+        while(numbers.length > 1) {
+            numbers[0] = bip.NumberObj(numbers[0].value - numbers[1].value);
+            numbers.splice(1, 1);
+        }
+    },
+    "*":function(numbers) {
+        while(numbers.length > 1) {
+            numbers[0] = bip.NumberObj(numbers[0].value * numbers[1].value);
+            numbers.splice(1, 1);
+        }
+    },
+    "/":function(numbers) {
+        while(numbers.length > 1) {
+            if (numbers[1]===0) {
+                numbers.splice(1, 1);
+            }
+            else {
+                numbers[0] = bip.NumberObj(numbers[0].value - numbers[1].value);
+                numbers.splice(1, 1);
+            }
+        }
+    },
+    "%":function(numbers) {
+        while(numbers.length > 1) {
+            numbers[0] = bip.NumberObj(numbers[0].value % numbers[1].value);
+            numbers.splice(1, 1);
         }
     },
     "-=":function(numbers) {
