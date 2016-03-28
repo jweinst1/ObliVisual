@@ -185,6 +185,17 @@ var stdAssembler = {
             args.splice(0, 1)
         }
         args.unshift(newlist);
+    },
+    //appending or adding oper
+    "<<":function(args) {
+        var container = args.shift();
+        while(args.length > 0) {
+            if(container.type === "list") {
+                container.append(args[0]);
+                args.splice(0, 1);
+            }
+        }
+        args.unshift(container);
     }
 
 
