@@ -1,6 +1,7 @@
 /**
  * File that handles the assembly of arguments passed through the command dictionary
  */
+var bip = require("./builtinobjects/BuiltInPrimitive.js");
 
 //checks if arguments length too long or short
 function checkarguments(args, num) {
@@ -8,39 +9,41 @@ function checkarguments(args, num) {
 }
 
     //assembles math statements from arrays
-var MathAssembler = {
+var stdAssembler = {
     "+=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.add(numbers[elem]);
         }
-        return total.value;
+    },
+    "+":function(numbers) {
+        while(numbers.length > 1) {
+            numbers[0] = bip.NumberObj(numbers[0].value + numbers[1].value);
+            delete numbers[1]
+        }
     },
     "-=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.subtract(numbers[elem]);
         }
-        return total.value;
     },
     "*=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.multiply(numbers[elem]);
         }
-        return total.value;
     },
     "/=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.divide(numbers[elem]);
         }
-        return total.value;
     }
 
 };
 
-exports.MathAssembler = MathAssembler;
+exports.stdAssembler = stdAssembler;
 
 //static functions that deal with boolean comparisons
 
