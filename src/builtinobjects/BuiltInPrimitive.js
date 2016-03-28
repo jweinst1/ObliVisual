@@ -54,7 +54,7 @@ var NumberObj = function(value) {
     };
     //non-mutating methods
     NumberObj.prototype.repr = function() {
-        return this.value.toString();
+        return this.value;
     };
 };
 
@@ -92,6 +92,17 @@ var NameObj = function(name) {
 };
 
 exports.NameObj = NameObj;
+
+//boolean object for the language
+var BoolObj = function(state) {
+    this.state = state;
+    this.type = "bool";
+    BoolObj.prototype.repr = function() {
+        return this.state;
+    };
+};
+
+exports.BoolObj = BoolObj;
 
 
 

@@ -1,4 +1,3 @@
-var cmds = require("./commands/commands.json");
 var asm = require("./Assembler.js");
 var argcon = require("./argumentcontainers.js");
 var ti = require("./TypeInference.js");
@@ -24,6 +23,7 @@ var Interpreter = (function () {
                 arguments.unshift(ti.ParseType(tokens[i], this.globals));
             }
         }
+        console.log(arguments[0]);
         return arguments[0].repr();
     };
     return Interpreter;
