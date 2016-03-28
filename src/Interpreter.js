@@ -10,6 +10,7 @@ var chk = require("./ErrorChecker.js");
 var Interpreter = (function () {
     function Interpreter() {
         this.globals = new dict.VariableDict();
+        this.stringmode = false;
     }
 
     Interpreter.prototype.interpretLine = function (line) {

@@ -4,7 +4,7 @@ var bip = require("./builtinobjects/BuiltInPrimitive.js");
 
 //parses types in tokens
 var ParseType = function(token, vardict) {
-    if (/[0-9]+/.test(token)) return new bip.NumberObj(parseInt(token));
+    if (/^[^"][0-9]+[^"]$/.test(token)) return new bip.NumberObj(parseInt(token));
     else if (/^".*?"$/.test(token)) {
         return new bip.StringObj(token.slice(1, token.length-1));
     }

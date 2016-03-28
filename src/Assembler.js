@@ -28,6 +28,10 @@ var stdAssembler = {
                 args[0] = new bip.NumberObj(parseInt(args[0].value.toString() + args[1].value.toString()));
                 args.splice(1, 1);
             }
+            else if(args[0].type === "string" && args[1].type === "string") {
+                args[0] = new bip.StringObj(args[0].string + args[1].string);
+                args.splice(1, 1);
+            }
         }
     },
     "^":function(args) {
@@ -91,6 +95,12 @@ var stdAssembler = {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.divide(numbers[elem]);
+        }
+    },
+    "%=":function(numbers) {
+        var total = numbers.shift();
+        for (var elem in numbers) {
+            total.remainder(numbers[elem]);
         }
     },
     "==":function(args) {

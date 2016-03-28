@@ -41,6 +41,14 @@ var NumberObj = function(value) {
             else this.value /= amount;
         }
     };
+    NumberObj.prototype.remainder = function(amount) {
+        if(amount.constructor === NumberObj) {
+            this.value %= amount.value;
+        }
+        else {
+            this.value %= amount;
+        }
+    };
     NumberObj.prototype.power = function(amount) {
         if(amount.constructor === NumberObj) {
             this.value = Math.pow(this.value, amount.value);
