@@ -17,14 +17,36 @@ var stdAssembler = {
         }
     },
     "+":function(numbers) {
-        if(numbers.length===0) numbers.push("ERROR");
         while(numbers.length > 1) {
             numbers[0] = new bip.NumberObj(numbers[0].value + numbers[1].value);
             numbers.splice(1, 1);
         }
     },
+    "&":function(args) {
+        while(args.length > 1) {
+            if(args[0].type === "number" && args[1].type === "number") {
+                args[0] = new bip.NumberObj(parseInt(args[0].value.toString() + args[1].value.toString()));
+                args.splice(1, 1);
+            }
+        }
+    },
+    "^":function(args) {
+        while(args.length > 1) {
+            if(args[0].type === "number" && args[1].type === "number") {
+                args[0] = new bip.NumberObj(Math.max(args[0].value, args[1].value));
+                args.splice(1, 1);
+            }
+        }
+    },
+    "_":function(args) {
+        while(args.length > 1) {
+            if(args[0].type === "number" && args[1].type === "number") {
+                args[0] = new bip.NumberObj(Math.min(args[0].value, args[1].value));
+                args.splice(1, 1);
+            }
+        }
+    },
     "-":function(numbers) {
-        if(numbers.length===0) numbers.push("ERROR");
         while(numbers.length > 1) {
             numbers[0] = new bip.NumberObj(numbers[0].value - numbers[1].value);
             numbers.splice(1, 1);
@@ -82,7 +104,70 @@ var stdAssembler = {
             }
         }
         is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    "!=":function(args) {
+        var first = args.shift();
+        var is = true;
+        for(var key in args) {
+            if(first.repr() === args[key].repr()) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    //compares the element at the top of the stack with all the other elements one by one
+    ">":function(args) {
+        var is = true;
+        var first = args.shift();
+        for(var key in args) {
+            if(!(first.repr() > args[key].repr())) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    //compares the element at the top of the stack with all the other elements one by one
+    "<":function(args) {
+        var is = true;
+        var first = args.shift();
+        for(var key in args) {
+            if(!(first.repr() < args[key].repr())) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    "<=":function(args) {
+        var is = true;
+        var first = args.shift();
+        for(var key in args) {
+            if(!(first.repr() <= args[key].repr())) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    ">=":function(args) {
+        var is = true;
+        var first = args.shift();
+        for(var key in args) {
+            if(!(first.repr() >= args[key].repr())) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
     }
+
 
 };
 

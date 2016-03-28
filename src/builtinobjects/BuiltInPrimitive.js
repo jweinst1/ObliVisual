@@ -104,5 +104,14 @@ var BoolObj = function(state) {
 
 exports.BoolObj = BoolObj;
 
+//error object
+var ErrorObj = function(message) {
+    this.message = message;
+    this.type = "error";
+    ErrorObj.prototype.repr = function() {
+        return this.message;
+    };
+};
 
+exports.ErrorObj = ErrorObj;
 
