@@ -5,8 +5,7 @@ window.addEventListener("DOMContentLoaded", function () {
         theme: "eclipse"
     });
 
-    repl.print("/* Oblivion REPL   2016  Joshua Weinstein */");
-    repl.print("/* Example command: add 5 to 6, this prints 11*/");
+    repl.print("/* Oblivion programming language REPL   2016  Joshua Weinstein */");
 
     window.print = function (message) {
         repl.print(message, "message");
