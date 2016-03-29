@@ -22,6 +22,14 @@ var ParseType = function(token, vardict) {
             return new bip.NameObj(token);
         }
     }
+    //infers the type of list literal of numbers
+    else if(/^\[[0-9,]+\]$/.test(token)) {
+        token = token.slice(1, token.length-1);
+        var splits = token.split(",");
+        var newlist = new bip.ListObj();
+        for(var i=0;i<splits.length;i++) newlist.append(new bip.NumberObj(parseInt(splits[i])));
+        return newlist;
+    }
 };
 
 exports.ParseType = ParseType;
