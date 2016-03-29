@@ -138,6 +138,9 @@ var ListObj = function() {
     ListObj.prototype.append = function(elem) {
         this.list.push(elem);
     };
+    ListObj.prototype.extend = function(elem) {
+        if(elem.type === "list") this.list.concat(elem.list);
+    };
 };
 
 exports.ListObj = ListObj;

@@ -1,7 +1,6 @@
 var asm = require("./Assembler.js");
 var argcon = require("./argumentcontainers.js");
 var ti = require("./TypeInference.js");
-var ut = require("./Utils.js");
 var dict = require("./VariableDictionary.js");
 var chk = require("./ErrorChecker.js");
 //main interpreter object
@@ -25,6 +24,7 @@ var Interpreter = (function () {
             }
         }
         console.log(arguments[0]);
+        if(arguments[0] === undefined) return "Syntax Error";
         return arguments[0].repr();
     };
     return Interpreter;

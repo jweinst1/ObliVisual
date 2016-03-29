@@ -33,13 +33,38 @@ var stdAssembler = {
                 args[0] = new bip.StringObj(args[0].string + args[1].string);
                 args.splice(1, 1);
             }
+            else if(args[0].type === "list" && args[1].type === "list") {
+                args[0].extend(args[1]);
+                args.splice(1, 1);
+            }
         }
     },
     "^":function(args) {
+        if(args.length === 1) {
+            if(args[0].type === "list") {
+                args[0] = new bip.NumberObj(Math.max.apply(Math, args[0].list));
+            }
+        }
         while(args.length > 1) {
             if(args[0].type === "number" && args[1].type === "number") {
                 args[0] = new bip.NumberObj(Math.max(args[0].value, args[1].value));
                 args.splice(1, 1);
+            }
+            else if(args[0].type === "list" && args[1].type === "number") {
+                if(isNaN(Math.max.apply(Math, args[0].list))) {
+                    args.splice(0, 1);
+                }
+                else {
+                    args[0] = new bip.NumberObj(Math.max.apply(Math, args[0].list));
+                }
+            }
+            else if(args[1].type === "list" && args[1].type === "number") {
+                if(isNaN(Math.max.apply(Math, args[1].list))) {
+                    args.splice(1, 1);
+                }
+                else {
+                    args[1] = new bip.NumberObj(Math.max.apply(Math, args[1].list));
+                }
             }
         }
     },
@@ -208,6 +233,7 @@ var stdAssembler = {
         }
         else if (args[0].name && args.length > 1) {
             dict.set(args[0].name, args[1]);
+            args.unshift(dict.get(args[0].name));
         }
     }
 
