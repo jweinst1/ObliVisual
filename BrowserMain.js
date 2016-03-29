@@ -2,46 +2,245 @@
 /**
  * File that handles the assembly of arguments passed through the command dictionary
  */
+var bip = require("./builtinobjects/BuiltInPrimitive.js");
 
 //checks if arguments length too long or short
 function checkarguments(args, num) {
     if(args.length !== num) return "arguments too long or too short";
 }
 
-    //assembles math statements from arrays
-var MathAssembler = {
-    add:function(numbers) {
+    //assembles core opers and statements
+var stdAssembler = {
+    "+=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.add(numbers[elem]);
         }
-        return total.value;
+        numbers.unshift(total);
     },
-    subtract:function(numbers) {
+    "+":function(numbers) {
+        while(numbers.length > 1) {
+            numbers[0] = new bip.NumberObj(numbers[0].value + numbers[1].value);
+            numbers.splice(1, 1);
+        }
+    },
+    "&":function(args) {
+        while(args.length > 1) {
+            if(args[0].type === "number" && args[1].type === "number") {
+                args[0] = new bip.NumberObj(parseInt(args[0].value.toString() + args[1].value.toString()));
+                args.splice(1, 1);
+            }
+            else if(args[0].type === "string" && args[1].type === "string") {
+                args[0] = new bip.StringObj(args[0].string + args[1].string);
+                args.splice(1, 1);
+            }
+            else if(args[0].type === "list" && args[1].type === "list") {
+                args[0].extend(args[1]);
+                args.splice(1, 1);
+            }
+        }
+    },
+    "^":function(args) {
+        if(args.length === 1) {
+            if(args[0].type === "list") {
+                args[0] = new bip.NumberObj(Math.max.apply(Math, args[0].list));
+            }
+        }
+        while(args.length > 1) {
+            if(args[0].type === "number" && args[1].type === "number") {
+                args[0] = new bip.NumberObj(Math.max(args[0].value, args[1].value));
+                args.splice(1, 1);
+            }
+            else if(args[0].type === "list" && args[1].type === "number") {
+                if(isNaN(Math.max.apply(Math, args[0].list))) {
+                    args.splice(0, 1);
+                }
+                else {
+                    args[0] = new bip.NumberObj(Math.max.apply(Math, args[0].list));
+                }
+            }
+            else if(args[1].type === "list" && args[1].type === "number") {
+                if(isNaN(Math.max.apply(Math, args[1].list))) {
+                    args.splice(1, 1);
+                }
+                else {
+                    args[1] = new bip.NumberObj(Math.max.apply(Math, args[1].list));
+                }
+            }
+        }
+    },
+    "_":function(args) {
+        while(args.length > 1) {
+            if(args[0].type === "number" && args[1].type === "number") {
+                args[0] = new bip.NumberObj(Math.min(args[0].value, args[1].value));
+                args.splice(1, 1);
+            }
+        }
+    },
+    "-":function(numbers) {
+        while(numbers.length > 1) {
+            numbers[0] = new bip.NumberObj(numbers[0].value - numbers[1].value);
+            numbers.splice(1, 1);
+        }
+    },
+    "*":function(numbers) {
+        while(numbers.length > 1) {
+            numbers[0] = new bip.NumberObj(numbers[0].value * numbers[1].value);
+            numbers.splice(1, 1);
+        }
+    },
+    "/":function(numbers) {
+        while(numbers.length > 1) {
+            if (numbers[1]===0) {
+                numbers.splice(1, 1);
+            }
+            else {
+                numbers[0] = new bip.NumberObj(numbers[0].value - numbers[1].value);
+                numbers.splice(1, 1);
+            }
+        }
+    },
+    "%":function(numbers) {
+        while(numbers.length > 1) {
+            numbers[0] = new bip.NumberObj(numbers[0].value % numbers[1].value);
+            numbers.splice(1, 1);
+        }
+    },
+    "-=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.subtract(numbers[elem]);
         }
-        return total.value;
+        numbers.unshift(total);
     },
-    multiply:function(numbers) {
+    "*=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.multiply(numbers[elem]);
         }
-        return total.value;
+        numbers.unshift(total);
     },
-    divide:function(numbers) {
+    "/=":function(numbers) {
         var total = numbers.shift();
         for (var elem in numbers) {
             total.divide(numbers[elem]);
         }
-        return total.value;
+        numbers.unshift(total);
+    },
+    "%=":function(numbers) {
+        var total = numbers.shift();
+        for (var elem in numbers) {
+            total.remainder(numbers[elem]);
+        }
+        numbers.unshift(total);
+    },
+    "==":function(args) {
+        var first = args.shift();
+        var is = true;
+        for(var key in args) {
+            if(first.repr() !== args[key].repr()) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    "!=":function(args) {
+        var first = args.shift();
+        var is = true;
+        for(var key in args) {
+            if(first.repr() === args[key].repr()) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    //compares the element at the top of the stack with all the other elements one by one
+    ">":function(args) {
+        var is = true;
+        var first = args.shift();
+        for(var key in args) {
+            if(!(first.repr() > args[key].repr())) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    //compares the element at the top of the stack with all the other elements one by one
+    "<":function(args) {
+        var is = true;
+        var first = args.shift();
+        for(var key in args) {
+            if(!(first.repr() < args[key].repr())) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    "<=":function(args) {
+        var is = true;
+        var first = args.shift();
+        for(var key in args) {
+            if(!(first.repr() <= args[key].repr())) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    ">=":function(args) {
+        var is = true;
+        var first = args.shift();
+        for(var key in args) {
+            if(!(first.repr() >= args[key].repr())) {
+                //needs fixing for bool object
+                is = false;
+                break;
+            }
+        }
+        is ? args.unshift(new bip.BoolObj(true)):args.unshift(new bip.BoolObj(false));
+    },
+    "list":function(args) {
+        //holds the objects for list generation
+        var newlist = new bip.ListObj();
+        while(args.length > 0) {
+            newlist.append(args[0]);
+            args.splice(0, 1)
+        }
+        args.unshift(newlist);
+    },
+    //appending or adding oper
+    "<<":function(args) {
+        var container = args.shift();
+        while(args.length > 0) {
+            if(container.type === "list") {
+                container.append(args[0]);
+                args.splice(0, 1);
+            }
+        }
+        args.unshift(container);
+    },
+    "=":function(args, dict) {
+        if (args[0].type === "name" && args.length > 1) {
+            dict.set(args[0].name, args[1]);
+        }
+        else if (args[0].name && args.length > 1) {
+            dict.set(args[0].name, args[1]);
+            args.unshift(dict.get(args[0].name));
+        }
     }
 
 };
 
-exports.MathAssembler = MathAssembler;
+exports.stdAssembler = stdAssembler;
 
 //static functions that deal with boolean comparisons
 
@@ -114,7 +313,7 @@ exports.StrAssembler = StrAssembler;
 
 
 
-},{}],2:[function(require,module,exports){
+},{"./builtinobjects/BuiltInPrimitive.js":7}],2:[function(require,module,exports){
 /**
  * Created by Josh on 3/26/16.
  */
@@ -134,6 +333,9 @@ var checkargs = function(statement, args) {
         case "[division]":
             return checkfornumbers(args);
             break;
+        case "[strconcat]":
+            return checkforstrs(args);
+            break;
         default:
             return false;
     }
@@ -151,12 +353,19 @@ var checkfornumbers = function(args) {
     }
     return false;
 };
-},{"./builtinobjects/BuiltInPrimitive.js":8}],3:[function(require,module,exports){
-var cmds = require("./commands/commands.json");
+
+var checkforstrs = function(strs) {
+    for(var key in args) {
+        if(args[key].constructor !== bip.StringObj) {
+            return true;
+        }
+    }
+    return false;
+};
+},{"./builtinobjects/BuiltInPrimitive.js":7}],3:[function(require,module,exports){
 var asm = require("./Assembler.js");
 var argcon = require("./argumentcontainers.js");
 var ti = require("./TypeInference.js");
-var ut = require("./Utils.js");
 var dict = require("./VariableDictionary.js");
 var chk = require("./ErrorChecker.js");
 //main interpreter object
@@ -165,75 +374,23 @@ var chk = require("./ErrorChecker.js");
 var Interpreter = (function () {
     function Interpreter() {
         this.globals = new dict.VariableDict();
+        this.stringmode = false;
     }
 
     Interpreter.prototype.interpretLine = function (line) {
-        var margMode = false;
         var tokens = line.split(" ");
         var arguments = [];
-        var current = cmds;
-        while (tokens.length>0) {
-            var temp = tokens.shift();
-            if (temp in current) {
-                current = current[temp];
-            }
-            else if ("**marg**" in current) {
-                arguments.push(ti.ParseType(temp, this.globals));
-                if (tokens.length==0) current = current["**marg**"];
-            }
-            else if ("**arg**" in current) {
-                arguments.push(ti.ParseType(temp, this.globals));
-                current = current["**arg**"];
+        for(var i=tokens.length-1;i>=0;i-=1) {
+            if(tokens[i] in asm.stdAssembler) {
+                asm.stdAssembler[tokens[i]](arguments, this.globals);
             }
             else {
-                //breaks loop if non-formed statement encountered
-                return "Invalid Statement"
+                arguments.unshift(ti.ParseType(tokens[i], this.globals));
             }
         }
-        //console.log(arguments);
-        //need processing
-        var linetype = ut.GetSingleKey(current);
-        if(chk.checkargs(linetype, arguments)) return "Argument Error";
-        switch(linetype) {
-            case "[print]":
-                return arguments[0].repr();
-                break;
-            case "[addition]":
-                return asm.MathAssembler.add(arguments);
-                break;
-            case "[strconcat]":
-                return asm.StrAssembler.concat(arguments);
-                break;
-            case "[assignment]":
-                return asm.VarAssembler.setvar(arguments, this.globals);
-                break;
-            case "[squareop]":
-                return asm.MathFuncs.square(arguments);
-                break;
-            case "[powerop]":
-                return asm.MathFuncs.power(arguments);
-                break;
-            case "[subtraction]":
-                return asm.MathAssembler.subtract(arguments);
-                break;
-            case "[multiplication]":
-                return asm.MathAssembler.multiply(arguments);
-                break;
-            case "[division]":
-                return asm.MathAssembler.divide(arguments);
-                break;
-            case "[equalop]":
-                return asm.BoolAseembler.equals(arguments);
-                break;
-            case "[greaterthan]":
-                return asm.BoolAseembler.gt(arguments);
-                break;
-            case "[lesserthan]":
-                return asm.BoolAseembler.lt(arguments);
-                break;
-            default:
-                console.log("Statement Type not picked")
-        }
+        console.log(arguments[0]);
+        if(arguments[0] === undefined) return "Syntax Error";
+        return arguments[0].repr();
     };
     return Interpreter;
 })();
@@ -242,20 +399,27 @@ exports.Interpreter = Interpreter;
 
 
 
-},{"./Assembler.js":1,"./ErrorChecker.js":2,"./TypeInference.js":4,"./Utils.js":5,"./VariableDictionary.js":6,"./argumentcontainers.js":7,"./commands/commands.json":9}],4:[function(require,module,exports){
+},{"./Assembler.js":1,"./ErrorChecker.js":2,"./TypeInference.js":4,"./VariableDictionary.js":5,"./argumentcontainers.js":6}],4:[function(require,module,exports){
 var bip = require("./builtinobjects/BuiltInPrimitive.js");
 //file for infering types.
 
 
 //parses types in tokens
 var ParseType = function(token, vardict) {
-    if (/[0-9]+/.test(token)) return new bip.NumberObj(parseInt(token));
-    else if (/^".*?"$/.test(token)) {
+    if (/^[0-9]+$/.test(token)) return new bip.NumberObj(parseInt(token));
+    else if (token[0] === '"' && token[token.length-1] === '"') {
         return new bip.StringObj(token.slice(1, token.length-1));
     }
+    else if(token === "[]") {
+        return new bip.ListObj();
+    }
     else if(/^\@[a-zA-Z]+$/.test(token)) {
-        token = token.slice(1, token.length);
-        if(vardict.check(token)) return vardict.get(token);
+        token = token.slice(0, token.length);
+        if(vardict.check(token)) {
+            var retrieve = vardict.get(token);
+            retrieve["name"] = token;
+            return retrieve;
+        }
         else {
             return new bip.NameObj(token);
         }
@@ -263,21 +427,7 @@ var ParseType = function(token, vardict) {
 };
 
 exports.ParseType = ParseType;
-},{"./builtinobjects/BuiltInPrimitive.js":8}],5:[function(require,module,exports){
-/**
- * Created by Josh on 3/20/16.
- */
-
-//utils file
-
-    //gets a single key in an obj
-var GetSingleKey = function(obj) {
-    for(var key in obj) var label = key;
-    return label;
-};
-
-exports.GetSingleKey = GetSingleKey;
-},{}],6:[function(require,module,exports){
+},{"./builtinobjects/BuiltInPrimitive.js":7}],5:[function(require,module,exports){
 /**
  * Created by Josh on 3/24/16.
  */
@@ -294,12 +444,12 @@ var VariableDict = function() {
         return name in this;
     };
     VariableDict.prototype.del = function(name) {
-        delete this[name];
+        if(name in this) delete this[name];
     };
 };
 
 exports.VariableDict = VariableDict;
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /**
  * Created by Josh on 3/19/16.
  */
@@ -345,7 +495,7 @@ var ArgStack = function() {
 };
 
 exports.ArgStack = ArgStack;
-},{}],8:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /**
  * Created by Josh on 3/25/16.
  */
@@ -389,6 +539,14 @@ var NumberObj = function(value) {
             else this.value /= amount;
         }
     };
+    NumberObj.prototype.remainder = function(amount) {
+        if(amount.constructor === NumberObj) {
+            this.value %= amount.value;
+        }
+        else {
+            this.value %= amount;
+        }
+    };
     NumberObj.prototype.power = function(amount) {
         if(amount.constructor === NumberObj) {
             this.value = Math.pow(this.value, amount.value);
@@ -402,7 +560,7 @@ var NumberObj = function(value) {
     };
     //non-mutating methods
     NumberObj.prototype.repr = function() {
-        return this.value.toString();
+        return this.value;
     };
 };
 
@@ -435,123 +593,56 @@ var NameObj = function(name) {
     this.name = name;
     this.type = "name";
     NameObj.prototype.repr = function() {
-        return "@" + this.name;
+        return this.name;
     };
 };
 
 exports.NameObj = NameObj;
 
+//boolean object for the language
+var BoolObj = function(state) {
+    this.state = state;
+    this.type = "bool";
+    BoolObj.prototype.repr = function() {
+        return this.state;
+    };
+};
+
+exports.BoolObj = BoolObj;
+
+//error object
+var ErrorObj = function(message) {
+    this.message = message;
+    this.type = "error";
+    ErrorObj.prototype.repr = function() {
+        return this.message;
+    };
+};
+
+exports.ErrorObj = ErrorObj;
+
+//list object
+var ListObj = function() {
+    this.list = [];
+    this.type = "list";
+
+    ListObj.prototype.repr = function() {
+        if(this.list === []) return this.list;
+        var display = [];
+        for(var key in this.list) display.push(this.list[key].repr());
+        return display;
+    };
+
+    ListObj.prototype.append = function(elem) {
+        this.list.push(elem);
+    };
+    ListObj.prototype.extend = function(elem) {
+        if(elem.type === "list") this.list.concat(elem.list);
+    };
+};
+
+exports.ListObj = ListObj;
 
 
-
-},{}],9:[function(require,module,exports){
-module.exports={
-  "subtract": {
-    "**arg**": {
-      "from": {
-        "**arg**": {
-          "[subtraction]": {}}}}},
-  "**arg**": {
-    "plus": {
-      "**arg**": {
-        "[addition]": {}}},
-    "minus": {
-      "**arg**":{
-        "[subtraction]":{}}},
-    "times":{
-      "**arg**":{
-        "[multiplication]":{}}},
-    "equals":{
-      "**arg**":{
-        "[equalop]":{}}},
-    "squared":{
-      "[squareop]":{}},
-    "is":{
-      "greater":{
-        "than":{
-          "**arg**":{
-            "[greaterthan]":{}}}},
-      "lesser":{
-        "than":{
-          "**arg**":{
-            "[lesserthan]":{}}}}}},
-  "add": {
-    "**arg**": {
-      "with": {
-        "**arg**": {
-          "[addition]": {}}},
-      "to": {
-        "**arg**": {
-          "[addition]": {}}},
-      "and": {
-        "**arg**": {
-          "[addition]": {}}},
-      "plus":{
-        "**arg**":{
-          "[addition]":{}}}}},
-  "sum":{
-    "the":{
-      "numbers":{
-        "**marg**":{
-          "[addition]":{}}}},
-    "these":{
-      "numbers":{
-        "**marg**":{
-          "[addition]":{}}}}},
-  "print": {
-    "**arg**": {
-      "[print]": {}}},
-  "display": {
-    "**arg**": {
-      "[print]": {}}},
-  "show":{
-    "**arg**":{
-      "[print]":{}}},
-  "increment":{
-    "**arg**":{
-      "by":{
-        "**arg**":{
-          "[addition]":{}}}}},
-  "multiply":{
-    "**arg**":{
-      "by":{
-        "**arg**":{
-          "[multiplication]":{}}}}},
-  "divide":{
-    "**arg**":{
-      "by":{
-        "**arg**":{
-          "[division]":{}}}}},
-  "raise":{
-    "**arg**":{
-      "by":{
-        "**arg**":{
-          "[powerop]":{}}}}},
-  "assign":{
-    "**arg**":{
-      "to":{
-        "**arg**":{
-          "[assignment]":{}}}}},
-  "get":{
-    "**arg**":{
-      "[print]":{}}},
-  "fuse":{
-    "**arg**":{
-      "and":{
-        "**arg**":{
-          "[strconcat]":{}}},
-      "with":{
-        "**arg**":{
-          "[strconcat]":{}}}},
-    "the":{
-      "strings":{
-        "**marg**":{
-          "[strconcat]":{}}}}},
-  "bind":{
-    "**arg**":{
-      "to":{
-        "**arg**":{
-          "[assignment]":{}}}}}
-}
 },{}]},{},[3])(3)
 });
