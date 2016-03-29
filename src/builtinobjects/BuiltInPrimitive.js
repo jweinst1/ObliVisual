@@ -145,6 +145,8 @@ var ListObj = function() {
 
 exports.ListObj = ListObj;
 
+//Set Object for the oblivion language
+
 var SetObj = function() {
     //takes arbitrary number of arguments
     this.set = {};
@@ -165,6 +167,28 @@ var SetObj = function() {
     };
     SetObj.prototype.contains = function(elem) {
         return elem in this.set;
+    };
+    //checks if current set is subset of another set
+    SetObj.prototype.isSubsetof = function(otherset) {
+        if(otherset.constructor === SetObj) {
+            for(var key in this.set) {
+                if(!(key in otherset.set)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    };
+    //checks if there is a subset of the current set
+    SetObj.prototype.hasSubset = function(otherset) {
+        if(otherset.constructor === SetObj) {
+            for(var key in otherset.set) {
+                if(!(key in this.set)) {
+                    return false;
+                }
+            }
+            return true;
+        }
     };
 };
 
