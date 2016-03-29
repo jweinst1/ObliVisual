@@ -145,3 +145,28 @@ var ListObj = function() {
 
 exports.ListObj = ListObj;
 
+var SetObj = function() {
+    //takes arbitrary number of arguments
+    this.set = {};
+    this.type = "set";
+    for(var i=0;i<arguments.length;i++) this.set[arguments[i]] = true;
+
+    //methods
+    SetObj.prototype.repr = function() {
+        var keys = [];
+        for(var key in this.set) keys.push(key);
+        return "(" + keys.join(", ") + ")";
+    };
+    SetObj.prototype.add = function(elem) {
+        this.set[elem] = true;
+    };
+    SetObj.prototype.remove = function(elem) {
+        if(elem in this.set) delete this.set[elem];
+    };
+    SetObj.prototype.contains = function(elem) {
+        return elem in this.set;
+    };
+};
+
+exports.SetObj = SetObj;
+
