@@ -14,7 +14,7 @@ var VariableDict = function() {
         return name in this;
     };
     VariableDict.prototype.del = function(name) {
-        delete this[name];
+        if(name in this) delete this[name];
     };
 };
 

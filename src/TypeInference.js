@@ -13,7 +13,11 @@ var ParseType = function(token, vardict) {
     }
     else if(/^\@[a-zA-Z]+$/.test(token)) {
         token = token.slice(0, token.length);
-        if(vardict.check(token)) return vardict.get(token);
+        if(vardict.check(token)) {
+            var retrieve = vardict.get(token);
+            retrieve["name"] = token;
+            return retrieve;
+        }
         else {
             return new bip.NameObj(token);
         }

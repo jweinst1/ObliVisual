@@ -206,8 +206,10 @@ var stdAssembler = {
         if (args[0].type === "name" && args.length > 1) {
             dict.set(args[0].name, args[1]);
         }
+        else if (args[0].name && args.length > 1) {
+            dict.set(args[0].name, args[1]);
+        }
     }
-
 
 };
 
