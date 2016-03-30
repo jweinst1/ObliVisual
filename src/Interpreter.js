@@ -13,7 +13,7 @@ var Interpreter = (function () {
     }
 
     Interpreter.prototype.interpretLine = function (line) {
-        var tokens = line.split(" ");
+        var tokens = Tokenize(line);
         var arguments = [];
         for(var i=tokens.length-1;i>=0;i-=1) {
             if(tokens[i] in asm.stdAssembler) {
@@ -32,4 +32,20 @@ var Interpreter = (function () {
 
 exports.Interpreter = Interpreter;
 
+//used for properly keeping spaces inside strings
+var Tokenize = function(line) {
+    var tokens = line.split(/(\".*?\")| /);
+    clean(tokens, undefined);
+    clean(tokens, "");
+    return tokens;
+};
 
+var clean = function(arr, deleteValue) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == deleteValue) {
+            arr.splice(i, 1);
+            i--;
+        }
+    }
+    return arr;
+};
