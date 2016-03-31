@@ -216,6 +216,14 @@ var stdAssembler = {
         }
         args.unshift(newlist);
     },
+    "set":function(args) {
+        var newset = new bip.SetObj();
+        while(args.length > 0) {
+            newset.add(args[0]);
+            args.splice(0, 1);
+        }
+        args.unshift(newset);
+    },
     //appending or adding oper
     "<<":function(args) {
         var container = args.shift();
@@ -234,6 +242,25 @@ var stdAssembler = {
         else if (args[0].name && args.length > 1) {
             dict.set(args[0].name, args[1]);
             args.unshift(dict.get(args[0].name));
+        }
+    },
+    "#":function(args) {
+        //number indexing must be on a number-keyed object
+        if(args[0].type === "number" && args[1].type === "list") {
+            args.unshift(args[1].index(args[0].value));
+        }
+    },
+    //popping operator
+    ">>":function(args) {
+        if(args[0].type === "list") {
+            if(args[0].list.length > 0) {
+                args.unshift(args[0].pop());
+            }
+        }
+        else if(args[0].type === "string") {
+            if(args[0].string.length > 0) {
+                args.unshift(args[0].pop());
+            }
         }
     }
 

@@ -86,6 +86,13 @@ var StringObj = function(string) {
     StringObj.prototype.getfirst = function() {
         return new StringObj(this.string[0]);
     };
+    StringObj.prototype.pop = function() {
+        if(this.string.length > 0) {
+            var popped = this.string[this.string.length-1];
+            this.string = this.string.slice(0, string.length-1);
+            return new StringObj(popped);
+        }
+    };
 };
 
 exports.StringObj = StringObj;
@@ -141,6 +148,16 @@ var ListObj = function() {
     ListObj.prototype.extend = function(elem) {
         if(elem.type === "list") this.list.concat(elem.list);
     };
+    ListObj.prototype.index = function(ind) {
+        if(ind > -1 && ind < this.list.length) {
+            return this.list[ind];
+        }
+    };
+    ListObj.prototype.pop = function() {
+        if(this.list.length > 0) {
+            return this.list.pop();
+        }
+    }
 };
 
 exports.ListObj = ListObj;
