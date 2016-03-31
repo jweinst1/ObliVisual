@@ -11,6 +11,9 @@ var ParseType = function(token, vardict) {
     else if(token === "[]") {
         return new bip.ListObj();
     }
+    else if (token === "()") {
+        return new bip.SetObj();
+    }
     else if(/^\@[a-zA-Z]+$/.test(token)) {
         token = token.slice(0, token.length);
         if(vardict.check(token)) {

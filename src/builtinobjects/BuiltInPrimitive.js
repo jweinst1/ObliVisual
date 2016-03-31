@@ -177,7 +177,7 @@ var SetObj = function() {
         return "(" + keys.join(", ") + ")";
     };
     SetObj.prototype.add = function(elem) {
-        this.set[elem] = true;
+        this.set[JSON.stringify(elem.repr())] = true;
     };
     SetObj.prototype.remove = function(elem) {
         if(elem in this.set) delete this.set[elem];

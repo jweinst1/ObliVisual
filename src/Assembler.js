@@ -232,6 +232,10 @@ var stdAssembler = {
                 container.append(args[0]);
                 args.splice(0, 1);
             }
+            else if(container.type === "set") {
+                container.add(args[0]);
+                args.splice(0, 1);
+            }
         }
         args.unshift(container);
     },
