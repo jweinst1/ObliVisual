@@ -93,6 +93,14 @@ var StringObj = function(string) {
             return new StringObj(popped);
         }
     };
+    //gets first element of stringobj as new string obj.
+    StringObj.prototype.popfirst = function() {
+        if(this.string.length > 0) {
+            var popped = this.string[0];
+            this.string = this.string.slice(1, string.length);
+            return new StringObj(popped);
+        }
+    }
 };
 
 exports.StringObj = StringObj;
