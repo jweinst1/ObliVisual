@@ -257,6 +257,9 @@ var stdAssembler = {
         if(args[0].type === "number" && args[1].type === "list") {
             args.unshift(args[1].index(args[0].value));
         }
+        else if(args[0].type === "number" && args[1].type === "string") {
+            args.unshift(args[1].index(args[0].value));
+        }
     },
     //popping operator
     ">>":function(args) {

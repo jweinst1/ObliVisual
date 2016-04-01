@@ -100,7 +100,15 @@ var StringObj = function(string) {
             this.string = this.string.slice(1, string.length);
             return new StringObj(popped);
         }
-    }
+    };
+    StringObj.prototype.index = function(ind) {
+        if(ind > -1 && ind < this.string.length) {
+            return new StringObj(this.string[ind]);
+        }
+        else {
+            return new StringObj("");
+        }
+    };
 };
 
 exports.StringObj = StringObj;
