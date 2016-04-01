@@ -227,3 +227,17 @@ var SetObj = function() {
 
 exports.SetObj = SetObj;
 
+//capsule object for enabling object linking across references
+var ObjCapsule = function(obj, valname) {
+    this.obj = obj;
+    this.valname = valname;
+    this.val = obj[valname];
+    ObjCapsule.prototype.set = function(val) {
+        this.obj[this.valname] = val;
+        this.val = this.obj[this.valname];
+    };
+    ObjCapsule.prototype.get = function() {
+        return this.val;
+    };
+};
+
