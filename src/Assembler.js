@@ -275,6 +275,18 @@ var stdAssembler = {
             args[0].subtract(1);
             args.unshift(new bip.NumberObj(1));
         }
+    },
+    //conversion to list obj
+    "[~]":function(args) {
+        //for a number, this makes a list of numbers from 0 to the number
+        if(args[0].type === "number") {
+            var num = args.shift();
+            var newlist = new bip.ListObj();
+            for(var i=0;i<(+num.value);i++) {
+                newlist.append(new bip.NumberObj(i));
+            }
+            args.unshift(newlist);
+        }
     }
 
 };
