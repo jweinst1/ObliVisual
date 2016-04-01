@@ -236,6 +236,10 @@ var stdAssembler = {
                 container.add(args[0]);
                 args.splice(0, 1);
             }
+            else if(container.type === "number") {
+                container.add(args[0]);
+                args.splice(0, 1);
+            }
         }
         args.unshift(container);
     },
@@ -265,6 +269,11 @@ var stdAssembler = {
             if(args[0].string.length > 0) {
                 args.unshift(args[0].pop());
             }
+        }
+        //takes a number object, subtracts 1, and puts that 1 in front of the number
+        else if(args[0].type === "number") {
+            args[0].subtract(1);
+            args.unshift(new bip.NumberObj(1));
         }
     }
 
