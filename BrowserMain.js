@@ -217,12 +217,28 @@ var stdAssembler = {
         }
         args.unshift(newlist);
     },
+    "set":function(args) {
+        var newset = new bip.SetObj();
+        while(args.length > 0) {
+            newset.add(args[0]);
+            args.splice(0, 1);
+        }
+        args.unshift(newset);
+    },
     //appending or adding oper
     "<<":function(args) {
         var container = args.shift();
         while(args.length > 0) {
             if(container.type === "list") {
                 container.append(args[0]);
+                args.splice(0, 1);
+            }
+            else if(container.type === "set") {
+                container.add(args[0]);
+                args.splice(0, 1);
+            }
+            else if(container.type === "number") {
+                container.add(args[0]);
                 args.splice(0, 1);
             }
         }
@@ -235,6 +251,42 @@ var stdAssembler = {
         else if (args[0].name && args.length > 1) {
             dict.set(args[0].name, args[1]);
             args.unshift(dict.get(args[0].name));
+        }
+    },
+    "#":function(args) {
+        //number indexing must be on a number-keyed object
+        if(args[0].type === "number" && args[1].type === "list") {
+            args.unshift(args[1].index(args[0].value));
+        }
+    },
+    //popping operator
+    ">>":function(args) {
+        if(args[0].type === "list") {
+            if(args[0].list.length > 0) {
+                args.unshift(args[0].pop());
+            }
+        }
+        else if(args[0].type === "string") {
+            if(args[0].string.length > 0) {
+                args.unshift(args[0].pop());
+            }
+        }
+        //takes a number object, subtracts 1, and puts that 1 in front of the number
+        else if(args[0].type === "number") {
+            args[0].subtract(1);
+            args.unshift(new bip.NumberObj(1));
+        }
+    },
+    //conversion to list obj
+    "[~]":function(args) {
+        //for a number, this makes a list of numbers from 0 to the number
+        if(args[0].type === "number") {
+            var num = args.shift();
+            var newlist = new bip.ListObj();
+            for(var i=0;i<(+num.value);i++) {
+                newlist.append(new bip.NumberObj(i));
+            }
+            args.unshift(newlist);
         }
     }
 
@@ -374,11 +426,10 @@ var chk = require("./ErrorChecker.js");
 var Interpreter = (function () {
     function Interpreter() {
         this.globals = new dict.VariableDict();
-        this.stringmode = false;
     }
 
     Interpreter.prototype.interpretLine = function (line) {
-        var tokens = line.split(" ");
+        var tokens = Tokenize(line);
         var arguments = [];
         for(var i=tokens.length-1;i>=0;i-=1) {
             if(tokens[i] in asm.stdAssembler) {
@@ -397,8 +448,23 @@ var Interpreter = (function () {
 
 exports.Interpreter = Interpreter;
 
+//used for properly keeping spaces inside strings
+var Tokenize = function(line) {
+    var tokens = line.split(/(\".*?\")| /);
+    clean(tokens, undefined);
+    clean(tokens, "");
+    return tokens;
+};
 
-
+var clean = function(arr, deleteValue) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == deleteValue) {
+            arr.splice(i, 1);
+            i--;
+        }
+    }
+    return arr;
+};
 },{"./Assembler.js":1,"./ErrorChecker.js":2,"./TypeInference.js":4,"./VariableDictionary.js":5,"./argumentcontainers.js":6}],4:[function(require,module,exports){
 var bip = require("./builtinobjects/BuiltInPrimitive.js");
 //file for infering types.
@@ -413,6 +479,9 @@ var ParseType = function(token, vardict) {
     else if(token === "[]") {
         return new bip.ListObj();
     }
+    else if (token === "()") {
+        return new bip.SetObj();
+    }
     else if(/^\@[a-zA-Z]+$/.test(token)) {
         token = token.slice(0, token.length);
         if(vardict.check(token)) {
@@ -423,6 +492,14 @@ var ParseType = function(token, vardict) {
         else {
             return new bip.NameObj(token);
         }
+    }
+    //infers the type of list literal of numbers
+    else if(/^\[[0-9,]+\]$/.test(token)) {
+        token = token.slice(1, token.length-1);
+        var splits = token.split(",");
+        var newlist = new bip.ListObj();
+        for(var i=0;i<splits.length;i++) newlist.append(new bip.NumberObj(parseInt(splits[i])));
+        return newlist;
     }
 };
 
@@ -584,6 +661,21 @@ var StringObj = function(string) {
     StringObj.prototype.getfirst = function() {
         return new StringObj(this.string[0]);
     };
+    StringObj.prototype.pop = function() {
+        if(this.string.length > 0) {
+            var popped = this.string[this.string.length-1];
+            this.string = this.string.slice(0, string.length-1);
+            return new StringObj(popped);
+        }
+    };
+    //gets first element of stringobj as new string obj.
+    StringObj.prototype.popfirst = function() {
+        if(this.string.length > 0) {
+            var popped = this.string[0];
+            this.string = this.string.slice(1, string.length);
+            return new StringObj(popped);
+        }
+    }
 };
 
 exports.StringObj = StringObj;
@@ -639,9 +731,68 @@ var ListObj = function() {
     ListObj.prototype.extend = function(elem) {
         if(elem.type === "list") this.list.concat(elem.list);
     };
+    ListObj.prototype.index = function(ind) {
+        if(ind > -1 && ind < this.list.length) {
+            return this.list[ind];
+        }
+    };
+    ListObj.prototype.pop = function() {
+        if(this.list.length > 0) {
+            return this.list.pop();
+        }
+    }
 };
 
 exports.ListObj = ListObj;
+
+//Set Object for the oblivion language
+
+var SetObj = function() {
+    //takes arbitrary number of arguments
+    this.set = {};
+    this.type = "set";
+    for(var i=0;i<arguments.length;i++) this.set[arguments[i]] = true;
+
+    //methods
+    SetObj.prototype.repr = function() {
+        var keys = [];
+        for(var key in this.set) keys.push(key);
+        return "(" + keys.join(", ") + ")";
+    };
+    SetObj.prototype.add = function(elem) {
+        this.set[JSON.stringify(elem.repr())] = true;
+    };
+    SetObj.prototype.remove = function(elem) {
+        if(elem in this.set) delete this.set[elem];
+    };
+    SetObj.prototype.contains = function(elem) {
+        return elem in this.set;
+    };
+    //checks if current set is subset of another set
+    SetObj.prototype.isSubsetof = function(otherset) {
+        if(otherset.constructor === SetObj) {
+            for(var key in this.set) {
+                if(!(key in otherset.set)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    };
+    //checks if there is a subset of the current set
+    SetObj.prototype.hasSubset = function(otherset) {
+        if(otherset.constructor === SetObj) {
+            for(var key in otherset.set) {
+                if(!(key in this.set)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    };
+};
+
+exports.SetObj = SetObj;
 
 
 },{}]},{},[3])(3)
