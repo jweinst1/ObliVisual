@@ -6,6 +6,8 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     repl.print("/* Oblivion programming language REPL   2016  Joshua Weinstein */");
+    repl.print("/* type HELP for a quick guide on commands and objects of the language */");
+    repl.print("/* Try typing << () 1 2 3  to make a set object */")
 
     window.print = function (message) {
         repl.print(message, "message");
