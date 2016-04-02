@@ -16,6 +16,17 @@ var NumberObj = (function () {
     NumberObj.prototype.concat = function (other) {
         this.value = parseInt(this.value.toString() + other.value.toString());
     };
+    NumberObj.prototype.index = function (other) {
+        if (other.value < 0) {
+            return new NumberObj(-1);
+        }
+        else if (other.value < this.value) {
+            return new NumberObj(1);
+        }
+        else {
+            return new NumberObj(0);
+        }
+    };
     NumberObj.prototype.add = function (other) {
         return new NumberObj(this.value + other.value);
     };

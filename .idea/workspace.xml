@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js" afterPath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js.map" afterPath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts" afterPath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts" />
@@ -50,8 +49,8 @@
       <file leaf-file-name="PrimitiveObjects.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.09756097">
-              <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+            <state vertical-scroll-proportion="1.8699187">
+              <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -61,8 +60,15 @@
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-              <folding />
+              <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+              <folding>
+                <marker date="1459576353000" expanded="true" signature="887:950" placeholder="{...}" />
+                <marker date="1459576353000" expanded="true" signature="1004:1067" placeholder="{...}" />
+                <marker date="1459576353000" expanded="true" signature="1121:1184" placeholder="{...}" />
+                <marker date="1459576353000" expanded="true" signature="1236:1417" placeholder="{...}" />
+                <marker date="1459576353000" expanded="true" signature="1269:1326" placeholder="{...}" />
+                <marker date="1459576353000" expanded="true" signature="1340:1411" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -933,15 +939,17 @@
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding />
+          <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+          <folding>
+            <marker date="1459576353000" expanded="true" signature="295:327" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.09756097">
-          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+        <state vertical-scroll-proportion="1.8699187">
+          <caret line="46" column="36" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
           <folding />
         </state>
       </provider>

@@ -7,6 +7,7 @@ interface Obj {
     increment():void;
     decrement():void;
     concat(other:any):void;
+    index(key:any):any;
     add(other:any):any;
     subtract(other:any):any;
     multiply(other:any):any;
@@ -34,6 +35,17 @@ class NumberObj implements Obj {
     }
     public concat(other:NumberObj) {
         this.value = parseInt(this.value.toString() + other.value.toString());
+    }
+    public index(other:NumberObj) {
+        if(other.value < 0) {
+            return new NumberObj(-1);
+        }
+        else if(other.value < this.value) {
+            return new NumberObj(1)
+        }
+        else {
+            return new NumberObj(0);
+        }
     }
     public add(other:NumberObj) {
         return new NumberObj(this.value + other.value);
