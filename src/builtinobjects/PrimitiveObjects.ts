@@ -1,11 +1,21 @@
-//typescript version
+//typescript version of built in objects
 
-class Obj {
-    public value:any;
+interface Obj {
+    value:any;
+    type:string;
+    increment(amount:any):void;
+
+}
+
+class NumberObj implements Obj {
+    public value:number;
     public type:string;
 
-    constructor(value:any, type:string) {
+    constructor(value:any) {
+        this.type = "number";
         this.value = value;
-        this.type = type;
+    }
+    public increment(amount:NumberObj) {
+        this.value += amount.value;
     }
 }

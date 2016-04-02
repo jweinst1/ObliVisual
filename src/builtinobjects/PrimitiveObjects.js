@@ -1,9 +1,12 @@
-//typescript version
-var Obj = (function () {
-    function Obj(value, type) {
+//typescript version of built in objects
+var NumberObj = (function () {
+    function NumberObj(value) {
+        this.type = "number";
         this.value = value;
-        this.type = type;
     }
-    return Obj;
+    NumberObj.prototype.increment = function (amount) {
+        this.value += amount.value;
+    };
+    return NumberObj;
 })();
 //# sourceMappingURL=PrimitiveObjects.js.map
