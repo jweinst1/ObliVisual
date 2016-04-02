@@ -3,8 +3,16 @@
 interface Obj {
     value:any;
     type:string;
-    increment(amount:any):void;
-
+    repr():any;
+    increment():void;
+    decrement():void;
+    concat(other:any):void;
+    add(other:any):any;
+    subtract(other:any):any;
+    multiply(other:any):any;
+    divide(other:any):any;
+    remainder(other:any):any;
+    addassign(other:any):void;
 }
 
 class NumberObj implements Obj {
@@ -15,7 +23,55 @@ class NumberObj implements Obj {
         this.type = "number";
         this.value = value;
     }
-    public increment(amount:NumberObj) {
-        this.value += amount.value;
+    public repr() {
+        return this.value;
     }
+    public increment() {
+        this.value += 1;
+    }
+    public decrement() {
+        this.value -= 1;
+    }
+    public concat(other:NumberObj) {
+        this.value = parseInt(this.value.toString() + other.value.toString());
+    }
+    public add(other:NumberObj) {
+        return new NumberObj(this.value + other.value);
+    }
+    public subtract(other:NumberObj) {
+        return new NumberObj(this.value - other.value);
+    }
+    public multiply(other:NumberObj) {
+        return new NumberObj(this.value * other.value);
+    }
+    public divide(other:NumberObj) {
+        if(other.value === 0) {
+            return new NumberObj(this.value);
+        }
+        else {
+            return new NumberObj(this.value / other.value);
+        }
+    }
+    public remainder(other:NumberObj) {
+        return new NumberObj(this.value % other.value);
+    }
+    public addassign(other:NumberObj) {
+        this.value += other.value;
+    }
+}
+
+class StringObj {
+
+}
+
+class ListObj {
+
+}
+
+class SetObj {
+
+}
+
+class MapObj {
+
 }
