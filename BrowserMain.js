@@ -258,6 +258,9 @@ var stdAssembler = {
         if(args[0].type === "number" && args[1].type === "list") {
             args.unshift(args[1].index(args[0].value));
         }
+        else if(args[0].type === "number" && args[1].type === "string") {
+            args.unshift(args[1].index(args[0].value));
+        }
     },
     //popping operator
     ">>":function(args) {
@@ -365,7 +368,7 @@ exports.StrAssembler = StrAssembler;
 
 
 
-},{"./builtinobjects/BuiltInPrimitive.js":7}],2:[function(require,module,exports){
+},{"./builtinobjects/BuiltInPrimitive.js":8}],2:[function(require,module,exports){
 /**
  * Created by Josh on 3/26/16.
  */
@@ -414,12 +417,38 @@ var checkforstrs = function(strs) {
     }
     return false;
 };
-},{"./builtinobjects/BuiltInPrimitive.js":7}],3:[function(require,module,exports){
+},{"./builtinobjects/BuiltInPrimitive.js":8}],3:[function(require,module,exports){
+/**
+ * Created by Josh on 4/2/16.
+ */
+
+var HelpString = "The Oblivion language works off of a reverse operand syntax\n" +
+    "This means that, instead of 5 + 5, oblivion writes them like + 5 5.\n" +
+    "Unlike Scheme syntax, oblivion has no parenthesis. The operators or function calls in oblivion evaluate all\n" +
+    "previous elements in the stack.\n" +
+    "Addition +: Example + 1 2 3 4 gives 10\n" +
+    "subtraction -, multplicaiton, *, division / work the same.\n" +
+    "equal comparison ==: Example == 4 5 6 gives false. Compares each element in the stack to the first element\n" +
+    "greater than or less than > 4 5 6, < 9 9 9\n" +
+    "combining operaotrs == 1 + 4 - 5 6. Here the two operands for the == oper will be 1 and 3.\n" +
+    "construct a list object using list 1 2 3 4\n" +
+    "append to a list object using << [] 1 2 3 4\n" +
+    "A list literal can be treated as [1,2,3,4] with no spaces\n" +
+    "bind a variable using = @name value, such as = @foo << [] 5 6 7\n" +
+    "this command binds a variable named @foo to the list 5,6,7\n" +
+    "To get a range of numbers from 0, use [~]. such as [~] 5 gives 0,1,2,3,4\n" +
+    "to concat objects, use &. Typing & 7 8 gives 78. Or typing & on strings concats them\n" +
+    "use set, such as set 1 2 3 to get a hashable set. or << () 1 2 3\n";
+
+exports.HelpString = HelpString;
+
+},{}],4:[function(require,module,exports){
 var asm = require("./Assembler.js");
 var argcon = require("./argumentcontainers.js");
 var ti = require("./TypeInference.js");
 var dict = require("./VariableDictionary.js");
 var chk = require("./ErrorChecker.js");
+var help = require("./Help.js");
 //main interpreter object
 
 
@@ -429,6 +458,7 @@ var Interpreter = (function () {
     }
 
     Interpreter.prototype.interpretLine = function (line) {
+        if(line == "HELP") return help.HelpString;
         var tokens = Tokenize(line);
         var arguments = [];
         for(var i=tokens.length-1;i>=0;i-=1) {
@@ -465,7 +495,7 @@ var clean = function(arr, deleteValue) {
     }
     return arr;
 };
-},{"./Assembler.js":1,"./ErrorChecker.js":2,"./TypeInference.js":4,"./VariableDictionary.js":5,"./argumentcontainers.js":6}],4:[function(require,module,exports){
+},{"./Assembler.js":1,"./ErrorChecker.js":2,"./Help.js":3,"./TypeInference.js":5,"./VariableDictionary.js":6,"./argumentcontainers.js":7}],5:[function(require,module,exports){
 var bip = require("./builtinobjects/BuiltInPrimitive.js");
 //file for infering types.
 
@@ -504,7 +534,7 @@ var ParseType = function(token, vardict) {
 };
 
 exports.ParseType = ParseType;
-},{"./builtinobjects/BuiltInPrimitive.js":7}],5:[function(require,module,exports){
+},{"./builtinobjects/BuiltInPrimitive.js":8}],6:[function(require,module,exports){
 /**
  * Created by Josh on 3/24/16.
  */
@@ -526,7 +556,7 @@ var VariableDict = function() {
 };
 
 exports.VariableDict = VariableDict;
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /**
  * Created by Josh on 3/19/16.
  */
@@ -572,7 +602,7 @@ var ArgStack = function() {
 };
 
 exports.ArgStack = ArgStack;
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /**
  * Created by Josh on 3/25/16.
  */
@@ -675,7 +705,15 @@ var StringObj = function(string) {
             this.string = this.string.slice(1, string.length);
             return new StringObj(popped);
         }
-    }
+    };
+    StringObj.prototype.index = function(ind) {
+        if(ind > -1 && ind < this.string.length) {
+            return new StringObj(this.string[ind]);
+        }
+        else {
+            return new StringObj("");
+        }
+    };
 };
 
 exports.StringObj = StringObj;
@@ -794,6 +832,20 @@ var SetObj = function() {
 
 exports.SetObj = SetObj;
 
+//capsule object for enabling object linking across references
+var ObjCapsule = function(obj, valname) {
+    this.obj = obj;
+    this.valname = valname;
+    this.val = obj[valname];
+    ObjCapsule.prototype.set = function(val) {
+        this.obj[this.valname] = val;
+        this.val = this.obj[this.valname];
+    };
+    ObjCapsule.prototype.get = function() {
+        return this.val;
+    };
+};
 
-},{}]},{},[3])(3)
+
+},{}]},{},[4])(4)
 });
