@@ -86,11 +86,30 @@ var NumberObj = (function () {
     NumberObj.prototype.remove = function (key) {
         this.value -= 1;
     };
+    NumberObj.prototype.count = function (other) {
+        if (other.value === 0) {
+            return new NumberObj(0);
+        }
+        else {
+            return new NumberObj(Math.floor(this.value / other.value));
+        }
+    };
+    NumberObj.prototype.length = function () {
+        return new NumberObj(this.value.toString().length);
+    };
     return NumberObj;
 })();
 var StringObj = (function () {
-    function StringObj() {
+    function StringObj(value) {
+        this.type = "string";
+        this.value = value;
     }
+    StringObj.prototype.repr = function () {
+        return this.value;
+    };
+    StringObj.prototype.concat = function (other) {
+        this.value += other.value;
+    };
     return StringObj;
 })();
 var ListObj = (function () {

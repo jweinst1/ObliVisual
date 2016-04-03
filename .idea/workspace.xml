@@ -47,27 +47,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrimitiveObjects.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrimitiveObjects.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48913044">
-              <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="144" column="34" selection-start-line="144" selection-start-column="34" selection-end-line="144" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrimitiveObjects.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PrimitiveObjects.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-              <folding>
-                <marker date="1459667165000" expanded="true" signature="887:950" placeholder="{...}" />
-                <marker date="1459667165000" expanded="true" signature="1121:1184" placeholder="{...}" />
-                <marker date="1459667165000" expanded="true" signature="1713:1755" placeholder="{...}" />
-                <marker date="1459667165000" expanded="true" signature="1810:1852" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="5.258152">
+              <caret line="129" column="5" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -910,19 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
-          <folding>
-            <marker date="1459667165000" expanded="true" signature="887:950" placeholder="{...}" />
-            <marker date="1459667165000" expanded="true" signature="1121:1184" placeholder="{...}" />
-            <marker date="1459667165000" expanded="true" signature="1713:1755" placeholder="{...}" />
-            <marker date="1459667165000" expanded="true" signature="1810:1852" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Help.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -951,9 +933,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48913044">
-          <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="144" column="34" selection-start-line="144" selection-start-column="34" selection-end-line="144" selection-end-column="34" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.258152">
+          <caret line="129" column="5" selection-start-line="129" selection-start-column="5" selection-end-line="129" selection-end-column="5" />
+          <folding>
+            <marker date="1459668857000" expanded="true" signature="887:950" placeholder="{...}" />
+            <marker date="1459668857000" expanded="true" signature="1713:1755" placeholder="{...}" />
+            <marker date="1459668857000" expanded="true" signature="1810:1852" placeholder="{...}" />
+            <marker date="1459668857000" expanded="true" signature="3230:3236" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

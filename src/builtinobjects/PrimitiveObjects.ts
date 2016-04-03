@@ -12,6 +12,8 @@ interface Obj {
     append(other:any):void;
     pop():any;
     remove(key:any):void;
+    count(other:any):any;
+    length():any;
 
     add(other:any):any;
     subtract(other:any):any;
@@ -114,11 +116,34 @@ class NumberObj implements Obj {
     public remove(key:NumberObj) {
         this.value -= 1;
     }
+    public count(other:NumberObj) {
+        if (other.value === 0) {
+            return new NumberObj(0);
+        }
+        else {
+            return new NumberObj(Math.floor(this.value / other.value));
+        }
+    }
+    public length() {
+        return new NumberObj(this.value.toString().length);
+    }
 
 }
 
-class StringObj {
+class StringObj implements Obj {
+    public value:number;
+    public type:string;
 
+    constructor(value:any) {
+        this.type = "string";
+        this.value = value;
+    }
+    public repr() {
+        return this.value;
+    }
+    public concat(other:StringObj) {
+        this.value += other.value;
+    }
 }
 
 class ListObj {
