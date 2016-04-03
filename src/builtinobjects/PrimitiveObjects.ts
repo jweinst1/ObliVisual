@@ -131,18 +131,31 @@ class NumberObj implements Obj {
 }
 
 class StringObj implements Obj {
-    public value:number;
+    public value:string[];
     public type:string;
 
     constructor(value:any) {
         this.type = "string";
-        this.value = value;
+        this.value = value.split("");
     }
     public repr() {
-        return this.value;
+        return this.value.join("");
     }
     public concat(other:StringObj) {
-        this.value += other.value;
+        this.value = this.value.concat(other.value);
+    }
+    //adds a space to end of string
+    public increment() {
+        this.value = this.value.concat([" "]);
+    }
+    public decrement() {
+        this.value.pop();
+    }
+    public index(key:NumberObj) {
+        return new StringObj(this.value[key.value]);
+    }
+    public add(other:StringObj) {
+        return new StringObj(this.value.join("") + other.value.join(""));
     }
 }
 

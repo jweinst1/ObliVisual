@@ -102,13 +102,26 @@ var NumberObj = (function () {
 var StringObj = (function () {
     function StringObj(value) {
         this.type = "string";
-        this.value = value;
+        this.value = value.split("");
     }
     StringObj.prototype.repr = function () {
-        return this.value;
+        return this.value.join("");
     };
     StringObj.prototype.concat = function (other) {
-        this.value += other.value;
+        this.value = this.value.concat(other.value);
+    };
+    //adds a space to end of string
+    StringObj.prototype.increment = function () {
+        this.value = this.value.concat([" "]);
+    };
+    StringObj.prototype.decrement = function () {
+        this.value.pop();
+    };
+    StringObj.prototype.index = function (key) {
+        return new StringObj(this.value[key.value]);
+    };
+    StringObj.prototype.add = function (other) {
+        return new StringObj(this.value.join("") + other.value.join(""));
     };
     return StringObj;
 })();
