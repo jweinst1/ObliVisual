@@ -3,6 +3,7 @@ var argcon = require("./argumentcontainers.js");
 var ti = require("./TypeInference.js");
 var dict = require("./VariableDictionary.js");
 var chk = require("./ErrorChecker.js");
+var help = require("./Help.js");
 //main interpreter object
 
 
@@ -12,6 +13,7 @@ var Interpreter = (function () {
     }
 
     Interpreter.prototype.interpretLine = function (line) {
+        if(line == "HELP") return help.HelpString;
         var tokens = Tokenize(line);
         var arguments = [];
         for(var i=tokens.length-1;i>=0;i-=1) {

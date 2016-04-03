@@ -14,6 +14,7 @@ interface Obj {
     divide(other:any):any;
     remainder(other:any):any;
     addassign(other:any):void;
+    subassign(other:any):void;
 }
 
 class NumberObj implements Obj {
@@ -69,6 +70,9 @@ class NumberObj implements Obj {
     }
     public addassign(other:NumberObj) {
         this.value += other.value;
+    }
+    public subassign(other:NumberObj) {
+        this.value -= other.value;
     }
 }
 

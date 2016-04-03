@@ -50,6 +50,9 @@ var NumberObj = (function () {
     NumberObj.prototype.addassign = function (other) {
         this.value += other.value;
     };
+    NumberObj.prototype.subassign = function (other) {
+        this.value -= other.value;
+    };
     return NumberObj;
 })();
 var StringObj = (function () {
