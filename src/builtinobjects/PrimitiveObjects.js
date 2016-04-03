@@ -7,6 +7,9 @@ var NumberObj = (function () {
     NumberObj.prototype.repr = function () {
         return this.value;
     };
+    NumberObj.prototype.display = function () {
+        return this.value;
+    };
     NumberObj.prototype.increment = function () {
         this.value += 1;
     };
@@ -26,6 +29,9 @@ var NumberObj = (function () {
         else {
             return new NumberObj(0);
         }
+    };
+    NumberObj.prototype.insert = function (key, other) {
+        this.value += other.value;
     };
     NumberObj.prototype.add = function (other) {
         return new NumberObj(this.value + other.value);
@@ -97,6 +103,10 @@ var NumberObj = (function () {
     NumberObj.prototype.length = function () {
         return new NumberObj(this.value.toString().length);
     };
+    //returns a boolean, must be updated to return a bool object
+    NumberObj.prototype.contains = function (other) {
+        return other.value < this.value;
+    };
     return NumberObj;
 })();
 var StringObj = (function () {
@@ -106,6 +116,9 @@ var StringObj = (function () {
     }
     StringObj.prototype.repr = function () {
         return this.value.join("");
+    };
+    StringObj.prototype.length = function () {
+        return this.value.length;
     };
     StringObj.prototype.concat = function (other) {
         this.value = this.value.concat(other.value);

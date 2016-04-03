@@ -4,6 +4,7 @@ interface Obj {
     value:any;
     type:string;
     repr():any;
+    display():any;
     increment():void;
     decrement():void;
     concat(other:any):void;
@@ -13,8 +14,9 @@ interface Obj {
     pop():any;
     remove(key:any):void;
     count(other:any):any;
+    contains(other:any):any;
     length():any;
-
+    insert(key:any, other:any):void;
     add(other:any):any;
     subtract(other:any):any;
     multiply(other:any):any;
@@ -39,6 +41,9 @@ class NumberObj implements Obj {
     public repr() {
         return this.value;
     }
+    public display() {
+        return this.value;
+    }
     public increment() {
         this.value += 1;
     }
@@ -58,6 +63,9 @@ class NumberObj implements Obj {
         else {
             return new NumberObj(0);
         }
+    }
+    public insert(key:NumberObj, other:NumberObj) {
+        this.value += other.value;
     }
     public add(other:NumberObj) {
         return new NumberObj(this.value + other.value);
@@ -127,6 +135,10 @@ class NumberObj implements Obj {
     public length() {
         return new NumberObj(this.value.toString().length);
     }
+    //returns a boolean, must be updated to return a bool object
+    public contains(other:NumberObj) {
+        return other.value < this.value;
+    }
 
 }
 
@@ -140,6 +152,9 @@ class StringObj implements Obj {
     }
     public repr() {
         return this.value.join("");
+    }
+    public length() {
+        return this.value.length;
     }
     public concat(other:StringObj) {
         this.value = this.value.concat(other.value);

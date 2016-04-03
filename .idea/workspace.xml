@@ -49,8 +49,8 @@
       <file leaf-file-name="PrimitiveObjects.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6929348">
-              <caret line="157" column="73" selection-start-line="157" selection-start-column="73" selection-end-line="157" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.65217394">
+              <caret line="137" column="64" selection-start-line="137" selection-start-column="64" selection-end-line="137" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -60,8 +60,40 @@
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
-              <folding />
+              <caret line="155" column="5" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
+              <folding>
+                <marker date="1459706565000" expanded="true" signature="377:409" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="459:491" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="543:629" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="680:920" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="711:760" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="804:852" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="866:914" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1068:1131" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1185:1248" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1302:1365" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1417:1598" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1450:1507" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1521:1592" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1653:1716" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1767:1839" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1894:1936" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="1991:2033" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2093:2135" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2193:2336" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2226:2266" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2280:2330" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2397:2439" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2497:2543" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2595:2637" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2681:2830" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2880:2912" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2963:3147" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="2996:3044" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="3058:3141" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="3194:3261" placeholder="{...}" />
+                <marker date="1459706565000" expanded="true" signature="3821:3881" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -933,20 +965,30 @@
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+          <caret line="155" column="5" selection-start-line="155" selection-start-column="5" selection-end-line="155" selection-end-column="5" />
           <folding>
-            <marker date="1459704935000" expanded="true" signature="887:950" placeholder="{...}" />
-            <marker date="1459704935000" expanded="true" signature="1713:1755" placeholder="{...}" />
-            <marker date="1459704935000" expanded="true" signature="1810:1852" placeholder="{...}" />
-            <marker date="1459704935000" expanded="true" signature="3240:3246" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="377:409" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="459:491" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="680:920" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="711:760" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="804:852" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="866:914" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="1068:1131" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="1417:1598" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="1450:1507" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="1521:1592" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="1653:1716" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="1894:1936" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="1991:2033" placeholder="{...}" />
+            <marker date="1459706565000" expanded="true" signature="3588:3594" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6929348">
-          <caret line="157" column="73" selection-start-line="157" selection-start-column="73" selection-end-line="157" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.65217394">
+          <caret line="137" column="64" selection-start-line="137" selection-start-column="64" selection-end-line="137" selection-end-column="64" />
           <folding />
         </state>
       </provider>
