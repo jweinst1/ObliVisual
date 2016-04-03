@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Help.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BrowserMain.js" afterPath="$PROJECT_DIR$/src/BrowserMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpreter.js" afterPath="$PROJECT_DIR$/src/Interpreter.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js" afterPath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js.map" afterPath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts" afterPath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts" />
@@ -40,21 +37,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrowserMain.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BrowserMain.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BrowserMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.06749556">
+            <state vertical-scroll-proportion="0.0">
               <caret line="821" column="45" selection-start-line="821" selection-start-column="45" selection-end-line="821" selection-end-column="45" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrimitiveObjects.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PrimitiveObjects.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.48913044">
+              <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -64,8 +61,13 @@
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-              <folding />
+              <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+              <folding>
+                <marker date="1459667165000" expanded="true" signature="887:950" placeholder="{...}" />
+                <marker date="1459667165000" expanded="true" signature="1121:1184" placeholder="{...}" />
+                <marker date="1459667165000" expanded="true" signature="1713:1755" placeholder="{...}" />
+                <marker date="1459667165000" expanded="true" signature="1810:1852" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -203,10 +205,10 @@
         <option value="$PROJECT_DIR$/src/Assembler.js" />
         <option value="$PROJECT_DIR$/src/builtinobjects/BuiltInPrimitive.js" />
         <option value="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js" />
-        <option value="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts" />
         <option value="$PROJECT_DIR$/src/Help.js" />
         <option value="$PROJECT_DIR$/src/Interpreter.js" />
         <option value="$PROJECT_DIR$/src/BrowserMain.js" />
+        <option value="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts" />
       </list>
     </option>
   </component>
@@ -527,7 +529,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -908,19 +910,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding />
+          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+          <folding>
+            <marker date="1459667165000" expanded="true" signature="887:950" placeholder="{...}" />
+            <marker date="1459667165000" expanded="true" signature="1121:1184" placeholder="{...}" />
+            <marker date="1459667165000" expanded="true" signature="1713:1755" placeholder="{...}" />
+            <marker date="1459667165000" expanded="true" signature="1810:1852" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -944,8 +943,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BrowserMain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06749556">
+        <state vertical-scroll-proportion="0.0">
           <caret line="821" column="45" selection-start-line="821" selection-start-column="45" selection-end-line="821" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48913044">
+          <caret line="114" column="24" selection-start-line="114" selection-start-column="24" selection-end-line="114" selection-end-column="24" />
           <folding />
         </state>
       </provider>

@@ -8,13 +8,22 @@ interface Obj {
     decrement():void;
     concat(other:any):void;
     index(key:any):any;
+    setitem(key:any, other:any):void;
+    append(other:any):void;
+    pop():any;
+    remove(key:any):void;
+
     add(other:any):any;
     subtract(other:any):any;
     multiply(other:any):any;
     divide(other:any):any;
     remainder(other:any):any;
+    power(other:any):any;
     addassign(other:any):void;
     subassign(other:any):void;
+    multiplyassign(other:any):void;
+    divideassign(other:any):void;
+    remainderassign(other:any):void;
 }
 
 class NumberObj implements Obj {
@@ -68,12 +77,44 @@ class NumberObj implements Obj {
     public remainder(other:NumberObj) {
         return new NumberObj(this.value % other.value);
     }
+    public power(other:NumberObj) {
+        return new NumberObj(Math.pow(this.value, other.value));
+    }
     public addassign(other:NumberObj) {
         this.value += other.value;
     }
     public subassign(other:NumberObj) {
         this.value -= other.value;
     }
+    public multiplyassign(other:NumberObj) {
+        this.value *= other.value;
+    }
+    public divideassign(other:NumberObj) {
+        if(other.value === 0) {
+            this.value += 0;
+        }
+        else {
+            this.value /= other.value;
+        }
+    }
+    public remainderassign(other:NumberObj) {
+        this.value %= other.value;
+    }
+    public setitem(key:NumberObj, other:NumberObj) {
+        this.value += other.value - 1;
+    }
+    public append(other:NumberObj) {
+        this.value += other.value;
+    }
+    public pop() {
+        this.value -= 1;
+        if(this.value >= 0) return new NumberObj(1);
+        else return new NumberObj(-1);
+    }
+    public remove(key:NumberObj) {
+        this.value -= 1;
+    }
+
 }
 
 class StringObj {

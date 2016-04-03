@@ -47,11 +47,44 @@ var NumberObj = (function () {
     NumberObj.prototype.remainder = function (other) {
         return new NumberObj(this.value % other.value);
     };
+    NumberObj.prototype.power = function (other) {
+        return new NumberObj(Math.pow(this.value, other.value));
+    };
     NumberObj.prototype.addassign = function (other) {
         this.value += other.value;
     };
     NumberObj.prototype.subassign = function (other) {
         this.value -= other.value;
+    };
+    NumberObj.prototype.multiplyassign = function (other) {
+        this.value *= other.value;
+    };
+    NumberObj.prototype.divideassign = function (other) {
+        if (other.value === 0) {
+            this.value += 0;
+        }
+        else {
+            this.value /= other.value;
+        }
+    };
+    NumberObj.prototype.remainderassign = function (other) {
+        this.value %= other.value;
+    };
+    NumberObj.prototype.setitem = function (key, other) {
+        this.value += other.value - 1;
+    };
+    NumberObj.prototype.append = function (other) {
+        this.value += other.value;
+    };
+    NumberObj.prototype.pop = function () {
+        this.value -= 1;
+        if (this.value >= 0)
+            return new NumberObj(1);
+        else
+            return new NumberObj(-1);
+    };
+    NumberObj.prototype.remove = function (key) {
+        this.value -= 1;
     };
     return NumberObj;
 })();
