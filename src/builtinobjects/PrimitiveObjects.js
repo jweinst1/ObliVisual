@@ -344,7 +344,37 @@ var ListObj = (function () {
         newlist.value = this.value.concat(other.value);
         return newlist;
     };
+    //subtracts all items in one list, from the other list
     ListObj.prototype.subtract = function (other) {
+        var newlist = new ListObj();
+        for (var i = 0; i < this.value.length; i++) {
+            for (var j = 0; j < other.value.length; j++) {
+                if (this.value[i] === other.value[j]) {
+                    newlist.append(other.value[i]);
+                }
+            }
+        }
+        return newlist;
+    };
+    ListObj.prototype.multiply = function (other) {
+        var newlist = new ListObj();
+        for (var i = 0; i < other.value.length; i++)
+            newlist.value = this.value.concat(other.value);
+        return newlist;
+    };
+    //future implementation
+    ListObj.prototype.divide = function (other) {
+        return this;
+    };
+    //future implementation
+    ListObj.prototype.remainder = function (other) {
+        return this;
+    };
+    ListObj.prototype.power = function (other) {
+        return this;
+    };
+    ListObj.prototype.addasign = function (other) {
+        this.append(other);
     };
     return ListObj;
 })();

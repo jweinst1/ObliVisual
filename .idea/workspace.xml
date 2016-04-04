@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js" afterPath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js.map" afterPath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts" afterPath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts" />
@@ -51,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.91847825">
-              <caret line="395" column="8" selection-start-line="395" selection-start-column="8" selection-end-line="395" selection-end-column="8" />
+              <caret line="423" column="27" selection-start-line="423" selection-start-column="27" selection-end-line="423" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -61,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="383" column="5" selection-start-line="383" selection-start-column="5" selection-end-line="383" selection-end-column="5" />
+              <caret line="413" column="5" selection-start-line="413" selection-start-column="5" selection-end-line="413" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -932,9 +931,9 @@
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="383" column="5" selection-start-line="383" selection-start-column="5" selection-end-line="383" selection-end-column="5" />
+          <caret line="413" column="5" selection-start-line="413" selection-start-column="5" selection-end-line="413" selection-end-column="5" />
           <folding>
-            <marker date="1459800517000" expanded="true" signature="9270:9330" placeholder="{...}" />
+            <marker date="1459806788000" expanded="true" signature="9270:9330" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -942,7 +941,7 @@
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.91847825">
-          <caret line="395" column="8" selection-start-line="395" selection-start-column="8" selection-end-line="395" selection-end-column="8" />
+          <caret line="423" column="27" selection-start-line="423" selection-start-column="27" selection-end-line="423" selection-end-column="27" />
           <folding />
         </state>
       </provider>
