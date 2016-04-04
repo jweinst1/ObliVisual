@@ -289,7 +289,62 @@ var ListObj = (function () {
         this.value = this.value.concat(other.value);
     };
     ListObj.prototype.index = function (key) {
-        return this.value[key.value];
+        var ind = key.value % this.value.length;
+        return this.value[ind];
+    };
+    ListObj.prototype.setitem = function (key, other) {
+        if (key.value >= 0 && key.value < this.value.length) {
+            this.value[key.value] = other;
+        }
+        else if (key.value < 0) {
+            this.value[0] = other;
+        }
+        else {
+            this.value[this.value.length - 1] = other;
+        }
+    };
+    ListObj.prototype.append = function (other) {
+        this.value.push(other);
+    };
+    ListObj.prototype.pop = function () {
+        return this.value.pop();
+    };
+    ListObj.prototype.remove = function (key) {
+        var ind = key.value % this.value.length - 1;
+        this.value.splice(ind, 1);
+    };
+    ListObj.prototype.count = function (other) {
+        var total = 0;
+        for (var i = 0; i < this.value.length; i++) {
+            if (this.value[i] === other) {
+                total += 1;
+            }
+        }
+        return new NumberObj(total);
+    };
+    //linear search
+    ListObj.prototype.contains = function (other) {
+        var contain = false;
+        for (var i = 0; i < this.value.length; i++) {
+            if (this.value[i] === other) {
+                return new BoolObj(true);
+            }
+        }
+        return new BoolObj(contain);
+    };
+    ListObj.prototype.length = function () {
+        return new NumberObj(this.value.length);
+    };
+    ListObj.prototype.insert = function (key, other) {
+        var ind = key.value % this.value.length;
+        this.value.splice(ind, 0, other);
+    };
+    ListObj.prototype.add = function (other) {
+        var newlist = new ListObj();
+        newlist.value = this.value.concat(other.value);
+        return newlist;
+    };
+    ListObj.prototype.subtract = function (other) {
     };
     return ListObj;
 })();

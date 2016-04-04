@@ -337,7 +337,63 @@ class ListObj implements Obj {
         this.value = this.value.concat(other.value);
     }
     public index(key:NumberObj) {
-        return this.value[key.value];
+        var ind = key.value % this.value.length;
+        return this.value[ind];
+    }
+    public setitem(key:NumberObj, other:any) {
+        if(key.value >= 0 && key.value < this.value.length) {
+            this.value[key.value] = other;
+        }
+        else if(key.value < 0) {
+            this.value[0] = other;
+        }
+        else {
+            this.value[this.value.length-1] = other;
+        }
+    }
+    public append(other:any) {
+        this.value.push(other);
+    }
+    public pop() {
+        return this.value.pop();
+    }
+    public remove(key:NumberObj) {
+        var ind = key.value % this.value.length-1;
+        this.value.splice(ind, 1);
+    }
+    public count(other:any) {
+        var total = 0;
+        for(var i=0;i<this.value.length;i++) {
+            if (this.value[i] === other) {
+                total += 1;
+            }
+        }
+        return new NumberObj(total);
+    }
+    //linear search
+    public contains(other:any) {
+        var contain = false;
+        for(var i=0;i<this.value.length;i++) {
+            if(this.value[i] === other) {
+                return new BoolObj(true);
+            }
+        }
+        return new BoolObj(contain);
+    }
+    public length() {
+        return new NumberObj(this.value.length);
+    }
+    public insert(key:NumberObj, other:any) {
+        var ind = key.value % this.value.length;
+        this.value.splice(ind, 0, other);
+    }
+    public add(other:ListObj) {
+        var newlist = new ListObj();
+        newlist.value = this.value.concat(other.value);
+        return newlist;
+    }
+    public subtract(other:ListObj) {
+        
     }
 }
 
