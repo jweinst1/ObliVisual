@@ -50,8 +50,8 @@
       <file leaf-file-name="PrimitiveObjects.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67391306">
-              <caret line="237" column="22" selection-start-line="237" selection-start-column="22" selection-end-line="237" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.7554348">
+              <caret line="290" column="5" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -61,8 +61,10 @@
         <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="229" column="5" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
-              <folding />
+              <caret line="272" column="5" selection-start-line="272" selection-start-column="5" selection-end-line="272" selection-end-column="5" />
+              <folding>
+                <marker date="1459753364000" expanded="true" signature="8405:8465" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -874,8 +876,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67391306">
-          <caret line="237" column="22" selection-start-line="237" selection-start-column="22" selection-end-line="237" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.7554348">
+          <caret line="290" column="5" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -883,8 +885,10 @@
     <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="229" column="5" selection-start-line="229" selection-start-column="5" selection-end-line="229" selection-end-column="5" />
-          <folding />
+          <caret line="272" column="5" selection-start-line="272" selection-start-column="5" selection-end-line="272" selection-end-column="5" />
+          <folding>
+            <marker date="1459753364000" expanded="true" signature="8405:8465" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

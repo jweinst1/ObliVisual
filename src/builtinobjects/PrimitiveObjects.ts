@@ -237,10 +237,58 @@ class StringObj implements Obj {
         }
         return newstr;
     }
+    //produces a repeat string object of the sum of both strings lengths attributes
+    public power(other:StringObj) {
+        var newlength = this.value.length + other.value.length;
+        var newstr = new StringObj("");
+        for(var i=0;i<newlength;i++) {
+            newstr.append(this);
+            newstr.append(other);
+        }
+        return newstr;
+    }
+    //returns a string split by the other string as the delimeter
+    public divide(other:StringObj) {
+        return new StringObj(this.repr().split(other.repr()));
+    }
+    //remove all oeprator for strings
+    public remainder(other:StringObj) {
+        var patt = new RegExp(other.repr(), "g");
+        return new StringObj(this.value.join("").replace(patt, ""));
+    }
+    public addassign(other:StringObj) {
+        this.append(other);
+    }
+    public subassign(other:StringObj) {
+        this.value = this.value.join("").replace(other.repr(), "").split("");
+    }
+    public multiplyassign(other:StringObj) {
+        var count = other.value.length;
+        for(var i=0;i<count;i++) {
+            this.append(other);
+        }
+    }
+    public divideassign(other:StringObj) {
+        this.value = this.repr().split(other.repr());
+    }
+    public remainderassign(other:StringObj) {
+        var patt = new RegExp(other.repr(), "g");
+        this.value = this.value.join("").replace(patt, "").split("");
+    }
 }
 
-class ListObj {
+class ListObj implements Obj {
 
+    public value:any[];
+    public type:string;
+
+    constructor() {
+        this.value = [];
+        this.type = "list";
+    }
+    public repr() {
+        return this.value;
+    }
 }
 
 class SetObj {

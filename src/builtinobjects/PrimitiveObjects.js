@@ -200,11 +200,54 @@ var StringObj = (function () {
         }
         return newstr;
     };
+    //produces a repeat string object of the sum of both strings lengths attributes
+    StringObj.prototype.power = function (other) {
+        var newlength = this.value.length + other.value.length;
+        var newstr = new StringObj("");
+        for (var i = 0; i < newlength; i++) {
+            newstr.append(this);
+            newstr.append(other);
+        }
+        return newstr;
+    };
+    //returns a string split by the other string as the delimeter
+    StringObj.prototype.divide = function (other) {
+        return new StringObj(this.repr().split(other.repr()));
+    };
+    //remove all oeprator for strings
+    StringObj.prototype.remainder = function (other) {
+        var patt = new RegExp(other.repr(), "g");
+        return new StringObj(this.value.join("").replace(patt, ""));
+    };
+    StringObj.prototype.addassign = function (other) {
+        this.append(other);
+    };
+    StringObj.prototype.subassign = function (other) {
+        this.value = this.value.join("").replace(other.repr(), "").split("");
+    };
+    StringObj.prototype.multiplyassign = function (other) {
+        var count = other.value.length;
+        for (var i = 0; i < count; i++) {
+            this.append(other);
+        }
+    };
+    StringObj.prototype.divideassign = function (other) {
+        this.value = this.repr().split(other.repr());
+    };
+    StringObj.prototype.remainderassign = function (other) {
+        var patt = new RegExp(other.repr(), "g");
+        this.value = this.value.join("").replace(patt, "").split("");
+    };
     return StringObj;
 })();
 var ListObj = (function () {
     function ListObj() {
+        this.value = [];
+        this.type = "list";
     }
+    ListObj.prototype.repr = function () {
+        return this.value;
+    };
     return ListObj;
 })();
 var SetObj = (function () {
