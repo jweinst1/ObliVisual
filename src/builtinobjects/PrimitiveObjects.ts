@@ -1,7 +1,6 @@
 //typescript version of built in objects
 
 interface Obj {
-    value:any;
     type:string;
     repr():any;
     display():any;
@@ -43,7 +42,7 @@ class NumberObj implements Obj {
         return this.value;
     }
     public display() {
-        return this.value;
+        return this.value.toString();
     }
     public increment() {
         this.value += 1;
@@ -277,6 +276,42 @@ class StringObj implements Obj {
     }
 }
 
+class RangeObj implements Obj {
+
+    public type:string;
+    public start:NumberObj;
+    public end:NumberObj;
+
+    constructor(start:NumberObj, end:NumberObj) {
+        this.type = "range"
+        this.start = start;
+        this.end = end;
+    }
+    //returns an object containing the start and end points of the range
+    public repr() {
+        return {end:this.end.repr(), start:this.start.repr()};
+    }
+    public display() {
+        return this.start.display() + "<-->" + this.end.display();
+    }
+    public increment() {
+        this.start.value += 1;
+        this.end.value += 1;
+    }
+    public decrement() {
+        this.start.value -= 1;
+        this.end.value -=1;
+    }
+
+    public concat(other:RangeObj) {
+
+    }
+    public index(other:NumberObj) {
+
+    }
+
+}
+
 class ListObj implements Obj {
 
     public value:any[];
@@ -288,6 +323,9 @@ class ListObj implements Obj {
     }
     public repr() {
         return this.value;
+    }
+    public display() {
+        return JSON.stringify(this.value);
     }
 }
 

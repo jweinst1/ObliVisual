@@ -8,7 +8,7 @@ var NumberObj = (function () {
         return this.value;
     };
     NumberObj.prototype.display = function () {
-        return this.value;
+        return this.value.toString();
     };
     NumberObj.prototype.increment = function () {
         this.value += 1;
@@ -240,6 +240,33 @@ var StringObj = (function () {
     };
     return StringObj;
 })();
+var RangeObj = (function () {
+    function RangeObj(start, end) {
+        this.type = "range";
+        this.start = start;
+        this.end = end;
+    }
+    //returns an object containing the start and end points of the range
+    RangeObj.prototype.repr = function () {
+        return { end: this.end.repr(), start: this.start.repr() };
+    };
+    RangeObj.prototype.display = function () {
+        return this.start.display() + "<-->" + this.end.display();
+    };
+    RangeObj.prototype.increment = function () {
+        this.start.value += 1;
+        this.end.value += 1;
+    };
+    RangeObj.prototype.decrement = function () {
+        this.start.value -= 1;
+        this.end.value -= 1;
+    };
+    RangeObj.prototype.concat = function (other) {
+    };
+    RangeObj.prototype.index = function (other) {
+    };
+    return RangeObj;
+})();
 var ListObj = (function () {
     function ListObj() {
         this.value = [];
@@ -247,6 +274,9 @@ var ListObj = (function () {
     }
     ListObj.prototype.repr = function () {
         return this.value;
+    };
+    ListObj.prototype.display = function () {
+        return JSON.stringify(this.value);
     };
     return ListObj;
 })();
