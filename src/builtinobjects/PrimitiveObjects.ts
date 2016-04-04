@@ -275,15 +275,15 @@ class StringObj implements Obj {
         this.value = this.value.join("").replace(patt, "").split("");
     }
 }
-
-class RangeObj implements Obj {
+//range object
+class RangeObj {
 
     public type:string;
     public start:NumberObj;
     public end:NumberObj;
 
     constructor(start:NumberObj, end:NumberObj) {
-        this.type = "range"
+        this.type = "range";
         this.start = start;
         this.end = end;
     }
@@ -327,6 +327,18 @@ class ListObj implements Obj {
     public display() {
         return JSON.stringify(this.value);
     }
+    public increment() {
+        this.value.push(new NothingObj());
+    }
+    public decrement() {
+        this.value.pop();
+    }
+    public concat(other:ListObj) {
+        this.value = this.value.concat(other.value);
+    }
+    public index(key:NumberObj) {
+        return this.value[key.value];
+    }
 }
 
 class SetObj {
@@ -347,5 +359,21 @@ class BoolObj {
     }
     public repr() {
         return this.state;
+    }
+}
+//implements the nothing type
+class NothingObj {
+    public type:String;
+
+    constructor() {
+        this.type = "nothing"
+    }
+
+    public repr() {
+        return this;
+    }
+
+    public display() {
+        return this.type;
     }
 }

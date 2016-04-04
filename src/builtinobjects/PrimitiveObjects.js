@@ -240,6 +240,7 @@ var StringObj = (function () {
     };
     return StringObj;
 })();
+//range object
 var RangeObj = (function () {
     function RangeObj(start, end) {
         this.type = "range";
@@ -278,6 +279,18 @@ var ListObj = (function () {
     ListObj.prototype.display = function () {
         return JSON.stringify(this.value);
     };
+    ListObj.prototype.increment = function () {
+        this.value.push(new NothingObj());
+    };
+    ListObj.prototype.decrement = function () {
+        this.value.pop();
+    };
+    ListObj.prototype.concat = function (other) {
+        this.value = this.value.concat(other.value);
+    };
+    ListObj.prototype.index = function (key) {
+        return this.value[key.value];
+    };
     return ListObj;
 })();
 var SetObj = (function () {
@@ -299,5 +312,18 @@ var BoolObj = (function () {
         return this.state;
     };
     return BoolObj;
+})();
+//implements the nothing type
+var NothingObj = (function () {
+    function NothingObj() {
+        this.type = "nothing";
+    }
+    NothingObj.prototype.repr = function () {
+        return this;
+    };
+    NothingObj.prototype.display = function () {
+        return this.type;
+    };
+    return NothingObj;
 })();
 //# sourceMappingURL=PrimitiveObjects.js.map
