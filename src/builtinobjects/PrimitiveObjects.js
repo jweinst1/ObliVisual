@@ -117,8 +117,11 @@ var StringObj = (function () {
     StringObj.prototype.repr = function () {
         return this.value.join("");
     };
+    StringObj.prototype.display = function () {
+        return '"' + this.value.join("") + '"';
+    };
     StringObj.prototype.length = function () {
-        return this.value.length;
+        return new NumberObj(this.value.length);
     };
     StringObj.prototype.concat = function (other) {
         this.value = this.value.concat(other.value);
@@ -133,8 +136,45 @@ var StringObj = (function () {
     StringObj.prototype.index = function (key) {
         return new StringObj(this.value[key.value]);
     };
+    StringObj.prototype.insert = function (key, other) {
+        if (key.value >= 0 && key.value < this.value.length) {
+            for (var i = 0; i < other.value.length; i++) {
+                this.value.splice(key.value, 0, other.value[i]);
+            }
+        }
+        else {
+            //if index is out of bounds, will set at zero position
+            for (var i = 0; i < other.value.length; i++) {
+                this.value.splice(0, 0, other.value[i]);
+            }
+        }
+    };
+    //destructive version of insert method for strings.
+    StringObj.prototype.setitem = function (key, other) {
+        if (key.value >= 0 && key.value < this.value.length) {
+            this.value.splice(key.value, 1);
+            for (var i = 0; i < other.value.length; i++) {
+                this.value.splice(key.value, 0, other.value[i]);
+            }
+        }
+        else {
+            this.value.splice(0, 1);
+            //if index is out of bounds, will set at zero position
+            for (var i = 0; i < other.value.length; i++) {
+                this.value.splice(0, 0, other.value[i]);
+            }
+        }
+    };
     StringObj.prototype.add = function (other) {
         return new StringObj(this.value.join("") + other.value.join(""));
+    };
+    StringObj.prototype.append = function (other) {
+        this.value = this.value.concat(other.value);
+    };
+    StringObj.prototype.pop = function () {
+        return new StringObj(this.value[this.value.length]);
+    };
+    StringObj.prototype.remove = function (key) {
     };
     return StringObj;
 })();
@@ -152,5 +192,15 @@ var MapObj = (function () {
     function MapObj() {
     }
     return MapObj;
+})();
+var BoolObj = (function () {
+    function BoolObj(state) {
+        this.state = state;
+        this.type = "Bool";
+    }
+    BoolObj.prototype.repr = function () {
+        return this.state;
+    };
+    return BoolObj;
 })();
 //# sourceMappingURL=PrimitiveObjects.js.map

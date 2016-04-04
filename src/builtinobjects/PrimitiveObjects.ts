@@ -28,6 +28,7 @@ interface Obj {
     multiplyassign(other:any):void;
     divideassign(other:any):void;
     remainderassign(other:any):void;
+
 }
 
 class NumberObj implements Obj {
@@ -153,8 +154,11 @@ class StringObj implements Obj {
     public repr() {
         return this.value.join("");
     }
+    public display() {
+        return '"' + this.value.join("") + '"';
+    }
     public length() {
-        return this.value.length;
+        return new NumberObj(this.value.length);
     }
     public concat(other:StringObj) {
         this.value = this.value.concat(other.value);
@@ -169,8 +173,46 @@ class StringObj implements Obj {
     public index(key:NumberObj) {
         return new StringObj(this.value[key.value]);
     }
+    public insert(key:NumberObj, other:StringObj) {
+        if (key.value >= 0 && key.value < this.value.length) {
+            for(var i=0;i<other.value.length;i++) {
+                this.value.splice(key.value, 0, other.value[i]);
+            }
+        }
+        else {
+            //if index is out of bounds, will set at zero position
+            for(var i=0;i<other.value.length;i++) {
+                this.value.splice(0, 0, other.value[i]);
+            }
+        }
+    }
+    //destructive version of insert method for strings.
+    public setitem(key:NumberObj, other:StringObj) {
+        if (key.value >= 0 && key.value < this.value.length) {
+            this.value.splice(key.value, 1);
+            for(var i=0;i<other.value.length;i++) {
+                this.value.splice(key.value, 0, other.value[i]);
+            }
+        }
+        else {
+            this.value.splice(0, 1);
+            //if index is out of bounds, will set at zero position
+            for(var i=0;i<other.value.length;i++) {
+                this.value.splice(0, 0, other.value[i]);
+            }
+        }
+    }
     public add(other:StringObj) {
         return new StringObj(this.value.join("") + other.value.join(""));
+    }
+    public append(other:StringObj) {
+        this.value = this.value.concat(other.value);
+    }
+    public pop() {
+        return new StringObj(this.value[this.value.length]);
+    }
+    public remove(key:StringObj) {
+
     }
 }
 
@@ -184,4 +226,17 @@ class SetObj {
 
 class MapObj {
 
+}
+
+class BoolObj {
+    public state:Boolean;
+    public type:String;
+
+    constructor(state:Boolean) {
+        this.state = state;
+        this.type = "Bool";
+    }
+    public repr() {
+        return this.state;
+    }
 }
