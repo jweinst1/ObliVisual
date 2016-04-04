@@ -212,7 +212,30 @@ class StringObj implements Obj {
         return new StringObj(this.value[this.value.length]);
     }
     public remove(key:StringObj) {
-
+        this.value = this.value.join("").replace(key.repr(), "").split("");
+    }
+    public count(other:StringObj) {
+        var count = 0;
+        var tempstring = this.value.join("")
+        while(tempstring.search(other.repr()) !== -1) {
+            count += 1;
+            tempstring = tempstring.replace(other.repr(), "");
+        }
+        return new NumberObj(count);
+    }
+    public contains(other:StringObj) {
+        return new BoolObj(this.repr().search(other.repr()) !== -1);
+    }
+    public subtract(other:StringObj) {
+        return new StringObj(this.value.join("").replace(other.repr(), ""));
+    }
+    public multiply(other:StringObj) {
+        var count = other.value.length;
+        var newstr = new StringObj(this.repr());
+        for(var i=0;i<count;i++) {
+            newstr.append(other);
+        }
+        return newstr;
     }
 }
 

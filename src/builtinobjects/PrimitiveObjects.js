@@ -175,6 +175,30 @@ var StringObj = (function () {
         return new StringObj(this.value[this.value.length]);
     };
     StringObj.prototype.remove = function (key) {
+        this.value = this.value.join("").replace(key.repr(), "").split("");
+    };
+    StringObj.prototype.count = function (other) {
+        var count = 0;
+        var tempstring = this.value.join("");
+        while (tempstring.search(other.repr()) !== -1) {
+            count += 1;
+            tempstring = tempstring.replace(other.repr(), "");
+        }
+        return new NumberObj(count);
+    };
+    StringObj.prototype.contains = function (other) {
+        return new BoolObj(this.repr().search(other.repr()) !== -1);
+    };
+    StringObj.prototype.subtract = function (other) {
+        return new StringObj(this.value.join("").replace(other.repr(), ""));
+    };
+    StringObj.prototype.multiply = function (other) {
+        var count = other.value.length;
+        var newstr = new StringObj(this.repr());
+        for (var i = 0; i < count; i++) {
+            newstr.append(other);
+        }
+        return newstr;
     };
     return StringObj;
 })();
