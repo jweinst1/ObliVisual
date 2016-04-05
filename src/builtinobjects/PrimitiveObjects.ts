@@ -496,6 +496,28 @@ class SetObj implements Obj {
             return new NumberObj(0);
         }
     }
+    public contains(other:any) {
+        var boolresult = JSON.stringify(other) in this.value;
+        return new BoolObj(boolresult);
+    }
+    public length() {
+        var amount = 0;
+        for(var key in this.value) amount += 1;
+        return new NumberObj(amount);
+    }
+    public insert(key:any, other:any) {
+        this.append(other);
+    }
+    //returns union of both sets in a new set
+    public add(other:SetObj) {
+        var newset = new SetObj();
+        for(var key in this.value) newset.append(key);
+        for(var key in other.value) newset.append(key);
+        return newset;
+    }
+    public subtract(other:SetObj) {
+
+    }
 
 }
 
@@ -530,4 +552,8 @@ class NothingObj {
     public display() {
         return this.type;
     }
+}
+
+class OblivionObj {
+
 }

@@ -444,6 +444,30 @@ var SetObj = (function () {
             return new NumberObj(0);
         }
     };
+    SetObj.prototype.contains = function (other) {
+        var boolresult = JSON.stringify(other) in this.value;
+        return new BoolObj(boolresult);
+    };
+    SetObj.prototype.length = function () {
+        var amount = 0;
+        for (var key in this.value)
+            amount += 1;
+        return new NumberObj(amount);
+    };
+    SetObj.prototype.insert = function (key, other) {
+        this.append(other);
+    };
+    //returns union of both sets in a new set
+    SetObj.prototype.add = function (other) {
+        var newset = new SetObj();
+        for (var key in this.value)
+            newset.append(key);
+        for (var key in other.value)
+            newset.append(key);
+        return newset;
+    };
+    SetObj.prototype.subtract = function (other) {
+    };
     return SetObj;
 })();
 var MapObj = (function () {
@@ -473,5 +497,10 @@ var NothingObj = (function () {
         return this.type;
     };
     return NothingObj;
+})();
+var OblivionObj = (function () {
+    function OblivionObj() {
+    }
+    return OblivionObj;
 })();
 //# sourceMappingURL=PrimitiveObjects.js.map
