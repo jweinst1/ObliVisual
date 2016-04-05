@@ -417,6 +417,33 @@ var SetObj = (function () {
         var boolresult = JSON.stringify(key) in this.value;
         return new BoolObj(boolresult);
     };
+    SetObj.prototype.setitem = function (key, other) {
+        this.value[JSON.stringify(key)] = true;
+    };
+    SetObj.prototype.append = function (other) {
+        var key = JSON.stringify(other);
+        if (!(key in this.value)) {
+            this.value[key] = true;
+        }
+    };
+    //returns a random object from the set
+    SetObj.prototype.pop = function () {
+        for (var key in this.value) {
+            return JSON.parse(key);
+        }
+    };
+    SetObj.prototype.remove = function (other) {
+        var stringed = JSON.stringify(other);
+        delete this.value[stringed];
+    };
+    SetObj.prototype.count = function (other) {
+        if (JSON.stringify(other) in this.value) {
+            return new NumberObj(1);
+        }
+        else {
+            return new NumberObj(0);
+        }
+    };
     return SetObj;
 })();
 var MapObj = (function () {

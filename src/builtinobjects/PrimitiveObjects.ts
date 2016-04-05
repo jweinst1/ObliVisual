@@ -469,6 +469,33 @@ class SetObj implements Obj {
         var boolresult = JSON.stringify(key) in this.value;
         return new BoolObj(boolresult);
     }
+    public setitem(key:any, other:any) {
+        this.value[JSON.stringify(key)] = true;
+    }
+    public append(other:any) {
+        var key = JSON.stringify(other);
+        if(!(key in this.value)) {
+            this.value[key] = true;
+        }
+    }
+    //returns a random object from the set
+    public pop() {
+        for(var key in this.value) {
+            return JSON.parse(key);
+        }
+    }
+    public remove(other:any) {
+        var stringed = JSON.stringify(other);
+        delete this.value[stringed];
+    }
+    public count(other:any) {
+        if(JSON.stringify(other) in this.value) {
+            return new NumberObj(1);
+        }
+        else {
+            return new NumberObj(0);
+        }
+    }
 
 }
 
