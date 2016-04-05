@@ -409,8 +409,8 @@ class ListObj implements Obj {
         for(var i=0;i<other.value.length;i++) newlist.value = this.value.concat(other.value);
         return newlist;
     }
-    //future implementation
-    public divide(other:ListObj) {
+    //future implementation, needs revising
+    public divide(other:any) {
         return this;
     }
     //future implementation
@@ -420,12 +420,55 @@ class ListObj implements Obj {
     public power(other:ListObj) {
         return this;
     }
-    public addasign(other:ListObj) {
+    public addassign(other:ListObj) {
         this.append(other);
+    }
+    public subassign(other:ListObj) {
+        this.value = this.subtract(other).value;
+    }
+    public multiplyassign(other:ListObj) {
+        this.value = this.multiply(other).value;
+    }
+    public divideassign(other:any) {
+        this.value = this.divide(other).value;
+    }
+    public remainderassign(other:ListObj) {
+        this.value = this.remainder(other).value;
     }
 }
 
-class SetObj {
+class SetObj implements Obj {
+
+    public type:string;
+    public value:Object;
+    constructor() {
+        this.type = "set";
+        this.value = {};
+    }
+    public repr() {
+        return this.value;
+    }
+    public display() {
+        return JSON.stringify(this.value);
+    }
+    public increment() {
+
+    }
+    public decrement() {
+
+    }
+    public concat(other:SetObj) {
+        for(var key in other.value) {
+            if(!(key in this.value)) {
+                this.value[key] = true;
+            }
+        }
+    }
+    //same as contains, returns bool object
+    public index(key:any) {
+        var boolresult = JSON.stringify(key) in this.value;
+        return new BoolObj(boolresult);
+    }
 
 }
 

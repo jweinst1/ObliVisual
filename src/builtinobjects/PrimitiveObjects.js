@@ -362,7 +362,7 @@ var ListObj = (function () {
             newlist.value = this.value.concat(other.value);
         return newlist;
     };
-    //future implementation
+    //future implementation, needs revising
     ListObj.prototype.divide = function (other) {
         return this;
     };
@@ -373,14 +373,50 @@ var ListObj = (function () {
     ListObj.prototype.power = function (other) {
         return this;
     };
-    ListObj.prototype.addasign = function (other) {
+    ListObj.prototype.addassign = function (other) {
         this.append(other);
+    };
+    ListObj.prototype.subassign = function (other) {
+        this.value = this.subtract(other).value;
+    };
+    ListObj.prototype.multiplyassign = function (other) {
+        this.value = this.multiply(other).value;
+    };
+    ListObj.prototype.divideassign = function (other) {
+        this.value = this.divide(other).value;
+    };
+    ListObj.prototype.remainderassign = function (other) {
+        this.value = this.remainder(other).value;
     };
     return ListObj;
 })();
 var SetObj = (function () {
     function SetObj() {
+        this.type = "set";
+        this.value = {};
     }
+    SetObj.prototype.repr = function () {
+        return this.value;
+    };
+    SetObj.prototype.display = function () {
+        return JSON.stringify(this.value);
+    };
+    SetObj.prototype.increment = function () {
+    };
+    SetObj.prototype.decrement = function () {
+    };
+    SetObj.prototype.concat = function (other) {
+        for (var key in other.value) {
+            if (!(key in this.value)) {
+                this.value[key] = true;
+            }
+        }
+    };
+    //same as contains, returns bool object
+    SetObj.prototype.index = function (key) {
+        var boolresult = JSON.stringify(key) in this.value;
+        return new BoolObj(boolresult);
+    };
     return SetObj;
 })();
 var MapObj = (function () {
