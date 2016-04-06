@@ -498,9 +498,9 @@ var NothingObj = (function () {
     };
     return NothingObj;
 })();
-var OblivionObj = (function () {
-    function OblivionObj() {
+var RiftObj = (function () {
+    function RiftObj() {
     }
-    return OblivionObj;
+    return RiftObj;
 })();
 //# sourceMappingURL=PrimitiveObjects.js.map

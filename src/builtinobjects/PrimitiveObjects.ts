@@ -554,6 +554,6 @@ class NothingObj {
     }
 }
 
-class OblivionObj {
+class RiftObj {
 
 }
