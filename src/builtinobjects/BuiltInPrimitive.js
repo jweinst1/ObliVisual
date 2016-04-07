@@ -410,50 +410,86 @@ exports.ListObj = ListObj;
 
 //Set Object for the oblivion language
 
-var SetObj = function() {
-    //takes arbitrary number of arguments
-    this.set = {};
-    this.type = "set";
-    for(var i=0;i<arguments.length;i++) this.set[arguments[i]] = true;
-
-    //methods
-    SetObj.prototype.repr = function() {
-        var keys = [];
-        for(var key in this.set) keys.push(key);
-        return "(" + keys.join(", ") + ")";
+var SetObj = (function () {
+    function SetObj() {
+        this.type = "set";
+        this.value = {};
+    }
+    SetObj.prototype.repr = function () {
+        return this.value;
     };
-    SetObj.prototype.add = function(elem) {
-        this.set[JSON.stringify(elem.repr())] = true;
+    SetObj.prototype.display = function () {
+        return JSON.stringify(this.value);
     };
-    SetObj.prototype.remove = function(elem) {
-        if(elem in this.set) delete this.set[elem];
+    SetObj.prototype.increment = function () {
     };
-    SetObj.prototype.contains = function(elem) {
-        return elem in this.set;
+    SetObj.prototype.decrement = function () {
     };
-    //checks if current set is subset of another set
-    SetObj.prototype.isSubsetof = function(otherset) {
-        if(otherset.constructor === SetObj) {
-            for(var key in this.set) {
-                if(!(key in otherset.set)) {
-                    return false;
-                }
+    SetObj.prototype.concat = function (other) {
+        for (var key in other.value) {
+            if (!(key in this.value)) {
+                this.value[key] = true;
             }
-            return true;
         }
     };
-    //checks if there is a subset of the current set
-    SetObj.prototype.hasSubset = function(otherset) {
-        if(otherset.constructor === SetObj) {
-            for(var key in otherset.set) {
-                if(!(key in this.set)) {
-                    return false;
-                }
-            }
-            return true;
+    //same as contains, returns bool object
+    SetObj.prototype.index = function (key) {
+        var boolresult = JSON.stringify(key) in this.value;
+        return new BoolObj(boolresult);
+    };
+    SetObj.prototype.setitem = function (key, other) {
+        this.value[JSON.stringify(key)] = true;
+    };
+    SetObj.prototype.append = function (other) {
+        var key = JSON.stringify(other);
+        if (!(key in this.value)) {
+            this.value[key] = true;
         }
     };
-};
+    //returns a random object from the set
+    SetObj.prototype.pop = function () {
+        for (var key in this.value) {
+            return JSON.parse(key);
+        }
+    };
+    SetObj.prototype.remove = function (other) {
+        var stringed = JSON.stringify(other);
+        delete this.value[stringed];
+    };
+    SetObj.prototype.count = function (other) {
+        if (JSON.stringify(other) in this.value) {
+            return new NumberObj(1);
+        }
+        else {
+            return new NumberObj(0);
+        }
+    };
+    SetObj.prototype.contains = function (other) {
+        var boolresult = JSON.stringify(other) in this.value;
+        return new BoolObj(boolresult);
+    };
+    SetObj.prototype.length = function () {
+        var amount = 0;
+        for (var key in this.value)
+            amount += 1;
+        return new NumberObj(amount);
+    };
+    SetObj.prototype.insert = function (key, other) {
+        this.append(other);
+    };
+    //returns union of both sets in a new set
+    SetObj.prototype.add = function (other) {
+        var newset = new SetObj();
+        for (var key in this.value)
+            newset.append(key);
+        for (var item in other.value)
+            newset.append(item);
+        return newset;
+    };
+    SetObj.prototype.subtract = function (other) {
+    };
+    return SetObj;
+})();
 
 exports.SetObj = SetObj;
 
@@ -478,7 +514,11 @@ var Rift = (function () {
         return this.collection;
     };
     Rift.prototype.display = function() {
-        return JSON.stringify(this.colleciton);
+        var display = [];
+        for(var i=0;i<this.collection.length;i++) {
+            display.push(this.collection[i]);
+        }
+        return JSON.stringify(display);
     };
     Rift.prototype.append = function(other) {
         this.collection.push(other);

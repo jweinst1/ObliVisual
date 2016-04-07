@@ -26,7 +26,7 @@ var Interpreter = (function () {
         }
         console.log(arguments[0]);
         if(arguments[0] === undefined) return "Syntax Error";
-        return arguments[0].repr();
+        return arguments[0].display();
     };
     return Interpreter;
 })();
