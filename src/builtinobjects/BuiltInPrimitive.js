@@ -3,114 +3,250 @@
  */
 
 //number object
-var NumberObj = function(value) {
-    this.value = value;
-    this.type = "number";
-    //mutating methods
-    NumberObj.prototype.add = function(amount) {
-        if(amount.constructor === NumberObj) {
-            this.value += amount.value;
-        }
-        else {
-            this.value += amount;
-        }
-    };
-    NumberObj.prototype.subtract = function(amount) {
-        if(amount.constructor === NumberObj) {
-            this.value -= amount.value;
-        }
-        else {
-            this.value -= amount;
-        }
-    };
-    NumberObj.prototype.multiply = function(amount) {
-        if(amount.constructor === NumberObj) {
-            this.value *= amount.value;
-        }
-        else {
-            this.value *= amount;
-        }
-    };
-    NumberObj.prototype.divide = function(amount) {
-        if(amount.constructor === NumberObj) {
-            if(amount.value===0) this.value += 0;
-            else this.value /= amount.value;
-        }
-        else {
-            if(amount===0) this.value += 0;
-            else this.value /= amount;
-        }
-    };
-    NumberObj.prototype.remainder = function(amount) {
-        if(amount.constructor === NumberObj) {
-            this.value %= amount.value;
-        }
-        else {
-            this.value %= amount;
-        }
-    };
-    NumberObj.prototype.power = function(amount) {
-        if(amount.constructor === NumberObj) {
-            this.value = Math.pow(this.value, amount.value);
-        }
-        else {
-            this.value = Math.pow(this.value, amount);
-        }
-    };
-    NumberObj.prototype.sqrt = function() {
-        this.value = Math.sqrt(this.value);
-    };
-    //non-mutating methods
-    NumberObj.prototype.repr = function() {
+var NumberObj = (function () {
+    function NumberObj(value) {
+        this.type = "number";
+        this.value = value;
+    }
+    NumberObj.prototype.repr = function () {
         return this.value;
     };
-};
+    NumberObj.prototype.display = function () {
+        return this.value.toString();
+    };
+    NumberObj.prototype.increment = function () {
+        this.value += 1;
+    };
+    NumberObj.prototype.decrement = function () {
+        this.value -= 1;
+    };
+    NumberObj.prototype.concat = function (other) {
+        this.value = parseInt(this.value.toString() + other.value.toString());
+    };
+    NumberObj.prototype.index = function (other) {
+        if (other.value < 0) {
+            return new NumberObj(-1);
+        }
+        else if (other.value < this.value) {
+            return new NumberObj(1);
+        }
+        else {
+            return new NumberObj(0);
+        }
+    };
+    NumberObj.prototype.insert = function (key, other) {
+        this.value += other.value;
+    };
+    NumberObj.prototype.add = function (other) {
+        return new NumberObj(this.value + other.value);
+    };
+    NumberObj.prototype.subtract = function (other) {
+        return new NumberObj(this.value - other.value);
+    };
+    NumberObj.prototype.multiply = function (other) {
+        return new NumberObj(this.value * other.value);
+    };
+    NumberObj.prototype.divide = function (other) {
+        if (other.value === 0) {
+            return new NumberObj(this.value);
+        }
+        else {
+            return new NumberObj(this.value / other.value);
+        }
+    };
+    NumberObj.prototype.remainder = function (other) {
+        return new NumberObj(this.value % other.value);
+    };
+    NumberObj.prototype.power = function (other) {
+        return new NumberObj(Math.pow(this.value, other.value));
+    };
+    NumberObj.prototype.addassign = function (other) {
+        this.value += other.value;
+    };
+    NumberObj.prototype.subassign = function (other) {
+        this.value -= other.value;
+    };
+    NumberObj.prototype.multiplyassign = function (other) {
+        this.value *= other.value;
+    };
+    NumberObj.prototype.divideassign = function (other) {
+        if (other.value === 0) {
+            this.value += 0;
+        }
+        else {
+            this.value /= other.value;
+        }
+    };
+    NumberObj.prototype.remainderassign = function (other) {
+        this.value %= other.value;
+    };
+    NumberObj.prototype.setitem = function (key, other) {
+        this.value += other.value - 1;
+    };
+    NumberObj.prototype.append = function (other) {
+        this.value += other.value;
+    };
+    NumberObj.prototype.pop = function () {
+        this.value -= 1;
+        if (this.value >= 0)
+            return new NumberObj(1);
+        else
+            return new NumberObj(-1);
+    };
+    NumberObj.prototype.remove = function (key) {
+        this.value -= 1;
+    };
+    NumberObj.prototype.count = function (other) {
+        if (other.value === 0) {
+            return new NumberObj(0);
+        }
+        else {
+            return new NumberObj(Math.floor(this.value / other.value));
+        }
+    };
+    NumberObj.prototype.length = function () {
+        return new NumberObj(this.value.toString().length);
+    };
+    //returns a boolean, must be updated to return a bool object
+    NumberObj.prototype.contains = function (other) {
+        return other.value < this.value;
+    };
+    return NumberObj;
+})();
 
 exports.NumberObj = NumberObj;
 
-var StringObj = function(string) {
-    this.string = string;
-    this.type = "string";
-
-    StringObj.prototype.repr = function() {
-        return "\"" + this.string + "\"";
+var StringObj = (function () {
+    function StringObj(value) {
+        this.type = "string";
+        this.value = value.split("");
+    }
+    StringObj.prototype.repr = function () {
+        return this.value.join("");
     };
-    StringObj.prototype.concat = function(addstring) {
-        this.string += addstring.string;
+    StringObj.prototype.display = function () {
+        return '"' + this.value.join("") + '"';
     };
-    //gets new string object of last character
-    StringObj.prototype.getlast = function() {
-        return new StringObj(this.string[this.string.length-1]);
+    StringObj.prototype.length = function () {
+        return new NumberObj(this.value.length);
     };
-    //gets new string object for first character
-    StringObj.prototype.getfirst = function() {
-        return new StringObj(this.string[0]);
+    StringObj.prototype.concat = function (other) {
+        this.value = this.value.concat(other.value);
     };
-    StringObj.prototype.pop = function() {
-        if(this.string.length > 0) {
-            var popped = this.string[this.string.length-1];
-            this.string = this.string.slice(0, string.length-1);
-            return new StringObj(popped);
-        }
+    //adds a space to end of string
+    StringObj.prototype.increment = function () {
+        this.value = this.value.concat([" "]);
     };
-    //gets first element of stringobj as new string obj.
-    StringObj.prototype.popfirst = function() {
-        if(this.string.length > 0) {
-            var popped = this.string[0];
-            this.string = this.string.slice(1, string.length);
-            return new StringObj(popped);
-        }
+    StringObj.prototype.decrement = function () {
+        this.value.pop();
     };
-    StringObj.prototype.index = function(ind) {
-        if(ind > -1 && ind < this.string.length) {
-            return new StringObj(this.string[ind]);
+    StringObj.prototype.index = function (key) {
+        return new StringObj(this.value[key.value]);
+    };
+    StringObj.prototype.insert = function (key, other) {
+        if (key.value >= 0 && key.value < this.value.length) {
+            for (var i = 0; i < other.value.length; i++) {
+                this.value.splice(key.value, 0, other.value[i]);
+            }
         }
         else {
-            return new StringObj("");
+            //if index is out of bounds, will set at zero position
+            for (var i = 0; i < other.value.length; i++) {
+                this.value.splice(0, 0, other.value[i]);
+            }
         }
     };
-};
-
+    //destructive version of insert method for strings.
+    StringObj.prototype.setitem = function (key, other) {
+        if (key.value >= 0 && key.value < this.value.length) {
+            this.value.splice(key.value, 1);
+            for (var i = 0; i < other.value.length; i++) {
+                this.value.splice(key.value, 0, other.value[i]);
+            }
+        }
+        else {
+            this.value.splice(0, 1);
+            //if index is out of bounds, will set at zero position
+            for (var i = 0; i < other.value.length; i++) {
+                this.value.splice(0, 0, other.value[i]);
+            }
+        }
+    };
+    StringObj.prototype.add = function (other) {
+        return new StringObj(this.value.join("") + other.value.join(""));
+    };
+    StringObj.prototype.append = function (other) {
+        this.value = this.value.concat(other.value);
+    };
+    StringObj.prototype.pop = function () {
+        return new StringObj(this.value[this.value.length]);
+    };
+    StringObj.prototype.remove = function (key) {
+        this.value = this.value.join("").replace(key.repr(), "").split("");
+    };
+    StringObj.prototype.count = function (other) {
+        var count = 0;
+        var tempstring = this.value.join("");
+        while (tempstring.search(other.repr()) !== -1) {
+            count += 1;
+            tempstring = tempstring.replace(other.repr(), "");
+        }
+        return new NumberObj(count);
+    };
+    StringObj.prototype.contains = function (other) {
+        return new BoolObj(this.repr().search(other.repr()) !== -1);
+    };
+    StringObj.prototype.subtract = function (other) {
+        return new StringObj(this.value.join("").replace(other.repr(), ""));
+    };
+    StringObj.prototype.multiply = function (other) {
+        var count = other.value.length;
+        var newstr = new StringObj(this.repr());
+        for (var i = 0; i < count; i++) {
+            newstr.append(other);
+        }
+        return newstr;
+    };
+    //produces a repeat string object of the sum of both strings lengths attributes
+    StringObj.prototype.power = function (other) {
+        var newlength = this.value.length + other.value.length;
+        var newstr = new StringObj("");
+        for (var i = 0; i < newlength; i++) {
+            newstr.append(this);
+            newstr.append(other);
+        }
+        return newstr;
+    };
+    //returns a string split by the other string as the delimeter
+    StringObj.prototype.divide = function (other) {
+        return new StringObj(this.repr().split(other.repr()));
+    };
+    //remove all oeprator for strings
+    StringObj.prototype.remainder = function (other) {
+        var patt = new RegExp(other.repr(), "g");
+        return new StringObj(this.value.join("").replace(patt, ""));
+    };
+    StringObj.prototype.addassign = function (other) {
+        this.append(other);
+    };
+    StringObj.prototype.subassign = function (other) {
+        this.value = this.value.join("").replace(other.repr(), "").split("");
+    };
+    StringObj.prototype.multiplyassign = function (other) {
+        var count = other.value.length;
+        for (var i = 0; i < count; i++) {
+            this.append(other);
+        }
+    };
+    StringObj.prototype.divideassign = function (other) {
+        this.value = this.repr().split(other.repr());
+    };
+    StringObj.prototype.remainderassign = function (other) {
+        var patt = new RegExp(other.repr(), "g");
+        this.value = this.value.join("").replace(patt, "").split("");
+    };
+    return StringObj;
+})();
 exports.StringObj = StringObj;
 
 //a name object, which represents an unbound variable.
@@ -226,6 +362,218 @@ var SetObj = function() {
 };
 
 exports.SetObj = SetObj;
+
+//multi use collection object, combines sets, lists, and maps into a javascript array
+//rift object
+/*
+ The elements of a rift belong to a part of a sort of ordered elements, a distinct set, and a mapping collection, all at the same time.
+ However, inserted objects must be wrapped in an object of some type, or else they will be confused with keys
+ */
+
+var Rift = (function () {
+    function Rift() {
+        this.type = "rift";
+        this.collection = [];
+    }
+    //small instance object to keep track of counts
+    function Node(value) {
+        this.count = 1;
+        this.value = value;
+    }
+    Rift.prototype.repr = function() {
+        return this.collection;
+    };
+    Rift.prototype.display = function() {
+        return JSON.stringify(this.colleciton);
+    };
+    Rift.prototype.append = function(other) {
+        this.collection.push(other);
+        var elem = JSON.stringify(other);
+        if(elem in this.collection) {
+            this.collection[elem].count += 1;
+        }
+        else {
+            this.collection[elem] = new Node(null);
+        }
+    };
+    //appends all elements in a javascript array to the collection
+    Rift.prototype.appendarr = function(arr) {
+        for(var i=0;i<arr.length;i++) {
+            this.append(arr[i]);
+        }
+    };
+    //appends new element to the first index, or left side
+    Rift.prototype.appendleft = function(other) {
+        this.collection.unshift(other);
+        var elem = JSON.stringify(other);
+        if(elem in this.collection) {
+            this.collection[elem].count += 1;
+        }
+        else {
+            this.collection[elem] = new Node(null);
+        }
+    };
+    //non destructive inserting method
+    Rift.prototype.insert = function(other, index) {
+        index = index % this.collection.length;
+        if(isNaN(index)) return false;
+        this.collection.splice(index, 0, other);
+        var elem = JSON.stringify(other);
+        if(elem in this.collection) {
+            this.collection[elem].count += 1;
+        }
+        else {
+            this.collection[elem] = new Node(null);
+        }
+    };
+    //O(1) determination of existence
+    Rift.prototype.contains = function(other) {
+        return JSON.stringify(other) in this.collection;
+    };
+    Rift.prototype.count = function(other) {
+        var elem = JSON.stringify(other);
+        if(elem in this.collection) {
+            return this.collection[other].count;
+        }
+        else {
+            return 0;
+        }
+    };
+    //keeps track of numerability and doesn't delete if multiple elements
+    Rift.prototype.pop = function() {
+        var popped = this.collection.pop();
+        var popstr = JSON.stringify(popped);
+        if(popstr in this.collection) {
+            if(this.collection[popstr].count > 1) {
+                this.collection[popstr].count -= 1;
+                return popped;
+            }
+            else {
+                delete this.collection[popstr];
+                return popped;
+            }
+        }
+    };
+    Rift.prototype.remove = function(other) {
+        var removed = JSON.stringify(other);
+        for(var i=0;i<this.collection.length;i++) {
+            if(JSON.stringify(this.collection[i]) === removed) {
+                this.collection.splice(i, 1);
+                if(this.collection[removed].count > 1) {
+                    this.collection[removed] -= 1;
+                    return true;
+                }
+                else {
+                    delete this.collection[removed];
+                    return true;
+                }
+            }
+        }
+    };
+    /*Deletes all occurences of other in the collection*/
+    Rift.prototype.removeall = function(other) {
+        var removed = JSON.stringify(other);
+        for(var i=0;i<this.collection.length;i++) {
+            if(JSON.stringify(this.collection[i]) === removed) {
+                this.collection(i, 1);
+            }
+        }
+        delete this.collection[removed];
+    };
+    //sets a value if an only if that value is already present in the collection
+    Rift.prototype.setvalue = function(key, val) {
+        var stringed = JSON.stringify(key);
+        if(stringed in this.collection) {
+            this.collection[stringed].value = val;
+        }
+    };
+    /*appends a new object, and sets a new value associated with it. Does not append if key alredy present*/
+    Rift.prototype.set = function(key, val) {
+        var stringed = JSON.stringify(key);
+        if(stringed in this.collection) {
+            this.collection[stringed].value = val;
+        }
+        else {
+            this.collection[stringed] = new Node(val);
+            this.collection.push(key);
+        }
+    };
+    /*attempts to retrieve the value associated with a key. If no value, returns null
+     if the key does not exist, will return false*/
+    Rift.prototype.get = function(key) {
+        var stringed = JSON.stringify(key);
+        if(stringed in this.collection) {
+            return this.collection[stringed].value;
+        }
+        else {
+            return false;
+        }
+    };
+    Rift.prototype.indexOf = function(item) {
+        var stringed = JSON.stringify(item);
+        //optimization step where if the item is not in the collection, it will not search.
+        if(!(stringed in this.collection)) return false;
+        for(var i=0;i<this.collection.length;i++) {
+            if(JSON.stringify(this.collection[i]) === stringed) {
+                return i;
+            }
+        }
+        return false;
+    };
+    /*Returns the numerical indexed value, with the input of a number type.
+     Returns false if the collection is empty, or the input is NaN*/
+    Rift.prototype.index = function(num) {
+        num = num % this.collection.length;
+        if(isNaN(num)) {
+            return false;
+        }
+        else {
+            return this.collection[num];
+        }
+    };
+    Rift.prototype.equals = function(other) {
+        var result = JSON.stringify(this) === JSON.stringify(other);
+        return result;
+    };
+    //gets the length of entire collection, not just indexed items
+    Rift.prototype.length = function() {
+        var total = 0;
+        for(var key in this.collection) {
+            total += 1;
+        }
+        return total;
+    };
+    Rift.prototype.slice = function(start, end) {
+        end = end % this.collection.length;
+        start = start % this.collection.length;
+        if(isNaN(start) || isNaN(end)) {
+            return false;
+        }
+        else {
+            return this.collection.slice(start, end);
+        }
+    };
+    /*Prints all keys and indexes in the collection*/
+    Rift.prototype.printKeys = function() {
+        for(var key in this.collection) {
+            console.log(key);
+        }
+    };
+    /*Prints all ordered elements in the collection*/
+    Rift.prototype.printOrdered = function() {
+        for(var i=0;i<this.collection.length;i++) {
+            console.log(this.collection[i]);
+        }
+    };
+    /*returns an array slice containing only the ordered elements of the collection*/
+    Rift.prototype.orderedCollection = function() {
+        return this.collection.slice(0, this.collection.length);
+    };
+    return Rift;
+})();
+
+exports.Rift = Rift;
+
 
 //capsule object for enabling object linking across references
 var ObjCapsule = function(obj, valname) {
