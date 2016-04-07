@@ -283,34 +283,128 @@ var ErrorObj = function(message) {
 exports.ErrorObj = ErrorObj;
 
 //list object
-var ListObj = function() {
-    this.list = [];
-    this.type = "list";
-
-    ListObj.prototype.repr = function() {
-        if(this.list === []) return this.list;
-        var display = [];
-        for(var key in this.list) display.push(this.list[key].repr());
-        return display;
-    };
-
-    ListObj.prototype.append = function(elem) {
-        this.list.push(elem);
-    };
-    ListObj.prototype.extend = function(elem) {
-        if(elem.type === "list") this.list.concat(elem.list);
-    };
-    ListObj.prototype.index = function(ind) {
-        if(ind > -1 && ind < this.list.length) {
-            return this.list[ind];
-        }
-    };
-    ListObj.prototype.pop = function() {
-        if(this.list.length > 0) {
-            return this.list.pop();
-        }
+var ListObj = (function () {
+    function ListObj() {
+        this.value = [];
+        this.type = "list";
     }
-};
+    ListObj.prototype.repr = function () {
+        return this.value;
+    };
+    ListObj.prototype.display = function () {
+        return JSON.stringify(this.value);
+    };
+    ListObj.prototype.increment = function () {
+        this.value.push(new NothingObj());
+    };
+    ListObj.prototype.decrement = function () {
+        this.value.pop();
+    };
+    ListObj.prototype.concat = function (other) {
+        this.value = this.value.concat(other.value);
+    };
+    ListObj.prototype.index = function (key) {
+        var ind = key.value % this.value.length;
+        return this.value[ind];
+    };
+    ListObj.prototype.setitem = function (key, other) {
+        if (key.value >= 0 && key.value < this.value.length) {
+            this.value[key.value] = other;
+        }
+        else if (key.value < 0) {
+            this.value[0] = other;
+        }
+        else {
+            this.value[this.value.length - 1] = other;
+        }
+    };
+    ListObj.prototype.append = function (other) {
+        this.value.push(other);
+    };
+    ListObj.prototype.pop = function () {
+        return this.value.pop();
+    };
+    ListObj.prototype.remove = function (key) {
+        var ind = key.value % this.value.length - 1;
+        this.value.splice(ind, 1);
+    };
+    ListObj.prototype.count = function (other) {
+        var total = 0;
+        for (var i = 0; i < this.value.length; i++) {
+            if (this.value[i] === other) {
+                total += 1;
+            }
+        }
+        return new NumberObj(total);
+    };
+    //linear search
+    ListObj.prototype.contains = function (other) {
+        var contain = false;
+        for (var i = 0; i < this.value.length; i++) {
+            if (this.value[i] === other) {
+                return new BoolObj(true);
+            }
+        }
+        return new BoolObj(contain);
+    };
+    ListObj.prototype.length = function () {
+        return new NumberObj(this.value.length);
+    };
+    ListObj.prototype.insert = function (key, other) {
+        var ind = key.value % this.value.length;
+        this.value.splice(ind, 0, other);
+    };
+    ListObj.prototype.add = function (other) {
+        var newlist = new ListObj();
+        newlist.value = this.value.concat(other.value);
+        return newlist;
+    };
+    //subtracts all items in one list, from the other list
+    ListObj.prototype.subtract = function (other) {
+        var newlist = new ListObj();
+        for (var i = 0; i < this.value.length; i++) {
+            for (var j = 0; j < other.value.length; j++) {
+                if (this.value[i] === other.value[j]) {
+                    newlist.append(other.value[i]);
+                }
+            }
+        }
+        return newlist;
+    };
+    ListObj.prototype.multiply = function (other) {
+        var newlist = new ListObj();
+        for (var i = 0; i < other.value.length; i++)
+            newlist.value = this.value.concat(other.value);
+        return newlist;
+    };
+    //future implementation, needs revising
+    ListObj.prototype.divide = function (other) {
+        return this;
+    };
+    //future implementation
+    ListObj.prototype.remainder = function (other) {
+        return this;
+    };
+    ListObj.prototype.power = function (other) {
+        return this;
+    };
+    ListObj.prototype.addassign = function (other) {
+        this.append(other);
+    };
+    ListObj.prototype.subassign = function (other) {
+        this.value = this.subtract(other).value;
+    };
+    ListObj.prototype.multiplyassign = function (other) {
+        this.value = this.multiply(other).value;
+    };
+    ListObj.prototype.divideassign = function (other) {
+        this.value = this.divide(other).value;
+    };
+    ListObj.prototype.remainderassign = function (other) {
+        this.value = this.remainder(other).value;
+    };
+    return ListObj;
+})();
 
 exports.ListObj = ListObj;
 
