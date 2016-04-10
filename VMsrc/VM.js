@@ -11,6 +11,12 @@ var Oblivion = (function(){
     //functions stored in object for quick access
     //all must be calld with an instance of the VM, Oblivion
     var Assembler = {
+        "++":function(args, obj) {
+            obj.current++;
+        },
+        "--":function(args, obj) {
+            obj.current--;
+        },
         "+":function(args, obj) {
             for(var key in args) obj.current += args[key];
         },
@@ -81,9 +87,22 @@ var Oblivion = (function(){
             }
             obj.current = true;
         },
+        "!=":function(args, obj) {
+            for(var key in args) {
+                if(!(args[key] != obj.current)) {
+                    obj.current = false;
+                    return;
+                }
+            }
+            obj.current = true;
+        },
         //appending function
         "<-":function(args, obj) {
             for(var key in args) obj.current.push(args[key]);
+        },
+        //removing function, removes all the elements in the array, that are in args
+        "->":function(args, obj) {
+            for(var key in args) obj.current.splice(obj.current.indexOf(args[key]), 1);
         }
     };
     //main splitting function
