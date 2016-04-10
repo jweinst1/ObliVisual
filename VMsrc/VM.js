@@ -17,6 +17,12 @@ var Oblivion = (function(){
         "-":function(args, obj) {
             for(var key in args) obj.current -= args[key];
         },
+        "*":function(args, obj) {
+            for(var key in args) obj.current *= args[key];
+        },
+        "/":function(args, obj) {
+            for(var key in args) obj.current /= args[key];
+        },
         "@":function(args, obj) {
             obj.current = args[0];
         }
@@ -41,8 +47,8 @@ var Oblivion = (function(){
             if(/[0-9]|[1-9][0-9]+/.test(tokens[i])) {
                 tokens[i] = parseInt(tokens[i]);
             }
-            else if(/".*?"/.test(token)) {
-                tokens[i] = tokens[i].slice(1, token.length-1);
+            else if(/".*?"/.test(tokens[i])) {
+                tokens[i] = tokens[i].slice(1, tokens[i].length-1);
             }
             else {
                 throw "Token Error, at expression: " + token;
