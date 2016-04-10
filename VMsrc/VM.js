@@ -44,6 +44,24 @@ var Oblivion = (function(){
                 }
             }
             obj.current = true;
+        },
+        "<":function(args, obj) {
+            for(var key in args) {
+                if(!(args[key] < obj.current)) {
+                    obj.current = false;
+                    return;
+                }
+            }
+            obj.current = true;
+        },
+        ">":function(args, obj) {
+            for(var key in args) {
+                if(!(args[key] > obj.current)) {
+                    obj.current = false;
+                    return;
+                }
+            }
+            obj.current = true;
         }
     };
     //main splitting function
