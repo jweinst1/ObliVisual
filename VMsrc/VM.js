@@ -62,6 +62,28 @@ var Oblivion = (function(){
                 }
             }
             obj.current = true;
+        },
+        ">=":function(args, obj) {
+            for(var key in args) {
+                if(!(args[key] >= obj.current)) {
+                    obj.current = false;
+                    return;
+                }
+            }
+            obj.current = true;
+        },
+        "<=":function(args, obj) {
+            for(var key in args) {
+                if(!(args[key] <= obj.current)) {
+                    obj.current = false;
+                    return;
+                }
+            }
+            obj.current = true;
+        },
+        //appending function
+        "<-":function(args, obj) {
+            for(var key in args) obj.current.push(args[key]);
         }
     };
     //main splitting function
@@ -87,6 +109,10 @@ var Oblivion = (function(){
             else if(/".*?"/.test(tokens[i])) {
                 tokens[i] = tokens[i].slice(1, tokens[i].length-1);
             }
+            //puts empty array into arg slice
+            else if(tokens[i] === "[]") {
+                tokens[i] = [];
+            }
             else {
                 throw "Token Error, at expression: " + token;
 
@@ -97,6 +123,11 @@ var Oblivion = (function(){
         var pieces = this.splitfunc(code);
         for(var i=0;i<pieces.length;i++) {
             var calltype = pieces[i].shift();
+            if(calltype === "=>") {
+                var result = this.current;
+                this.current = null;
+                return result;
+            }
             this.typeinfer(pieces[i]);
             if(calltype in this.assembler) this.assembler[calltype](pieces[i], this);
             else {
