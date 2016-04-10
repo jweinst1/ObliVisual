@@ -14,6 +14,9 @@ var Oblivion = (function(){
         "+":function(args, obj) {
             for(var key in args) obj.current += args[key];
         },
+        "-":function(args, obj) {
+            for(var key in args) obj.current -= args[key];
+        },
         "@":function(args, obj) {
             obj.current = args[0];
         }
@@ -52,7 +55,10 @@ var Oblivion = (function(){
         for(var i=0;i<pieces.length;i++) {
             var calltype = pieces[i].shift();
             this.typeinfer(pieces[i]);
-            this.assembler[calltype](pieces[i], this);
+            if(calltype in this.assembler) this.assembler[calltype](pieces[i], this);
+            else {
+                throw "Invalid Oper Error";
+            }
         }
         var result = this.current;
         this.current = null;
@@ -60,3 +66,5 @@ var Oblivion = (function(){
     };
     return Oblivion;
 })();
+
+exports.Oblivion = Oblivion;
