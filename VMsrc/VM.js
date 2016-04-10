@@ -1,20 +1,6 @@
 /**
  * Created by Josh on 4/9/16.
  */
-//functions stored in object for quick access
-//all must be calld with an instance of the VM, Oblivion
-var Assembler = {
-    "+":function(args, obj) {
-        for(var key in args) obj.current += args[key];
-    },
-    "@":function(args, obj) {
-        obj.current = args[0];
-    }
-};
-
-
-
-
 
 //main VM class
 var Oblivion = (function(){
@@ -22,6 +8,16 @@ var Oblivion = (function(){
         this.current = null;
         this.assembler = Assembler;
     }
+    //functions stored in object for quick access
+    //all must be calld with an instance of the VM, Oblivion
+    var Assembler = {
+        "+":function(args, obj) {
+            for(var key in args) obj.current += args[key];
+        },
+        "@":function(args, obj) {
+            obj.current = args[0];
+        }
+    };
     //main splitting function
     Oblivion.prototype.splitfunc = function(string) {
         if(/;.+;/.test(string)) {
