@@ -23,8 +23,27 @@ var Oblivion = (function(){
         "/":function(args, obj) {
             for(var key in args) obj.current /= args[key];
         },
+        //floor division
+        "//":function(args, obj) {
+            for(var key in args) obj.current = Math.floor(obj.current / args[key]);
+        },
+        "**":function(args, obj) {
+            for(var key in args) obj.current = Math.pow(obj.current, args[key]);
+        },
+        "%":function(args, obj) {
+            for(var key in args) obj.current %= args[key];
+        },
         "@":function(args, obj) {
             obj.current = args[0];
+        },
+        "==":function(args, obj) {
+            for(var key in args) {
+                if(!(args[key] === obj.current)) {
+                    obj.current = false;
+                    return;
+                }
+            }
+            obj.current = true;
         }
     };
     //main splitting function
