@@ -1,6 +1,4 @@
-/**
- * Created by Josh on 4/9/16.
- */
+var vd = require("./VariableDictionary.js");
 
 //main VM class
 var Oblivion = (function(){
@@ -131,6 +129,9 @@ var Oblivion = (function(){
             //puts empty array into arg slice
             else if(tokens[i] === "[]") {
                 tokens[i] = [];
+            }
+            else if(tokens[i] === "{}") {
+                tokens[i] = {};
             }
             else {
                 throw "Token Error, at expression: " + token;
