@@ -5,10 +5,14 @@ var Oblivion = (function(){
     function Oblivion() {
         this.current = null;
         this.assembler = Assembler;
+        this.vars = new vd.VariableDict();
     }
     //functions stored in object for quick access
     //all must be calld with an instance of the VM, Oblivion
     var Assembler = {
+        "=":function(args, obj) {
+            obj.vars.set(args[0], args[1]);
+        },
         "++":function(args, obj) {
             obj.current++;
         },
@@ -94,6 +98,10 @@ var Oblivion = (function(){
             }
             obj.current = true;
         },
+        //changs current value to number.
+        "#":function(args, obj) {
+            obj.current = parseInt(obj.current);
+        },
         //appending function
         "<-":function(args, obj) {
             for(var key in args) obj.current.push(args[key]);
@@ -126,6 +134,14 @@ var Oblivion = (function(){
             else if(/".*?"/.test(tokens[i])) {
                 tokens[i] = tokens[i].slice(1, tokens[i].length-1);
             }
+            //variable binding
+            else if(/^\$.+$/.test(tokens[i])) {
+                tokens[i] = tokens[i];
+            }
+            //uses the *name format for getting a bound variable.
+            else if(/^\*.+$/.test(tokens[i])) {
+                tokens[i] = this.vars.get("$" + tokens[i].slice(1,tokens[i].length));
+            }
             //puts empty array into arg slice
             else if(tokens[i] === "[]") {
                 tokens[i] = [];
@@ -134,7 +150,7 @@ var Oblivion = (function(){
                 tokens[i] = {};
             }
             else {
-                throw "Token Error, at expression: " + token;
+                throw "Token Error, at expression: " + tokens[i];
 
             }
         }
