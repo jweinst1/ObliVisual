@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VMsrc/VM.js" afterPath="$PROJECT_DIR$/VMsrc/VM.js" />
     </list>
     <ignored path="Oblivion.iws" />
@@ -82,8 +81,8 @@
       <file leaf-file-name="VM.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VMsrc/VM.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4878049">
-              <caret line="104" column="43" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.10569106">
+              <caret line="163" column="42" selection-start-line="163" selection-start-column="42" selection-end-line="163" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -933,8 +932,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VMsrc/VM.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4878049">
-          <caret line="104" column="43" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.10569106">
+          <caret line="163" column="42" selection-start-line="163" selection-start-column="42" selection-end-line="163" selection-end-column="42" />
           <folding />
         </state>
       </provider>

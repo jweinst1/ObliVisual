@@ -98,7 +98,7 @@ var Oblivion = (function(){
             }
             obj.current = true;
         },
-        //changs current value to number.
+        //changes current value to number.
         "#":function(args, obj) {
             obj.current = parseInt(obj.current);
         },
@@ -163,10 +163,15 @@ var Oblivion = (function(){
         var pieces = this.splitfunc(code);
         for(var i=0;i<pieces.length;i++) {
             var calltype = pieces[i].shift();
+            //immediate return to kill assembly
             if(calltype === "=>") {
                 var result = this.current;
                 this.current = null;
                 return result;
+            }
+            else if(calltype === "?") {
+                this.current ? i += 0 : i++;
+                continue;
             }
             this.typeinfer(pieces[i]);
             if(calltype in this.assembler) this.assembler[calltype](pieces[i], this);
