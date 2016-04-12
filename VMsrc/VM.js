@@ -102,6 +102,10 @@ var Oblivion = (function(){
         "#":function(args, obj) {
             obj.current = parseInt(obj.current);
         },
+        //turns current element to a string
+        "`":function(args, obj) {
+            obj.current = JSON.stringify(obj.current);
+        },
         //appending function
         "<-":function(args, obj) {
             for(var key in args) obj.current.push(args[key]);
