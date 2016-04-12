@@ -169,8 +169,14 @@ var Oblivion = (function(){
                 this.current = null;
                 return result;
             }
+            //allows for conditionals
             else if(calltype === "?") {
                 this.current ? i += 0 : i++;
+                continue;
+            }
+            //logical not conditional
+            else if(calltype === "!") {
+                this.current ? i ++ : i+=0;
                 continue;
             }
             this.typeinfer(pieces[i]);
