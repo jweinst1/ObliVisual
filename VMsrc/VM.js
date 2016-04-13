@@ -55,7 +55,7 @@ var Oblivion = (function(){
         },
         "<":function(args, obj) {
             for(var key in args) {
-                if(!(args[key] < obj.current)) {
+                if(!(args[key] > obj.current)) {
                     obj.current = false;
                     return;
                 }
@@ -64,7 +64,7 @@ var Oblivion = (function(){
         },
         ">":function(args, obj) {
             for(var key in args) {
-                if(!(args[key] > obj.current)) {
+                if(!(args[key] < obj.current)) {
                     obj.current = false;
                     return;
                 }
@@ -174,6 +174,7 @@ var Oblivion = (function(){
     Oblivion.prototype.process = function(code) {
         var pieces = this.splitfunc(code);
         for(var i=0;i<pieces.length;i++) {
+
             var calltype = pieces[i].shift();
             //immediate return to kill assembly
             if(calltype === "=>") {
@@ -183,16 +184,30 @@ var Oblivion = (function(){
             }
             //allows for conditionals
             else if(calltype === "?") {
+                pieces[i].unshift(calltype);
                 this.current ? i += 0 : i++;
                 continue;
             }
             //logical not conditional
             else if(calltype === "!") {
+                pieces[i].unshift(calltype);
                 this.current ? i ++ : i+=0;
                 continue;
             }
+            //looping amount oper
+            else if(calltype === "~") {
+                this.typeinfer(pieces[i]);
+                pieces[i].unshift(calltype);
+                var shiftamount = pieces[i][1];
+                pieces.splice(i, 1);
+                i -= shiftamount;
+                continue
+            }
             this.typeinfer(pieces[i]);
-            if(calltype in this.assembler) this.assembler[calltype](pieces[i], this);
+            if(calltype in this.assembler) {
+                this.assembler[calltype](pieces[i], this);
+                pieces[i].unshift(calltype);
+            }
             else {
                 throw "Invalid Oper Error";
             }
