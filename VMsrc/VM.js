@@ -113,6 +113,18 @@ var Oblivion = (function(){
         //removing function, removes all the elements in the array, that are in args
         "->":function(args, obj) {
             for(var key in args) obj.current.splice(obj.current.indexOf(args[key]), 1);
+        },
+        //logical abstract OR operator
+        "|":function(args, obj) {
+            for(var key in args) obj.current = obj.current || args[key];
+        },
+        //logical abstract AND operator
+        "&":function(args, obj) {
+            for(var key in args) obj.current = obj.current && args[key];
+        },
+        //resets current element to null
+        "!!":function(args, obj) {
+            obj.current = null;
         }
     };
     //main splitting function
