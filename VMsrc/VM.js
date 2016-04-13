@@ -144,7 +144,17 @@ var Oblivion = (function(){
     };
     Oblivion.prototype.typeinfer = function(tokens) {
         for(var i=0;i<tokens.length;i++) {
-            if(/[0-9]|[1-9][0-9]+/.test(tokens[i])) {
+            if(/([0-9]+)\.\.([0-9]+)/.test(tokens[i])) {
+                var matched = /([0-9]+)\.\.([0-9]+)/.exec(tokens[i]);
+                var start = parseInt(matched[1]);
+                var end = parseInt(matched[2]);
+                var newlst = [];
+                for(var j=start;j<end;j++) {
+                    newlst.push(j);
+                }
+                tokens[i] = newlst;
+            }
+            else if(/[0-9]|[1-9][0-9]+/.test(tokens[i])) {
                 tokens[i] = parseInt(tokens[i]);
             }
             else if(/".*?"/.test(tokens[i])) {
@@ -174,7 +184,6 @@ var Oblivion = (function(){
     Oblivion.prototype.process = function(code) {
         var pieces = this.splitfunc(code);
         for(var i=0;i<pieces.length;i++) {
-
             var calltype = pieces[i].shift();
             //immediate return to kill assembly
             if(calltype === "=>") {
