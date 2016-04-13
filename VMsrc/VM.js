@@ -6,6 +6,7 @@ var Oblivion = (function(){
         this.current = null;
         this.assembler = Assembler;
         this.vars = new vd.VariableDict();
+        this.log = "";
     }
     //functions stored in object for quick access
     //all must be calld with an instance of the VM, Oblivion
@@ -182,6 +183,7 @@ var Oblivion = (function(){
         }
     };
     Oblivion.prototype.process = function(code) {
+        this.previous += code;
         var pieces = this.splitfunc(code);
         for(var i=0;i<pieces.length;i++) {
             var calltype = pieces[i].shift();

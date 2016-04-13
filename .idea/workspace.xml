@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.js" afterPath="$PROJECT_DIR$/Main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/VMsrc/VM.js" afterPath="$PROJECT_DIR$/VMsrc/VM.js" />
     </list>
     <ignored path="Oblivion.iws" />
@@ -29,16 +32,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="244" column="34" selection-start-line="244" selection-start-column="34" selection-end-line="244" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrimitiveObjects.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="556" column="10" selection-start-line="556" selection-start-column="10" selection-end-line="556" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -78,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VM.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VM.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VMsrc/VM.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.869919">
-              <caret line="169" column="13" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="185" column="30" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -112,7 +105,17 @@
         <entry file="file://$PROJECT_DIR$/Main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="3" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2173913">
+              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -136,6 +139,7 @@
         <option value="Python Script" />
         <option value="JSClass" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -145,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Oblivion/UtilObjects/DuoCore.swift" />
         <option value="$PROJECT_DIR$/Oblivion/Operators/GlobalOperators.swift" />
         <option value="$PROJECT_DIR$/Oblivion/UtilObjects/StringExtensions.swift" />
         <option value="$PROJECT_DIR$/Drafts/tokens.txt" />
@@ -176,7 +179,6 @@
         <option value="$PROJECT_DIR$/src/MultipleArguments.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/builtinobjects/NumberObj.js" />
-        <option value="$PROJECT_DIR$/Main.js" />
         <option value="$PROJECT_DIR$/Drafts/Models.json" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/commands/commands.json" />
@@ -196,6 +198,8 @@
         <option value="$PROJECT_DIR$/VMsrc/VMconsole.js" />
         <option value="$PROJECT_DIR$/src/VariableDictionary.js" />
         <option value="$PROJECT_DIR$/VMsrc/VM.js" />
+        <option value="$PROJECT_DIR$/Main.js" />
+        <option value="$PROJECT_DIR$/main.html" />
       </list>
     </option>
   </component>
@@ -423,6 +427,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="5.5.0" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -434,11 +439,8 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.VMconsole.js">
+  <component name="RunManager" selected="JavaScript Debug.main.html">
     <configuration default="false" name="Main.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="Main.js" working-dir="$PROJECT_DIR$">
-      <method />
-    </configuration>
-    <configuration default="false" name="BrowserMain.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="BrowserMain.js" working-dir="$PROJECT_DIR$/src">
       <method />
     </configuration>
     <configuration default="false" name="NumberObj.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="NumberObj.js" working-dir="$PROJECT_DIR$/src/builtinobjects">
@@ -448,6 +450,9 @@
       <method />
     </configuration>
     <configuration default="false" name="VMconsole.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="VMconsole.js" working-dir="$PROJECT_DIR$/VMsrc">
+      <method />
+    </configuration>
+    <configuration default="false" name="main.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Oblivion/main.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -500,18 +505,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Node.js.Main.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.BrowserMain.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.NumberObj.js" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.NumberObj.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.main.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.main.html" />
         <item index="1" class="java.lang.String" itemvalue="Node.js.Main.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.NumberObj.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.BrowserMain.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.NumberObj.js" />
       </list>
     </recent_temporary>
   </component>
@@ -530,14 +535,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="43" width="1260" height="686" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -574,14 +579,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Interpreter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -907,14 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/VariableDictionary.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -948,8 +937,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VMsrc/VM.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.869919">
-          <caret line="169" column="13" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="185" column="30" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2173913">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
         </state>
       </provider>

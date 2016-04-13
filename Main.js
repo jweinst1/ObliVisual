@@ -1,20 +1,13 @@
-#!/usr/bin/env node
-var intp = require("./src/Interpreter.js");
-var readline = require('readline'),
-    rl = readline.createInterface(process.stdin, process.stdout);
-
-var processor = new intp.Interpreter();
-
-rl.setPrompt('obl> ');
-rl.prompt();
-//prompt for testing new statements into the main hub of interpreter
-rl.on('line', function(line) {
-    switch(line) {
-        case 'close':
-            process.exit(0);
-        default:
-            console.log(processor.interpretLine(line));
-            break;
-    }
-    rl.prompt();
-});
+var canvas = document.createElement('canvas');
+canvas.id     = "mycanvas";
+canvas.width  = 300;
+canvas.height = 300;
+canvas.style.zIndex   = 8;
+canvas.style.position = "absolute";
+canvas.style.border   = "1px solid";
+document.body.appendChild(canvas);
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(0,0,150,75);
+ctx.fillStyle = "#cc33ff";
+for(var pos = 0;pos<200;pos+=5) ctx.fillRect(pos,pos,5,5);
