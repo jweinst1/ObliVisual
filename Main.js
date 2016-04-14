@@ -1,13 +1,14 @@
-var canvas = document.createElement('canvas');
-canvas.id     = "mycanvas";
-canvas.width  = 300;
-canvas.height = 300;
-canvas.style.zIndex   = 8;
-canvas.style.position = "absolute";
-canvas.style.border   = "1px solid";
-document.body.appendChild(canvas);
-var ctx = canvas.getContext("2d");
-ctx.fillStyle = "#FF0000";
-ctx.fillRect(0,0,150,75);
-ctx.fillStyle = "#cc33ff";
-for(var pos = 0;pos<200;pos+=5) ctx.fillRect(pos,pos,5,5);
+//sample js file for oblivion drawing language
+var canvasobj = function(name) {
+    this.canvas = document.getElementById(name);
+    this.context = this.canvas.getContext("2d");
+    canvasobj.prototype.drawline = function() {
+        this.context.lineWidth = 5;
+        this.context.beginPath();
+        this.context.strokeStyle = "#FF0000";
+        for(var pos = 0;pos<200;pos+=5) this.context.lineTo(pos,pos);
+        this.context.stroke();
+    }
+};
+var drawingpad = new canvasobj("mycanvas");
+drawingpad.drawline();
