@@ -2,32 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Canvas.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Assembler.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/BrowserMain.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Converters/WordToNumber.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Converters/numberphrases.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ErrorChecker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Help.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Interpreter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Parsers/Strings.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/TypeInference.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/argumentcontainers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/builtinfuncs/Max.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/builtinobjects/BuiltInPrimitive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/builtinobjects/Lists.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/builtinobjects/PrimitiveObjects.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/commands/JSONINTERFACE.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/commands/PrintAllCommands.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/commands/commandeditor.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/commands/commands.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Color.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main.js" afterPath="$PROJECT_DIR$/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.html" afterPath="$PROJECT_DIR$/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Canvas.js" afterPath="$PROJECT_DIR$/src/Canvas.js" />
     </list>
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,10 +64,20 @@
         <entry file="file://$PROJECT_DIR$/src/Canvas.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5">
+              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,12 +92,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29307282">
-              <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Color.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Color.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4878049">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#38#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,8 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Oblivion/UtilObjects/StringExtensions.swift" />
-        <option value="$PROJECT_DIR$/Drafts/tokens.txt" />
         <option value="$PROJECT_DIR$/Oblivion/Tokenization/Token.swift" />
         <option value="$PROJECT_DIR$/Oblivion/Assemblers/MathAssembler.swift" />
         <option value="$PROJECT_DIR$/Oblivion/Lexing/LexerMethods.swift" />
@@ -202,8 +201,10 @@
         <option value="$PROJECT_DIR$/src/VariableDictionary.js" />
         <option value="$PROJECT_DIR$/VMsrc/VM.js" />
         <option value="$PROJECT_DIR$/main.html" />
-        <option value="$PROJECT_DIR$/Main.js" />
+        <option value="$PROJECT_DIR$/src/test.html" />
         <option value="$PROJECT_DIR$/src/Canvas.js" />
+        <option value="$PROJECT_DIR$/Main.js" />
+        <option value="$PROJECT_DIR$/src/Color.js" />
       </list>
     </option>
   </component>
@@ -315,7 +316,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="javascript.nodejs.core.library.configured.version" value="5.5.0" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -331,11 +332,8 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.main.html">
+  <component name="RunManager" selected="Node.js.Main.js">
     <configuration default="false" name="Main.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="Main.js" working-dir="$PROJECT_DIR$">
-      <method />
-    </configuration>
-    <configuration default="false" name="NumberObj.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="NumberObj.js" working-dir="$PROJECT_DIR$/src/builtinobjects">
       <method />
     </configuration>
     <configuration default="false" name="PrimitiveObjects.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="PrimitiveObjects.js" working-dir="$PROJECT_DIR$/src/builtinobjects">
@@ -345,6 +343,9 @@
       <method />
     </configuration>
     <configuration default="false" name="main.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Oblivion/main.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="Canvas.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="Canvas.js" working-dir="$PROJECT_DIR$/src">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -397,18 +398,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Node.js.Main.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.NumberObj.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.main.html" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.main.html" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.Canvas.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.main.html" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.Main.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.NumberObj.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.Main.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.Canvas.js" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.main.html" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
       </list>
     </recent_temporary>
   </component>
@@ -435,7 +436,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -642,10 +643,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Canvas.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>
@@ -654,9 +663,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29307282">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Color.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4878049">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

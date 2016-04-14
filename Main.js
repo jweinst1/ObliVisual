@@ -1,14 +1,25 @@
-//sample js file for oblivion drawing language
-var canvasobj = function(name) {
-    this.canvas = document.getElementById(name);
-    this.context = this.canvas.getContext("2d");
-    canvasobj.prototype.drawline = function() {
-        this.context.lineWidth = 5;
-        this.context.beginPath();
-        this.context.strokeStyle = "#FF0000";
-        for(var pos = 0;pos<200;pos+=5) this.context.lineTo(pos,pos);
-        this.context.stroke();
-    }
+#!/usr/bin/env node
+
+var http = require('http');
+
+http.createServer(function (req, res) {
+    var html = buildHtml(req);
+
+    res.writeHead(200, {
+        'Content-Type': 'text/html',
+        'Content-Length': html.length,
+        'Expires': new Date().toUTCString()
+    });
+    res.end(html);
+}).listen(8080);
+
+function buildHtml(req) {
+    var header = '';
+    var body = '';
+
+    // concatenate header string
+    // concatenate body string
+
+    return '<!DOCTYPE html>'
+        + '<html><header>' + header + '</header><body>' + body + '</body></html>';
 };
-var drawingpad = new canvasobj("mycanvas");
-drawingpad.drawline();
