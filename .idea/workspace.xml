@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SampleHTMLgenerated/fullscreencanvas.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/main.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Tester.js" afterPath="$PROJECT_DIR$/SampleHTMLgenerated/Samplehtmlserver.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Color.js" afterPath="$PROJECT_DIR$/src/Color.js" />
     </list>
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/src/Canvas.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
               </folding>
@@ -70,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Samplehtmlserver.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Samplehtmlserver.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SampleHTMLgenerated/Samplehtmlserver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8943089">
+            <state vertical-scroll-proportion="0.0">
               <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
               <folding>
                 <marker date="1460681804000" expanded="true" signature="429:454" placeholder="..." />
@@ -103,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Color.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Color.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Color.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.67479676">
+              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
               </folding>
@@ -118,7 +116,7 @@
       <file leaf-file-name="fullscreencanvas.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SampleHTMLgenerated/fullscreencanvas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.875">
+            <state vertical-scroll-proportion="-3.125">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
@@ -197,13 +195,13 @@
         <option value="$PROJECT_DIR$/src/VariableDictionary.js" />
         <option value="$PROJECT_DIR$/VMsrc/VM.js" />
         <option value="$PROJECT_DIR$/src/test.html" />
-        <option value="$PROJECT_DIR$/src/Color.js" />
         <option value="$PROJECT_DIR$/src/Interpreter.js" />
         <option value="$PROJECT_DIR$/Main.js" />
         <option value="$PROJECT_DIR$/Tester.js" />
         <option value="$PROJECT_DIR$/oblivionsample" />
         <option value="$PROJECT_DIR$/src/Canvas.js" />
         <option value="$PROJECT_DIR$/main.html" />
+        <option value="$PROJECT_DIR$/src/Color.js" />
       </list>
     </option>
   </component>
@@ -346,11 +344,8 @@
       <recent name="$PROJECT_DIR$/VMsrc" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.fullscreencanvas.html">
+  <component name="RunManager" selected="Node.js.Color.js">
     <configuration default="false" name="Main.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="$PROJECT_DIR$/SampleHTMLgenerated/Samplehtmlserver.js" working-dir="$PROJECT_DIR$">
-      <method />
-    </configuration>
-    <configuration default="false" name="PrimitiveObjects.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="PrimitiveObjects.js" working-dir="$PROJECT_DIR$/src/builtinobjects">
       <method />
     </configuration>
     <configuration default="false" name="VMconsole.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="VMconsole.js" working-dir="$PROJECT_DIR$/VMsrc">
@@ -360,6 +355,9 @@
       <method />
     </configuration>
     <configuration default="false" name="Canvas.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="Canvas.js" working-dir="$PROJECT_DIR$/src">
+      <method />
+    </configuration>
+    <configuration default="false" name="Color.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="Color.js" working-dir="$PROJECT_DIR$/src">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -412,18 +410,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Node.js.Main.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.fullscreencanvas.html" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.Canvas.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.fullscreencanvas.html" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.Canvas.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.Color.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.fullscreencanvas.html" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.Main.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.Canvas.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.PrimitiveObjects.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.Color.js" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.fullscreencanvas.html" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.Main.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.Canvas.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.VMconsole.js" />
       </list>
     </recent_temporary>
   </component>
@@ -442,9 +440,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="43" width="1260" height="686" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -632,16 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Color.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VMsrc/VariableDictionary.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -666,31 +654,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Canvas.js">
+    <entry file="file://$PROJECT_DIR$/SampleHTMLgenerated/Samplehtmlserver.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
-            <element signature="e#0#38#0" expanded="false" />
+            <marker date="1460681804000" expanded="true" signature="429:454" placeholder="..." />
+            <marker date="1460681804000" expanded="true" signature="455:506" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SampleHTMLgenerated/fullscreencanvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
+        <state vertical-scroll-proportion="-3.125">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleHTMLgenerated/Samplehtmlserver.js">
+    <entry file="file://$PROJECT_DIR$/src/Canvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8943089">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
-            <marker date="1460681804000" expanded="true" signature="429:454" placeholder="..." />
-            <marker date="1460681804000" expanded="true" signature="455:506" placeholder="..." />
+            <element signature="e#0#38#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Color.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67479676">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
