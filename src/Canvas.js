@@ -1,24 +1,57 @@
 /**
  * Created by Josh on 4/14/16.
  */
-var canvasobj = function(name) {
+var canvas = function(name) {
     this.canvas = document.getElementById(name);
     this.context = this.canvas.getContext("2d");
 };
 
-document = "test.html";
+var Canvas = (function(){
+    function Canvas(name, height, width){
+        this.canvas = document.getElementById(name);
+        this.context = this.canvas.getContext("2d");
+        this.height = height;
+        this.width = width;
+        this.x = 0;
+        this.y = 0;
+    }
+    //splits the drawing code format ;command:amount;
+    Canvas.prototype.splitfunc = function(string) {
+        if(/;.+;/.test(string)) {
+            var tokens = string.slice(1, string.length-1).split(";");
+            for(var i=0;i<tokens.length;i++) {
+                tokens[i] = tokens[i].split(":");
+            }
+            return tokens;
+        }
+        else {
+            //returns false if string is invalid assembly language
+            return false;
+        }
+    };
+    Canvas.prototype.codeDraw = function(code, color, thickness) {
+        color = color || "rgb(0,0,0)";
+        thickness = thickness || 1;
+        this.context.lineWidth = thickness;
+        this.context.strokeStyle = color;
+        var fragments = this.splitfunc(code);
+        for(var i=0;i<fragments.length;i++) {
+            var amount = parseInt(fragments[i][1]);
+            if(NaN(amount)) throw "Invalid Number in Code";
+            switch (fragments[i][0]) {
+                case ">":
+                    break;
+                default:
+                    this.x += 0;
+                    this.y += 0;
+            }
+        }
 
-var canvas = document.createElement('canvas');
-canvas.id = "mycanvas";
-canvas.width  = 300;
-canvas.height = 300;
-canvas.style.zIndex   = 8;
-canvas.style.position = "absolute";
-canvas.style.border   = "1px solid";
-document.body.appendChild(canvas);
-var ctx = canvas.getContext("2d");
-ctx.lineWidth = 5;
-ctx.beginPath();
-ctx.strokeStyle = "#FF0000";
-for(var pos = 0;pos<200;pos+=5) ctx.lineTo(pos,pos);
-ctx.stroke();
+    };
+    return Canvas
+})();
+
+exports.Canvas = Canvas;
+
+
+
