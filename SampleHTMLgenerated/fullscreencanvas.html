@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+<script>
+    var canvas = document.createElement('canvas');
+    canvas.id = "mycanvas";
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.zIndex   = 8;
+    canvas.style.position = "absolute";
+    document.body.appendChild(canvas);
+    var ctx = canvas.getContext("2d");
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.strokeStyle = "#FF0000";
+    for(var pos = 0;pos<30000;pos+=8) ctx.lineTo(pos,pos);
+    ctx.stroke();
+</script>
+</body>
+</html>
