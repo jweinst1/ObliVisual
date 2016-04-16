@@ -12,9 +12,28 @@ exports.HTMLblank = HTMLblank;
 
 var ScriptWriter = (function(){
     function ScriptWriter(){
-
+        //default code to create the canvas object
+        this.commands = ["var canvas = document.createElement('canvas');",
+            'canvas.id = "main";',
+        "canvas.width  = window.innerWidth;",
+        "canvas.height = window.innerHeight;",
+        "canvas.style.zIndex   = 8;",
+        'canvas.style.position = "absolute";',
+        "document.body.appendChild(canvas);",
+        'var ctx = canvas.getContext("2d");']
     }
+    ScriptWriter.prototype.getHTMLline = function() {
+        return HTMLblank().replace("{{script}}", this.commands.join(" "));
+    };
+    ScriptWriter.prototype.addcmd = function(command) {
+        this.commands.push(command);
+    };
+    ScriptWriter.prototype.lastcmd = function() {
+        return this.commands[this.commands.length-1];
+    };
     return ScriptWriter;
 })();
 
 exports.ScriptWriter = ScriptWriter;
+
+

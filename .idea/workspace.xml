@@ -2,122 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SampleHTMLgenerated/temp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FileTemplates.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/AccessingArrays.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/AccessingArrays.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/AccessingArrays.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/AccessingArrays.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/AccessingArrays.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/ArrayReduce.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Associationop.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Associationop.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Associationop.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Associationop.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Associationop.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/DuoCore.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/DuoCore.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/DuoCore.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/DuoCore.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/DuoCore.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Enumerator.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Enumerator.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Enumerator.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Enumerator.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Enumerator.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/GeneralAssembler.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/GeneralAssembler.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/GeneralAssembler.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/GeneralAssembler.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Generators.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Generators.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Generators.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Generators.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Generators.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/IntegerObj.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/IntegerObj.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/IntegerObj.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/IntegerObj.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/IntegerObj.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathOpers.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathOpers.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathOpers.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathOpers.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathOpers.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathParser.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathParser.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathParser.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathParser.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MathParser.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MatrixMachine.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MatrixMachine.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MatrixMachine.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MatrixMachine.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/MatrixMachine.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Number.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Number.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Number.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Number.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Number.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/ReducingArrays.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/ReducingArrays.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/ReducingArrays.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/ReducingArrays.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/ReducingArrays.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Splitting.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Splitting.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Splitting.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Splitting.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Splitting.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/StringSearching.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/StringSearching.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/StringSearching.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/StringSearching.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/StringSearching.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenAssembler.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenAssembler.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenAssembler.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenAssembler.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenAssembler.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenExtraction.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenExtraction.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenExtraction.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenExtraction.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/TokenExtraction.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Types.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Types.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Types.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Types.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/Types.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/WordLanguageReader.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/WordLanguageReader.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/WordLanguageReader.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/WordLanguageReader.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/WordLanguageReader.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/mathassmbler.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/mathassmbler.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/mathassmbler.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/mathassmbler.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/mathassmbler.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexformax.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexformax.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexformax.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexformax.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexformax.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexsplitting.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexsplitting.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexsplitting.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexsplitting.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/regexsplitting.playground/timeline.xctimeline" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/tokenizer.playground/Contents.swift" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/tokenizer.playground/contents.xcplayground" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/tokenizer.playground/playground.xcworkspace/contents.xcworkspacedata" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/tokenizer.playground/playground.xcworkspace/xcuserdata/Josh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Experimental/tokenizer.playground/timeline.xctimeline" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SampleHTMLgenerated/fullscreencanvas.html" afterPath="$PROJECT_DIR$/SampleHTMLgenerated/fullscreencanvas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Color.js" afterPath="$PROJECT_DIR$/src/Color.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FileTemplates.js" afterPath="$PROJECT_DIR$/src/FileTemplates.js" />
     </list>
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -152,8 +38,8 @@
       <file leaf-file-name="FileTemplates.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FileTemplates.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7723577">
-              <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.75609756">
+              <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -219,8 +105,8 @@
       <file leaf-file-name="fullscreencanvas.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SampleHTMLgenerated/fullscreencanvas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.125">
-              <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+            <state vertical-scroll-proportion="-1.875">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="17" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -302,8 +188,8 @@
         <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/src/Color.js" />
         <option value="$PROJECT_DIR$/SampleHTMLgenerated/temp.html" />
-        <option value="$PROJECT_DIR$/SampleHTMLgenerated/fullscreencanvas.html" />
         <option value="$PROJECT_DIR$/src/tester.html" />
+        <option value="$PROJECT_DIR$/SampleHTMLgenerated/fullscreencanvas.html" />
         <option value="$PROJECT_DIR$/src/FileTemplates.js" />
       </list>
     </option>
@@ -447,7 +333,7 @@
       <recent name="$PROJECT_DIR$/VMsrc" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.tester.html">
+  <component name="RunManager" selected="Node.js.FileTemplates.js">
     <configuration default="false" name="Main.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="$PROJECT_DIR$/SampleHTMLgenerated/Samplehtmlserver.js" working-dir="$PROJECT_DIR$">
       <method />
     </configuration>
@@ -520,8 +406,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.tester.html" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.FileTemplates.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.FileTemplates.js" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.tester.html" />
         <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.fullscreencanvas.html" />
         <item index="3" class="java.lang.String" itemvalue="Node.js.Color.js" />
         <item index="4" class="java.lang.String" itemvalue="Node.js.Main.js" />
@@ -550,7 +436,7 @@
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -795,17 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SampleHTMLgenerated/Samplehtmlserver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-          <folding>
-            <marker date="1460681804000" expanded="true" signature="429:454" placeholder="..." />
-            <marker date="1460681804000" expanded="true" signature="455:506" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Color.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -844,16 +719,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SampleHTMLgenerated/fullscreencanvas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.125">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="17" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SampleHTMLgenerated/Samplehtmlserver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding>
+            <marker date="1460681804000" expanded="true" signature="429:454" placeholder="..." />
+            <marker date="1460681804000" expanded="true" signature="455:506" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FileTemplates.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7723577">
-          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.75609756">
+          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
           <folding />
         </state>
       </provider>
