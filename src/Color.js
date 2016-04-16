@@ -22,6 +22,9 @@ var RgbColor = (function(){
             this.red = Math.abs(this.red);
         }
     };
+    RgbColor.prototype.getred = function() {
+        return this.red;
+    };
     RgbColor.prototype.setblue = function(amount) {
         this.blue = amount;
         if(this.blue > 255) {
@@ -30,6 +33,9 @@ var RgbColor = (function(){
         else if(this.blue < 0) {
             this.blue = Math.abs(this.blue);
         }
+    };
+    RgbColor.prototype.getblue = function() {
+        return this.blue;
     };
     RgbColor.prototype.setgreen = function(amount) {
         this.green = amount;
@@ -40,6 +46,11 @@ var RgbColor = (function(){
             this.green = Math.abs(this.green);
         }
     };
+    RgbColor.prototype.getgreen = function() {
+        return this.green;
+    };
     return RgbColor;
 })();
+
+exports.RgbColor = RgbColor;
 
