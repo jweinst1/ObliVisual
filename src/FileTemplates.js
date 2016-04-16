@@ -20,7 +20,8 @@ var ScriptWriter = (function(){
         "canvas.style.zIndex   = 8;",
         'canvas.style.position = "absolute";',
         "document.body.appendChild(canvas);",
-        'var ctx = canvas.getContext("2d");']
+        'var ctx = canvas.getContext("2d");'];
+        this.contextname = "ctx";
     }
     ScriptWriter.prototype.getHTMLline = function() {
         return HTMLblank().replace("{{script}}", this.commands.join(" "));
@@ -30,6 +31,9 @@ var ScriptWriter = (function(){
     };
     ScriptWriter.prototype.lastcmd = function() {
         return this.commands[this.commands.length-1];
+    };
+    ScriptWriter.prototype.stroke = function() {
+        this.commands.push("ctx.stroke();");
     };
     return ScriptWriter;
 })();
