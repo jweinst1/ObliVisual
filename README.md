@@ -1,11 +1,12 @@
 # Oblivion
 
-Oblivion, meaning "the state of being forgotten", is a programming language meant to use spoken, human langauge as a programming language.
-The goal of the language is to use the syntax and grammars present in languages like English, to convey code and instructions to an interpreter or compiler,
-without using a traditional programming language, such as `Java` or `Python`.
+Oblivion, meaning "the state of being forgotten", is a programming language meant for creating canvas graphics, through
+an incredible amount of tools, utilities, and language abstractions that allow you utilize the power of computing to create images. The images are
+all created via the HTML5 canvas element, in a compressed, oneline html string.
 
-Most statements in a programming language are based off of a type of operation, and a set of arguments that an operation uses. For example, `5 + 5`, is an addition statement. We can infer
+The principle of abundant abstraction powers the core of the Oblvion language. At the lowest level, simple commands can
+create pictures like this:
 
-##Usage
-
-Oblivion works by interpreting statements as a placement grammar. The placement of operating words relative to one another indicate where the operands are. For example, `add 5 to 6`, is interpreted as `add **arg** to **arg**` by the interpreter.
+```
+>,50,_,3,<,3,^,50,^>,60,^<,50
+```
