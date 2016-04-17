@@ -4,30 +4,6 @@
  * Neither x or y coordinates can ever go below zero
  */
 
-var LinePathASM = {
-    "begin":function(){
-        return "ctx.beginPath();";
-    },
-    ">":function(x, y, amount) {
-        x += amount;
-        return "ctx.lineTo(" + x + "," + y + ");";
-    },
-    "<":function(x, y, amount) {
-        x -= amount;
-        if(x < 0) x = 0;
-        return "ctx.lineTo(" + x + "," + y + ");";
-    },
-    "^":function(x, y, amount) {
-        y += amount;
-        return "ctx.lineTo(" + x + "," + y + ");";
-    },
-    "_":function(x, y, amount) {
-        y -= amount;
-        if(y < 0) y = 0;
-        return "ctx.lineTo(" + x + "," + y + ");";
-    }
-
-};
 
 var LineTool = (function(){
     var Point = function(x, y){
@@ -58,7 +34,32 @@ var LineTool = (function(){
             obj.y -= amount;
             if(obj.y < 0) obj.y = 0;
             return "ctx.lineTo(" + obj.x + "," + obj.y + ");";
+        },
+        "^>":function(obj, amount) {
+            obj.y += amount;
+            obj.x += amount;
+            return "ctx.lineTo(" + obj.x + "," + obj.y + ");";
+        },
+        "_>":function(obj, amount) {
+            obj.y -= amount;
+            if(obj.y < 0) obj.y = 0;
+            obj.x += amount;
+            return "ctx.lineTo(" + obj.x + "," + obj.y + ");";
+        },
+        "_<":function(obj, amount) {
+            obj.y -= amount;
+            if(obj.y < 0) obj.y = 0;
+            obj.x -= amount;
+            if(obj.x < 0) obj.x = 0;
+            return "ctx.lineTo(" + obj.x + "," + obj.y + ");";
+        },
+        "^<":function(obj, amount) {
+            obj.y += amount;
+            obj.x -= amount;
+            if(obj.x < 0) obj.x = 0;
+            return "ctx.lineTo(" + obj.x + "," + obj.y + ");";
         }
+
 
     };
     function LineTool(){
@@ -77,10 +78,13 @@ var LineTool = (function(){
             var linelength = parseInt(pieces[i+1]);
             strokes.push(LinePathASM[pieces[i]](pos, linelength));
         }
+        strokes.push(LinePathASM["stroke"]());
         return strokes;
     };
     return LineTool;
 })();
 
-console.log(LineTool.drawlines(">,4,^,6,>,8"));
+exports.LineTool = LineTool;
+
+
 

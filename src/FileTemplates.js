@@ -35,6 +35,9 @@ var ScriptWriter = (function(){
     ScriptWriter.prototype.stroke = function() {
         this.commands.push("ctx.stroke();");
     };
+    ScriptWriter.prototype.concatcmds = function(arr) {
+        this.commands = this.commands.concat(arr);
+    };
     ScriptWriter.prototype.linethick = function(amount) {
         this.commands.push("ctx.lineWidth =" +amount+ ";");
     };
