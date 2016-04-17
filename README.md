@@ -10,3 +10,9 @@ create pictures like this:
 ```
 >,50,_,3,<,3,^,50,^>,60,^<,50
 ```
+![gen image](https://raw.githubusercontent.com/jweinst1/Oblivion/master/Images/samplelinedraw.png)
+
+###Development
+
+The Oblivion language is currently in it's earliest stages of development. The standard library is still
+underway.
