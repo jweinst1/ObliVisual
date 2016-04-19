@@ -1,18 +1,21 @@
 #!/usr/bin/env node
+var readline = require('readline'),
+    rl = readline.createInterface(process.stdin, process.stdout);
+var itp = require("./src/Interpreter.js");
 
-var fs = require('fs');
-var userArgs = process.argv.slice(2);
-var cmpl = require("./src/Graphics/Compiler.js");
-/**
- * Mainfile to faciliate reading and writing html docs.
- */
+rl.setPrompt('TTT> ');
+rl.prompt();
 
-fs.readFile(userArgs[0], 'utf-8', function (err, data) {
-    if (err) throw err;
-    /*data = data.split("\n");*/
-    var readstring = cmpl.Compile.compileToHTML(data);
-    fs.writeFile(userArgs[1], readstring, function (err) {
-        if (err) throw err;
-        console.log('Your file has been transcompiled to HTMl');
-    });
+rl.on('line', function(line) {
+    switch(line.trim()) {
+        case 'hello':
+            console.log('world!');
+            break;
+        case 'close':
+            process.exit(0);
+        default:
+            console.log('Say what? I might have heard `' + line.trim() + '`');
+            break;
+    }
+    rl.prompt();
 });
