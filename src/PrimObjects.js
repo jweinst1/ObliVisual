@@ -39,8 +39,8 @@ var StringObj = (function(){
 exports.StringObj = StringObj;
 
 var ListObj = (function(){
-    function ListObj(value){
-        this.value = value;
+    function ListObj(){
+        this.value = [];
         this.type = "list";
     }
     ListObj.prototype.repr = function() {
@@ -53,3 +53,60 @@ var ListObj = (function(){
 })();
 
 exports.ListObj = ListObj;
+
+var SetObj = (function(){
+    function SetObj(){
+        this.value = {};
+        this.type = "set";
+    }
+    SetObj.prototype.repr = function() {
+        return this.value;
+    };
+    SetObj.prototype.display = function() {
+        return JSON.stringify(this.value);
+    };
+    SetObj.prototype.add = function(elem) {
+        this.value[JSON.stringify(elem)] = true;
+    };
+    SetObj.prototype.contains = function(elem) {
+        return new BoolObj(JSON.stringify(elem) in this.value);
+    };
+    SetObj.prototype.delete = function(elem) {
+        delete this.value[JSON.stringify(elem)];
+    };
+    return SetObj;
+})();
+
+exports.SetObj = SetObj;
+
+var ErrorObj = (function(){
+    function ErrorObj(value){
+        this.value = value;
+        this.type = "error";
+    }
+    ErrorObj.prototype.repr = function() {
+        return this.value;
+    };
+    ErrorObj.prototype.display = function() {
+        return this.value;
+    };
+    return ErrorObj;
+})();
+
+exports.ErrorObj = ErrorObj;
+
+var BoolObj = (function(){
+    function BoolObj(value){
+        this.value = value;
+        this.type = "bool";
+    }
+    BoolObj.prototype.repr = function() {
+        return this.value;
+    };
+    BoolObj.prototype.display = function() {
+        return JSON.stringify(this.value);
+    };
+    return BoolObj;
+})();
+
+exports.BoolObj = BoolObj;

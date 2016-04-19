@@ -11,6 +11,7 @@ var Interpreter = (function(){
     function Interpreter(){
         this.global = new vd.VariableDict();
         this.current = null;
+        this.mode = "Default";
     }
     Interpreter.prototype.splitcode = function(input){
         var slices = input.split(/(\[.*?\])/);
@@ -22,12 +23,25 @@ var Interpreter = (function(){
         }
         return tokens;
     };
-    Interpreter.prototype.inferType = function(arg) {
-        if(/[0-9]|[1-9][0-9]+/.test(arg)) {
-            return new pr.NumberObj(parseInt(arg));
-        }
-        else if(/^\".*\"$/.test(arg)) {
-            return new pr.StringObj(arg.slice(1, arg.length-1));
+    Interpreter.prototype.inferType = function(argarray) {
+        for(var i=0;i<argarray;i++) {
+            if(/[0-9]|[1-9][0-9]+/.test(argarray[i])) {
+                argarray[i] = new pr.NumberObj(parseInt(argarray[i]));
+            }
+            else if(/^\".*\"$/.test(agarray[i])) {
+                argarray[i] = new pr.StringObj(argarray[i].slice(1, argarray[i].length-1));
+            }
+            else if(/^\$[a-zA-Z]+/.test(argarray[i])) {
+                argarray[i] = argarray[i];
+            }
+            else if(/^\*[a-zA-Z]+/.test(argarray[i])) {
+                if(this.globals.check(argarray[i].slice(1, argarray[i].length))) {
+                    argarray[i] = this.globals.get(argarray[i].slice(1, argarray[i].length));
+                }
+                else {
+                    argarray[i] = new pr.ErrorObj("ValueError");
+                }
+            }
         }
     };
     //the interpreter works by processing a single unit at a time, rather than lines of code
@@ -37,6 +51,8 @@ var Interpreter = (function(){
         for(var a=0;a<pieces.length;a++) {
             if(pieces[a]) args.push(pieces[a]);
         }
+        var calltype = args.shift();
+        this.inferType(args);
         return args;
     };
     //this method is used to process multiple units at a time, or documents of code.

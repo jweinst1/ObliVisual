@@ -2,19 +2,17 @@
 var readline = require('readline'),
     rl = readline.createInterface(process.stdin, process.stdout);
 var itp = require("./src/Interpreter.js");
+var interpret = new itp.Interpreter();
 
-rl.setPrompt('TTT> ');
+rl.setPrompt('obl> ');
 rl.prompt();
 
 rl.on('line', function(line) {
-    switch(line.trim()) {
-        case 'hello':
-            console.log('world!');
-            break;
+    switch(line) {
         case 'close':
             process.exit(0);
         default:
-            console.log('Say what? I might have heard `' + line.trim() + '`');
+            console.log(interpret.processCode(line));
             break;
     }
     rl.prompt();
