@@ -24,25 +24,27 @@ var Interpreter = (function(){
         return tokens;
     };
     Interpreter.prototype.inferType = function(argarray) {
-        for(var i=0;i<argarray;i++) {
+        var newargs = [];
+        for(var i=0;i<argarray.length;i++) {
             if(/[0-9]|[1-9][0-9]+/.test(argarray[i])) {
-                argarray[i] = new pr.NumberObj(parseInt(argarray[i]));
+                newargs.push(new pr.NumberObj(parseInt(argarray[i])));
             }
             else if(/^\".*\"$/.test(agarray[i])) {
-                argarray[i] = new pr.StringObj(argarray[i].slice(1, argarray[i].length-1));
+                newargs.push(new pr.StringObj(argarray[i].slice(1, argarray[i].length-1)));
             }
             else if(/^\$[a-zA-Z]+/.test(argarray[i])) {
-                argarray[i] = argarray[i];
+                newargs.push(argarray[i]);
             }
             else if(/^\*[a-zA-Z]+/.test(argarray[i])) {
                 if(this.globals.check(argarray[i].slice(1, argarray[i].length))) {
-                    argarray[i] = this.globals.get(argarray[i].slice(1, argarray[i].length));
+                    newargs.push(this.globals.get(argarray[i].slice(1, argarray[i].length)));
                 }
                 else {
-                    argarray[i] = new pr.ErrorObj("ValueError");
+                    newargs.push(new pr.ErrorObj("ValueError"));
                 }
             }
         }
+        return newargs;
     };
     //the interpreter works by processing a single unit at a time, rather than lines of code
     Interpreter.prototype.processUnit = function(input) {
@@ -52,14 +54,10 @@ var Interpreter = (function(){
             if(pieces[a]) args.push(pieces[a]);
         }
         var calltype = args.shift();
-        this.inferType(args);
-        return args;
+        var typedargs = this.inferType(args);
+        return typedargs;
     };
     //this method is used to process multiple units at a time, or documents of code.
-    Interpreter.prototype.processCode = function(code) {
-        var tokens = this.splitcode(code);
-        for(var i=0;i<tokens.length;i++) this.processUnit(tokens[i]);
-    };
     return Interpreter;
 })();
 

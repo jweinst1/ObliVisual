@@ -12,7 +12,7 @@ rl.on('line', function(line) {
         case 'close':
             process.exit(0);
         default:
-            console.log(interpret.processCode(line));
+            console.log(interpret.processUnit(line));
             break;
     }
     rl.prompt();
