@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 var userArgs = process.argv.slice(2);
-var cmpl = require("./src/Compiler.js");
+var cmpl = require("./src/Graphics/Compiler.js");
 /**
  * Mainfile to faciliate reading and writing html docs.
  */
