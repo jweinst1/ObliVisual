@@ -5,12 +5,13 @@
 
 var vd = require("./VariableDictionary.js");
 var pr = require("./PrimObjects.js");
+var asm = require("./Assembler.js");
 
 //interpreter object class
 var Interpreter = (function(){
     function Interpreter(){
         this.global = new vd.VariableDict();
-        this.current = null;
+        this.current = {value:null, type:"null"};
         this.mode = "Default";
     }
     Interpreter.prototype.splitcode = function(input){
@@ -55,7 +56,17 @@ var Interpreter = (function(){
         }
         var calltype = args.shift();
         var typedargs = this.inferType(args);
-        return typedargs;
+        asm.StdAssembler[calltype](this, typedargs);
+    };
+    Interpreter.prototype.processCode = function(code) {
+        var units = this.splitcode(code);
+        for(var i=0;i<units.length;i++) {
+            if(this.current.type === "error") {
+                return this.current.display();
+            }
+            this.processUnit(units[i]);
+        }
+        return this.current.display();
     };
     //this method is used to process multiple units at a time, or documents of code.
     return Interpreter;
