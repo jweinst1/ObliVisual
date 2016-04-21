@@ -27,10 +27,14 @@ var Interpreter = (function(){
     Interpreter.prototype.inferType = function(argarray) {
         var newargs = [];
         for(var i=0;i<argarray.length;i++) {
-            if(/[0-9]|[1-9][0-9]+/.test(argarray[i])) {
+            //grabs the current result value and pushes it to argument stack
+            if(argarray[i] === "@c") {
+                newargs.push(this.current);
+            }
+            else if(/[0-9]|[1-9][0-9]+/.test(argarray[i])) {
                 newargs.push(new pr.NumberObj(parseInt(argarray[i])));
             }
-            else if(/^\".*\"$/.test(agarray[i])) {
+            else if(/^\".*\"$/.test(argarray[i])) {
                 newargs.push(new pr.StringObj(argarray[i].slice(1, argarray[i].length-1)));
             }
             else if(/^\$[a-zA-Z]+/.test(argarray[i])) {
@@ -66,6 +70,7 @@ var Interpreter = (function(){
             }
             this.processUnit(units[i]);
         }
+        console.log(this.current);
         return this.current.display();
     };
     //this method is used to process multiple units at a time, or documents of code.
