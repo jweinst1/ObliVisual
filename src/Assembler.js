@@ -9,8 +9,15 @@ var StdAssembler = {
     "+=":function(obj, args) {
         if(args[0].type === "number" && args[1].type === "number") {
             if(args[2]) {
-                for(var i=0;i<args[2].value;i++) {
-                    args[0].value += args[1].value
+                if(args[2].type === "number") {
+                    for(var i=0;i<args[2].value;i++) {
+                        args[0].value += args[1].value
+                    }
+                }
+                else if(args[2].type === "list") {
+                    for(var i=0;i<args[2].value.length;i++) {
+                        args[0].value += args[1].value
+                    }
                 }
             }
             else {
@@ -19,8 +26,15 @@ var StdAssembler = {
         }
         else if(args[0].type === "string" && args[1].type === "string") {
             if(args[2]) {
-                for(var i=0;i<args[2].value;i++) {
-                    args[0].value = args[0].value.concat(args[1].value);
+                if(args[2].type === "number") {
+                    for(var i=0;i<args[2].value;i++) {
+                        args[0].value = args[0].value.concat(args[1].value);
+                    }
+                }
+                else if(args[2].type === "list") {
+                    for(var i=0;i<args[2].value.length;i++) {
+                        args[0].value = args[0].value.concat(args[1].value);
+                    }
                 }
             }
             else {

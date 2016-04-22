@@ -123,8 +123,15 @@ var Process = (function() {
     function Process(oper, operand) {
         this.oper = oper;
         this.operand = operand;
+        this.func = operations[this.oper];
     }
+    Process.prototype.call = function(element) {
+        return this.func(element, this.operand);
+    };
     return Process;
 })();
 
 exports.Process = Process;
+
+
+
