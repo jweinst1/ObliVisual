@@ -111,12 +111,12 @@ var BoolObj = (function(){
 
 exports.BoolObj = BoolObj;
 
-
+//miniature version of a call on an object, however no return statements are used.
 var Process = (function() {
     var operations = {
         "+":function(arg, operand){
             if(arg.type === "number") {
-                return new NumberObj(arg.value + operand.value);
+                arg.value += operand.value;
             }
         }
     };
@@ -126,7 +126,7 @@ var Process = (function() {
         this.func = operations[this.oper];
     }
     Process.prototype.call = function(element) {
-        return this.func(element, this.operand);
+        this.func(element, this.operand);
     };
     return Process;
 })();
