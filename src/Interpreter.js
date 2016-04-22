@@ -31,11 +31,11 @@ var Interpreter = (function(){
             if(argarray[i] === "@c") {
                 newargs.push(this.current);
             }
-            else if(/[0-9]|[1-9][0-9]+/.test(argarray[i])) {
-                newargs.push(new pr.NumberObj(parseInt(argarray[i])));
-            }
             else if(/^\".*\"$/.test(argarray[i])) {
                 newargs.push(new pr.StringObj(argarray[i].slice(1, argarray[i].length-1)));
+            }
+            else if(/[0-9]|[1-9][0-9]+/.test(argarray[i])) {
+                newargs.push(new pr.NumberObj(parseInt(argarray[i])));
             }
             else if(/^\$[a-zA-Z]+/.test(argarray[i])) {
                 newargs.push(argarray[i]);

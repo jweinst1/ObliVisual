@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="359891c3-88e9-4169-a8fc-9350815ff639" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assembler.js" afterPath="$PROJECT_DIR$/src/Assembler.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PrimObjects.js" afterPath="$PROJECT_DIR$/src/PrimObjects.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interpreter.js" afterPath="$PROJECT_DIR$/src/Interpreter.js" />
     </list>
     <ignored path="Oblivion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,17 +100,17 @@
         <entry file="file://$PROJECT_DIR$/src/Interpreter.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+              <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assembler.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Assembler.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Assembler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="68" column="64" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="64" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
               </folding>
@@ -117,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrimObjects.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PrimObjects.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PrimObjects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.024390243">
-              <caret line="119" column="13" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -193,9 +194,9 @@
         <option value="$PROJECT_DIR$/src/LangDir/ObjectBuilder.js" />
         <option value="$PROJECT_DIR$/src/Graphics/Compiler.js" />
         <option value="$PROJECT_DIR$/Main.js" />
+        <option value="$PROJECT_DIR$/src/PrimObjects.js" />
         <option value="$PROJECT_DIR$/src/Interpreter.js" />
         <option value="$PROJECT_DIR$/src/Assembler.js" />
-        <option value="$PROJECT_DIR$/src/PrimObjects.js" />
       </list>
     </option>
   </component>
@@ -312,7 +313,7 @@
       <recent name="$PROJECT_DIR$/VMsrc" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.PrimObjects.js">
+  <component name="RunManager" selected="Node.js.Main.js">
     <configuration default="false" name="Compiler.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="$PROJECT_DIR$/src/Graphics/Compiler.js" working-dir="$PROJECT_DIR$/src">
       <method />
     </configuration>
@@ -385,8 +386,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.PrimObjects.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.Main.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.Main.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.PrimObjects.js" />
         <item index="2" class="java.lang.String" itemvalue="Node.js.Interpreter.js" />
         <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
         <item index="4" class="java.lang.String" itemvalue="Node.js.Compiler.js" />
@@ -408,7 +409,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="43" width="1260" height="686" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -793,29 +794,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PrimObjects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Interpreter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assembler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="76" selection-start-line="35" selection-start-column="76" selection-end-line="35" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="68" column="64" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="64" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PrimObjects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024390243">
-          <caret line="119" column="13" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
