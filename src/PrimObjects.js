@@ -110,3 +110,21 @@ var BoolObj = (function(){
 })();
 
 exports.BoolObj = BoolObj;
+
+
+var Process = (function() {
+    var operations = {
+        "+":function(arg, operand){
+            if(arg.type === "number") {
+                return new NumberObj(arg.value + operand.value);
+            }
+        }
+    };
+    function Process(oper, operand) {
+        this.oper = oper;
+        this.operand = operand;
+    }
+    return Process;
+})();
+
+exports.Process = Process;
