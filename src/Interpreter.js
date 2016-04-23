@@ -48,6 +48,9 @@ var Interpreter = (function(){
                     newargs.push(new pr.ErrorObj("ValueError"));
                 }
             }
+            else {
+                newargs.push(new pr.Name(argarray[i]));
+            }
         }
         return newargs;
     };

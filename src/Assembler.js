@@ -219,6 +219,17 @@ var StdAssembler = {
         }
         if(!isFinite(args[0].value)) args[0].value = 0;
         obj.current = args[0];
+    },
+    "!":function(obj, args) {
+        if(args[0].type === "name") {
+            obj.current = new prim.Process(args[0].repr(), args[1]);
+        }
+    },
+    "->":function(obj, args) {
+        if(args[0].type === "process") {
+            args[0].call(args[1]);
+            obj.current = args[1];
+        }
     }
 };
 exports.StdAssembler = StdAssembler;

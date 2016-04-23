@@ -122,16 +122,36 @@ var Process = (function() {
     };
     function Process(oper, operand) {
         this.oper = oper;
+        this.type = "process";
         this.operand = operand;
         this.func = operations[this.oper];
     }
     Process.prototype.call = function(element) {
         this.func(element, this.operand);
     };
+    Process.prototype.display = function(){
+        return "!(" + this.oper + " -> " + this.operand.display() + ")";
+    };
     return Process;
 })();
 
 exports.Process = Process;
+
+var Name = (function(){
+    function Name(name){
+        this.name = name;
+        this.type = "name";
+    }
+    Name.prototype.repr = function() {
+        return this.name;
+    };
+    Name.prototype.display = function() {
+        return this.name;
+    };
+    return Name;
+})();
+
+exports.Name = Name;
 
 
 
