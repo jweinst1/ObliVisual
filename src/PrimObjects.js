@@ -118,6 +118,27 @@ var Process = (function() {
             if(arg.type === "number") {
                 arg.value += operand.value;
             }
+            else if(arg.type === "string" && operand.type === "string") {
+                arg.value += operand.value;
+            }
+        },
+        "-":function(arg, operand){
+            if(arg.type === "number") {
+                arg.value -= operand.value;
+            }
+        },
+        "*":function(arg, operand){
+            if(arg.type === "number") {
+                arg.value *= operand.value;
+            }
+        },
+        "/":function(arg, operand){
+            if(arg.type === "number") {
+                arg.value /= operand.value;
+                if(!isFinite(arg.value)) {
+                    arg.value = 0;
+                }
+            }
         }
     };
     function Process(oper, operand) {
