@@ -227,8 +227,47 @@ var StdAssembler = {
     },
     "->":function(obj, args) {
         if(args[0].type === "process") {
-            args[0].call(args[1]);
-            obj.current = args[1];
+            if(args[2] && args[2].type === "number") {
+                for(var i=0;i<args[2].value;i++) {
+                    args[0].call(args[1]);
+                }
+                obj.current = args[1];
+            }
+            else if(args[2] && args[2].type === "number") {
+                for(var i=0;i<args[2].value.length;i++) {
+                    args[0].call(args[1]);
+                }
+                obj.current = args[1];
+            }
+            else {
+                args[0].call(args[1]);
+                obj.current = args[1];
+            }
+        }
+    },
+    //equals comparison operator, determines absolute equality
+    "==":function(obj, args) {
+        //turns false instantly if types are not the same
+        if(args[0].type !== args[1].type) {
+            obj.current = new prim.BoolObj(false);
+        }
+        else if(args[0].type === "number" && args[1].type === "number") {
+            args[0].value === args[1].value ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
+        }
+        else if(args[0].type === "string" && args[1].type === "string") {
+            args[0].value.join("") === args[1].value.join("") ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
+        }
+    },
+    "!=":function(obj, args) {
+        //turns false instantly if types are not the same
+        if(args[0].type !== args[1].type) {
+            obj.current = new prim.BoolObj(true);
+        }
+        else if(args[0].type === "number" && args[1].type === "number") {
+            args[0].value !== args[1].value ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
+        }
+        else if(args[0].type === "string" && args[1].type === "string") {
+            args[0].value.join("") !== args[1].value.join("") ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
         }
     }
 };
