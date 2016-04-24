@@ -38,11 +38,11 @@ var Interpreter = (function(){
                 newargs.push(new pr.NumberObj(parseInt(argarray[i])));
             }
             else if(/^\$[a-zA-Z]+/.test(argarray[i])) {
-                newargs.push(argarray[i]);
+                newargs.push(new pr.Name(argarray[i]));
             }
             else if(/^\*[a-zA-Z]+/.test(argarray[i])) {
-                if(this.globals.check(argarray[i].slice(1, argarray[i].length))) {
-                    newargs.push(this.globals.get(argarray[i].slice(1, argarray[i].length)));
+                if(this.global.check(argarray[i].slice(1, argarray[i].length))) {
+                    newargs.push(this.global.get(argarray[i].slice(1, argarray[i].length)));
                 }
                 else {
                     newargs.push(new pr.ErrorObj("ValueError"));

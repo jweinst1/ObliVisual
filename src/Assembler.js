@@ -6,6 +6,11 @@ var prim = require("./PrimObjects.js");
 
 var StdAssembler = {
     //does not create a new object, simply effects the last object
+    "print":function(obj, args) {
+        if(args.length > 0) {
+            obj.current = args[0];
+        }
+    },
     "+=": function (obj, args) {
         if (args[0].type === "number" && args[1].type === "number") {
             if (args[2]) {
@@ -245,6 +250,12 @@ var StdAssembler = {
             }
         }
     },
+    "=":function(obj, args) {
+        if(args[0].type === "name" && args[1]) {
+            obj.global.set(args[0].repr().slice(1, args[0].repr().length), args[1]);
+            obj.current = args[1];
+        }
+    },
     //equals comparison operator, determines absolute equality
     "==":function(obj, args) {
         //turns false instantly if types are not the same
@@ -259,7 +270,7 @@ var StdAssembler = {
         }
     },
     "!=":function(obj, args) {
-        //turns false instantly if types are not the same
+        //turns true instantly if types are not the same
         if(args[0].type !== args[1].type) {
             obj.current = new prim.BoolObj(true);
         }
@@ -268,6 +279,36 @@ var StdAssembler = {
         }
         else if(args[0].type === "string" && args[1].type === "string") {
             args[0].value.join("") !== args[1].value.join("") ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
+        }
+    },
+    ">":function(obj, args) {
+        //turns false instantly if types are not the same
+        if(args[0].type !== args[1].type) {
+            obj.current = new prim.BoolObj(false);
+        }
+        else if(args[0].type === "number" && args[1].type === "number") {
+            args[0].value > args[1].value ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
+        }
+        else if(args[0].type === "string" && args[1].type === "string") {
+            args[0].value.length > args[1].value.length ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
+        }
+        else if(args[0].type === "list" && args[1].type === "list") {
+            args[0].value.length > args[1].value.length ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
+        }
+    },
+    "<":function(obj, args) {
+        //turns false instantly if types are not the same
+        if(args[0].type !== args[1].type) {
+            obj.current = new prim.BoolObj(false);
+        }
+        else if(args[0].type === "number" && args[1].type === "number") {
+            args[0].value < args[1].value ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
+        }
+        else if(args[0].type === "string" && args[1].type === "string") {
+            args[0].value.length < args[1].value.length ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
+        }
+        else if(args[0].type === "list" && args[1].type === "list") {
+            args[0].value.length < args[1].value.length ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
         }
     }
 };
