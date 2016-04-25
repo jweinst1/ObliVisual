@@ -63,14 +63,14 @@ var Interpreter = (function(){
         }
         var calltype = args.shift();
         var typedargs = this.inferType(args);
-        asm.StdAssembler[calltype](this, typedargs);
+        if(calltype in asm.StdAssembler) asm.StdAssembler[calltype](this, typedargs);
+        else {
+            this.current = new pr.ErrorObj("Oper Error, Unknown Oper: " + calltype);
+        }
     };
     Interpreter.prototype.processCode = function(code) {
         var units = this.splitcode(code);
         for(var i=0;i<units.length;i++) {
-            if(this.current.type === "error") {
-                return this.current.display();
-            }
             this.processUnit(units[i]);
         }
         console.log(this.current);
