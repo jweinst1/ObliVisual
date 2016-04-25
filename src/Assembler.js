@@ -361,6 +361,22 @@ var StdAssembler = {
             newlst.append(args[i]);
         }
         obj.current = newlst;
+    },
+    //general appending operator
+    "<<":function(obj, args) {
+        if(args[0].type === "list") {
+            args[0].append(args[1]);
+            obj.current = args[0];
+        }
+    },
+    //pop operator
+    ">!":function(obj, args) {
+        if(args[0].type === "list") {
+            var popped = args[0].pop();
+            if (popped) {
+                obj.current = popped;
+            }
+        }
     }
 };
 exports.StdAssembler = StdAssembler;

@@ -56,6 +56,9 @@ var ListObj = (function(){
     ListObj.prototype.append = function(elem) {
         this.value.push(elem);
     };
+    ListObj.prototype.pop = function() {
+        return this.value.pop();
+    };
     return ListObj;
 })();
 
