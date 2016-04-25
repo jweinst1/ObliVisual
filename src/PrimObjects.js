@@ -47,7 +47,14 @@ var ListObj = (function(){
         return this.value;
     };
     ListObj.prototype.display = function() {
-        return JSON.stringify(this.value);
+        var displayed = [];
+        for(var key in this.value) {
+            displayed.push(this.value[key].display());
+        }
+        return displayed;
+    };
+    ListObj.prototype.append = function(elem) {
+        this.value.push(elem);
     };
     return ListObj;
 })();

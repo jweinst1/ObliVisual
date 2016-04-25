@@ -225,6 +225,49 @@ var StdAssembler = {
         if(!isFinite(args[0].value)) args[0].value = 0;
         obj.current = args[0];
     },
+    "%": function (obj, args) {
+        if (args[0].type === "number" && args[1].type === "number") {
+            var newnum = new prim.NumberObj(args[0].value);
+            if (args[2]) {
+                if (args[2].type === "number") {
+                    for (var i = 0; i < args[2].value; i++) {
+                        newnum.value %= args[1].value;
+                        obj.current = newnum;
+                    }
+                }
+                else if (args[2].type === "list") {
+                    for (var i = 0; i < args[2].value.length; i++) {
+                        newnum.value %= args[1].value;
+                        obj.current = newnum;
+                    }
+                }
+            }
+            else {
+                newnum.value %= args[1].value;
+                obj.current = newnum;
+            }
+        }
+    },
+    "%=": function (obj, args) {
+        if (args[0].type === "number" && args[1].type === "number") {
+            if (args[2]) {
+                if (args[2].type === "number") {
+                    for (var i = 0; i < args[2].value; i++) {
+                        args[0].value %= args[1].value;
+                    }
+                }
+                else if (args[2].type === "list") {
+                    for (var i = 0; i < args[2].value.length; i++) {
+                        args[0].value %= args[1].value;
+                    }
+                }
+            }
+            else {
+                args[0].value %= args[1].value;
+            }
+        }
+        obj.current = args[0];
+    },
     "!":function(obj, args) {
         if(args[0].type === "name") {
             obj.current = new prim.Process(args[0].repr(), args[1]);
@@ -310,6 +353,14 @@ var StdAssembler = {
         else if(args[0].type === "list" && args[1].type === "list") {
             args[0].value.length < args[1].value.length ? obj.current = new prim.BoolObj(true): obj.current = new prim.BoolObj(false);
         }
+    },
+    //creates a list object
+    "list":function(obj, args) {
+        var newlst = new prim.ListObj();
+        for(var i=0;i<args.length;i++) {
+            newlst.append(args[i]);
+        }
+        obj.current = newlst;
     }
 };
 exports.StdAssembler = StdAssembler;
