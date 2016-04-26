@@ -240,6 +240,13 @@ var Condition = (function(){
             var result;
             JSON.stringify(arg) !== JSON.stringify(operand) ? result = new BoolObj(true): result = new BoolObj(false);
             return result;
+        },
+        ">":function(arg, operand) {
+            var result;
+            if(arg.type === "number" && operand.type === "number") {
+                arg.value > operand.value ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
         }
     };
     function Condition(oper, operand){
