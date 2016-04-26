@@ -281,7 +281,25 @@ var StdAssembler = {
                 }
                 obj.current = args[1];
             }
-            else if(args[2] && args[2].type === "number") {
+            else if(args[2] && args[2].type === "list") {
+                for(var i=0;i<args[2].value.length;i++) {
+                    args[0].call(args[1]);
+                }
+                obj.current = args[1];
+            }
+            else {
+                args[0].call(args[1]);
+                obj.current = args[1];
+            }
+        }
+        else if(args[0].type === "condproc") {
+            if(args[2] && args[2].type === "number") {
+                for(var i=0;i<args[2].value;i++) {
+                    args[0].call(args[1]);
+                }
+                obj.current = args[1];
+            }
+            else if(args[2] && args[2].type === "list") {
                 for(var i=0;i<args[2].value.length;i++) {
                     args[0].call(args[1]);
                 }
@@ -397,6 +415,12 @@ var StdAssembler = {
             if(popped) {
                 obj.current = new prim.StringObj(popped);
             }
+        }
+    },
+    //operator to create a conditional process
+    "?!":function(obj, args) {
+        if(args[0].type === "condition" && args[1].type === "process" && args[2].type === "process") {
+            obj.current = new prim.ConditionalProcess(args[0], args[1], args[2]);
         }
     }
 };

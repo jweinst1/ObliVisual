@@ -324,8 +324,25 @@ These can be chained, to fire through streams of conditionals, to achieve the ri
 * */
 
 var ConditionalProcess = (function(){
-    function ConditionalProcess(){
-
+    function ConditionalProcess(cond, proc, altproc){
+        this.cond = cond;
+        this.proc = proc;
+        this.altproc = altproc;
+        this.type = "condproc";
     }
+    ConditionalProcess.prototype.display = function(){
+        return "!{" + this.cond.display() + " :: " + this.proc.display() + " :: " + this.altproc.display() + "}";
+    };
+    ConditionalProcess.prototype.call = function(elem) {
+        var result = this.cond.call(elem);
+        if(result.type === "bool" && result.value === true) {
+            this.proc.call(elem);
+        }
+        else {
+            this.altproc.call(elem);
+        }
+    };
     return ConditionalProcess;
 })();
+
+exports.ConditionalProcess = ConditionalProcess;
