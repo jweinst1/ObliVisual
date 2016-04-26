@@ -292,6 +292,9 @@ var StdAssembler = {
                 obj.current = args[1];
             }
         }
+        else if(args[0].type === "condition") {
+            obj.current = args[0].call(args[1]);
+        }
     },
     "=":function(obj, args) {
         if(args[0].type === "name" && args[1]) {
@@ -366,6 +369,12 @@ var StdAssembler = {
         if(args[0].type === "number") {
             var newarr = new prim.ArrayObj(args[0].value);
             obj.current = newarr;
+        }
+    },
+    //condition operator, callable with ->
+    "?":function(obj, args) {
+        if(args[0].type === "name") {
+            obj.current = new prim.Condition(args[0].repr(), args[1]);
         }
     },
     //general appending operator

@@ -231,7 +231,15 @@ var Condition = (function(){
     var operations = {
         //uses absolute string comparisons for fast logical evaluation.
         "==":function(arg, operand) {
-            JSON.stringify(arg) === JSON.stringify(operand) ? new BoolObj(true): new BoolObj(false);
+            var result;
+            JSON.stringify(arg) === JSON.stringify(operand) ? result = new BoolObj(true): result = new BoolObj(false);
+            return result;
+        },
+        //not equal oper for condition
+        "!=":function(arg, operand) {
+            var result;
+            JSON.stringify(arg) !== JSON.stringify(operand) ? result = new BoolObj(true): result = new BoolObj(false);
+            return result;
         }
     };
     function Condition(oper, operand){
