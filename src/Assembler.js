@@ -422,6 +422,14 @@ var StdAssembler = {
         if(args[0].type === "condition" && args[1].type === "process" && args[2].type === "process") {
             obj.current = new prim.ConditionalProcess(args[0], args[1], args[2]);
         }
+    },
+    "get":function(obj, args) {
+        if(args[0].type === "string" && args[1].type === "number") {
+            var got = args[0].get(args[1].value);
+            if(got) {
+                obj.current = new prim.StringObj(got);
+            }
+        }
     }
 };
 exports.StdAssembler = StdAssembler;

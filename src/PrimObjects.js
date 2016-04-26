@@ -38,6 +38,9 @@ var StringObj = (function(){
         this.value = this.value.slice(0, this.value.length-1);
         return last;
     };
+    StringObj.prototype.get = function(key) {
+        return this.value[key];
+    };
     return StringObj;
 })();
 
@@ -331,7 +334,7 @@ var ConditionalProcess = (function(){
         this.type = "condproc";
     }
     ConditionalProcess.prototype.display = function(){
-        return "!{" + this.cond.display() + " :: " + this.proc.display() + " :: " + this.altproc.display() + "}";
+        return "{" + this.cond.display() + " :: " + this.proc.display() + " :: " + this.altproc.display() + "}";
     };
     ConditionalProcess.prototype.call = function(elem) {
         var result = this.cond.call(elem);
