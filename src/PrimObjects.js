@@ -319,6 +319,13 @@ var Condition = (function(){
 
 exports.Condition = Condition;
 
+/*Special conidition, that if true, calls one process, and if false, calls a different process.
+These can be chained, to fire through streams of conditionals, to achieve the right process.
+* */
 
+var ConditionalProcess = (function(){
+    function ConditionalProcess(){
 
-
+    }
+    return ConditionalProcess;
+})();
