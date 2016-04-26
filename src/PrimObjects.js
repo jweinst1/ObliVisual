@@ -247,6 +247,59 @@ var Condition = (function(){
                 arg.value > operand.value ? result = new BoolObj(true): result = new BoolObj(false);
                 return result;
             }
+            else if(arg.type === "string" && operand.type === "string") {
+                arg.value.length > operand.value.length ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+            else if(arg.type === "list" && operand.type === "list") {
+                arg.value.length > operand.value.length ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+        },
+        "<":function(arg, operand) {
+            var result;
+            if(arg.type === "number" && operand.type === "number") {
+                arg.value < operand.value ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+            else if(arg.type === "string" && operand.type === "string") {
+                arg.value.length < operand.value.length ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+            else if(arg.type === "list" && operand.type === "list") {
+                arg.value.length < operand.value.length ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+        },
+        ">=":function(arg, operand) {
+            var result;
+            if(arg.type === "number" && operand.type === "number") {
+                arg.value >= operand.value ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+            else if(arg.type === "string" && operand.type === "string") {
+                arg.value.length >= operand.value.length ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+            else if(arg.type === "list" && operand.type === "list") {
+                arg.value.length >= operand.value.length ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+        },
+        "<=":function(arg, operand) {
+            var result;
+            if(arg.type === "number" && operand.type === "number") {
+                arg.value <= operand.value ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+            else if(arg.type === "string" && operand.type === "string") {
+                arg.value.length <= operand.value.length ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
+            else if(arg.type === "list" && operand.type === "list") {
+                arg.value.length <= operand.value.length ? result = new BoolObj(true): result = new BoolObj(false);
+                return result;
+            }
         }
     };
     function Condition(oper, operand){
