@@ -33,6 +33,11 @@ var StringObj = (function(){
     StringObj.prototype.display = function() {
         return '"' + this.value.join("") + '"';
     };
+    StringObj.prototype.pop = function() {
+        var last = this.value[this.value.length-1];
+        this.value = this.value.slice(0, this.value.length-1);
+        return last;
+    };
     return StringObj;
 })();
 
@@ -120,6 +125,42 @@ var BoolObj = (function(){
 })();
 
 exports.BoolObj = BoolObj;
+
+/*
+* The Array object is a fixed size, stick of storage.
+* */
+
+var ArrayObj = (function(){
+    function ArrayObj(size){
+        this.size = size;
+        this.value = [];
+        this.type = "array";
+        for(var i=0;i<this.size;i++) {
+            this.value.push(false);
+        }
+    }
+    ArrayObj.prototype.repr = function(){
+        return this.value;
+    };
+    ArrayObj.prototype.display = function() {
+        var displayed = [];
+        for(var key in this.value) {
+            displayed.push(this.value[key].display());
+        }
+        return displayed;
+    };
+    ArrayObj.prototype.get = function(num){
+        return this.value[num];
+    };
+    ArrayObj.prototype.set = function(num, elem) {
+        if(num >= 0 && num < this.size) {
+            this.value[num] = elem;
+        }
+    };
+    return ArrayObj;
+})();
+
+exports.ArrayObj = ArrayObj;
 
 //miniature version of a call on an object, however no return statements are used.
 var Process = (function() {

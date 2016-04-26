@@ -369,12 +369,18 @@ var StdAssembler = {
             obj.current = args[0];
         }
     },
-    //pop operator
+    //pop operator, works on list and strings
     ">!":function(obj, args) {
         if(args[0].type === "list") {
             var popped = args[0].pop();
             if (popped) {
                 obj.current = popped;
+            }
+        }
+        if(args[0].type === "string") {
+            var popped = args[0].pop();
+            if(popped) {
+                obj.current = new prim.StringObj(popped);
             }
         }
     }
