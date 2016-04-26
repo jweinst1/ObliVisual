@@ -225,6 +225,31 @@ var Name = (function(){
 
 exports.Name = Name;
 
+//condition object is used to call things that determine true or false states.
+
+var Condition = (function(){
+    var operations = {
+        //uses absolute string comparisons for fast logical evaluation.
+        "==":function(arg, operand) {
+            JSON.stringify(arg) === JSON.stringify(operand) ? new BoolObj(true): new BoolObj(false);
+        }
+    };
+    function Condition(oper, operand){
+        this.oper = oper;
+        this.operand = operand;
+        this.type = "condition";
+        this.func = operations[this.oper];
+    }
+    Condition.prototype.call = function(element) {
+        return this.func(element, this.operand);
+    };
+    Condition.prototype.display = function(){
+        return "?(" + this.oper + " -> " + this.operand.display() + ")";
+    };
+    return Condition;
+})();
+
+exports.Condition = Condition;
 
 
 

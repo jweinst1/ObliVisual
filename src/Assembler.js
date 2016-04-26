@@ -362,6 +362,12 @@ var StdAssembler = {
         }
         obj.current = newlst;
     },
+    "array":function(obj, args) {
+        if(args[0].type === "number") {
+            var newarr = new prim.ArrayObj(args[0].value);
+            obj.current = newarr;
+        }
+    },
     //general appending operator
     "<<":function(obj, args) {
         if(args[0].type === "list") {
