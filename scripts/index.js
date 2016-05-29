@@ -12,8 +12,8 @@ window.addEventListener("DOMContentLoaded", function () {
     window.print = function (message) {
         repl.print(message, "message");
     };
-
-    /*repl.isBalanced = function (code) {
+    
+    repl.isBalanced = function (code) {
         var length = code.length;
         var delimiter = '';
         var brackets = [];
@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
         return brackets.length ? false : true;
-    };*/
+    };
 
     repl.eval = function (code) {
         try {
