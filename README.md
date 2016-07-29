@@ -1,10 +1,10 @@
-# Oblivion
+# Oblivisual
 
-Oblivion, meaning "the state of being forgotten", is a programming language meant for creating canvas graphics, through
+Oblivisual, meaning "the state of being forgotten", is a programming language meant for creating canvas graphics, through
 an incredible amount of tools, utilities, and language abstractions that allow you utilize the power of computing to create images. The images are
 all created via the HTML5 canvas element, in a compressed, oneline html string.
 
-The principle of abundant abstraction powers the core of the Oblvion language. At the lowest level, simple commands can
+The principle of abundant abstraction powers the core of the Oblivisual language. At the lowest level, simple commands can
 create pictures like this:
 
 ```
