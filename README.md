@@ -10,7 +10,7 @@ create pictures like this:
 ```
 >,50,_,3,<,3,^,50,^>,60,^<,50
 ```
-![gen image](https://raw.githubusercontent.com/jweinst1/Oblivion/master/Images/samplelinedraw.png)
+![gen image](https://raw.githubusercontent.com/jweinst1/ObliVisual/master/Images/samplelinedraw.png)
 
 ###Development
 
